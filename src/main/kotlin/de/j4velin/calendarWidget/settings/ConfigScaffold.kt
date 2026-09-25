@@ -129,8 +129,8 @@ private fun BackupDialog(viewModel: ConfigViewModel<*>, onDismiss: () -> Unit) {
 }
 
 /**
- * Common frame of the configuration screens: top bar with menu, backup dialog and, if
- * [requirePermission], a calendar permission request instead of the content.
+ * Common frame of the configuration screens: top bar with cancel, done and menu, backup dialog
+ * and, if [requirePermission], a calendar permission request instead of the content.
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -138,6 +138,8 @@ internal fun ConfigScaffold(
     viewModel: ConfigViewModel<*>,
     requirePermission: Boolean,
     requestPermission: () -> Unit,
+    onDone: () -> Unit,
+    onCancel: () -> Unit,
     content: @Composable (PaddingValues) -> Unit,
 ) {
     val context = LocalContext.current
@@ -148,7 +150,16 @@ internal fun ConfigScaffold(
         topBar = {
             TopAppBar(
                 title = { Text(stringResource(R.string.app_name)) },
+                navigationIcon = {
+                    IconButton(onClick = onCancel) {
+                        Icon(
+                            painterResource(R.drawable.ic_close),
+                            contentDescription = stringResource(android.R.string.cancel),
+                        )
+                    }
+                },
                 actions = {
+                    TextButton(onClick = onDone) { Text(stringResource(R.string.done)) }
                     Box {
                         IconButton(onClick = { menuExpanded = true }) {
                             Icon(

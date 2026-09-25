@@ -10,4 +10,7 @@
                     android:resizeMode="horizontal|vertical"
                     android:updatePeriodMillis="0"
                     android:widgetCategory="keyguard|home_screen"
-                    android:widgetFeatures="reconfigurable"/>
+                    android:widgetFeatures="reconfigurable"
+                    android:description="@string/widget_agenda_description"
+                    android:targetCellWidth="3"
+                    android:targetCellHeight="2"/>

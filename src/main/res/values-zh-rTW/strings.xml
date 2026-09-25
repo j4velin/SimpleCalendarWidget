@@ -47,13 +47,40 @@ tools:ignore="MissingTranslation">
 <string name="appearance">外觀</string>
 <string name="settings">設定</string>
 <string name="backupandrestore">備份 &amp; 還原</string>
-<string name="backuplocation">小工具設定備份於路徑 /Android/de.j4velin.calendarWidget/files/backup資料夾內，可用於還原設定。\n當進行還原後，將會覆蓋目前小工具的設定項目內容!</string>
+<string name="backuplocation">小工具設定備份於路徑 /Android/de.j4velin.calendarWidget/files/backup資料夾內，可用於還原設定。
+\n當進行還原後，將會覆蓋目前小工具的設定項目內容!</string>
 <string name="backupsaved">備份已儲存:</string>
 <string name="externalstorageerror">錯誤:沒有可用的外部儲存空間</string>
 <string name="restore">還原</string>
 <string name="restored">已匯入設定</string>
 <string name="nobackup">沒有備份項目</string>
 <string name="moreapps">更多程式</string>
-<string name="donate">贊助開發</string>
-
+    <string name="launcher_info">日曆小工具已啟用！\n小工具清單中現在應該會出現新的項目。將它拖曳到主畫面即可放置小工具。\n\n您不需要再次執行此活動，因此圖示將從啟動器中移除。</string>
+    <string name="no_calendar_app">找不到日曆應用程式</string>
+    <string name="ics_no_event">在此檔案中找不到活動</string>
+    <string name="no_permission_widget">沒有讀取日曆的權限</string>
+    <string name="permission_required">此小工具需要存取您的日曆才能顯示您的活動。</string>
+    <string name="grant_permission">授予權限</string>
+    <string name="app_settings">應用程式設定</string>
+    <string name="no_calendars">您的裝置上找不到日曆！</string>
+    <string name="add_event">新增活動</string>
+    <string name="edit_widget">編輯小工具</string>
+    <string name="previous_month">上個月</string>
+    <string name="next_month">下個月</string>
+    <string name="invalid_format">格式無效</string>
+    <string name="black">黑色</string>
+    <string name="white">白色</string>
+    <string name="select_app">選擇應用程式</string>
+    <string name="backup">備份</string>
+    <string name="more_options">更多選項</string>
+    <string name="indicators_description">為當天的每個活動顯示一個點</string>
+    <string name="done">完成</string>
+    <string name="widget_agenda_label">SCW 行程</string>
+    <string name="widget_month_label">SCW 月曆</string>
+    <string name="widget_agenda_description">您即將到來的活動</string>
+    <string name="widget_month_description">附活動標記的月曆總覽</string>
+    <string name="preview_event_1">團隊會議</string>
+    <string name="preview_event_2">與安娜共進午餐</string>
+    <string name="preview_event_3">牙醫</string>
+    <string name="preview_event_4">度假</string>
 </resources>

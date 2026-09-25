@@ -82,6 +82,21 @@ records the plan and what actually changed.
   `VIEW` / `INSERT` intents plus the AOSP/Google calendar fallbacks remain.
 * Devices below Android 8.0.
 
+## Follow-up improvements (done)
+
+* New widgets preselect all calendars that are visible in the calendar app.
+* The config screens have **Done** and cancel (✕) buttons. Changes are only saved with
+  Done. Cancelling or pressing Back discards them, and also cancels placing a new widget.
+* Adaptive launcher icon, including a monochrome layer for themed icons (Android 13+).
+* Widgets:
+  * rounded corners (Android 12+)
+  * default grid sizes and picker descriptions
+  * compact icons when the widget is small
+  * generated previews in the widget picker (Android 15+)
+* Everything added during the modernization is translated into all 17 existing languages,
+  including the widget names.
+* GitHub Actions workflow: build, lint and tests on every push and pull request.
+
 ## Verification
 
 `./gradlew assembleDebug assembleRelease lintDebug testDebugUnitTest`

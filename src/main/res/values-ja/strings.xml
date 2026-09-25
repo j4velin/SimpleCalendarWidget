@@ -3,5 +3,32 @@
 
     <string name="today">今日</string>
     <string name="tomorrow">明日</string>
-
+    <string name="launcher_info">カレンダーウィジェットが有効になりました！\nウィジェット一覧に新しい項目が表示されます。ホーム画面にドラッグしてウィジェットを配置してください。\n\nこの画面を再度開く必要はないため、ランチャーからアイコンが削除されます。</string>
+    <string name="no_calendar_app">カレンダーアプリが見つかりません</string>
+    <string name="ics_no_event">このファイルに予定が見つかりません</string>
+    <string name="no_permission_widget">カレンダーの読み取り権限がありません</string>
+    <string name="permission_required">予定を表示するには、このウィジェットにカレンダーへのアクセスが必要です。</string>
+    <string name="grant_permission">権限を許可</string>
+    <string name="app_settings">アプリの設定</string>
+    <string name="no_calendars">端末にカレンダーが見つかりません！</string>
+    <string name="add_event">予定を追加</string>
+    <string name="edit_widget">ウィジェットを編集</string>
+    <string name="previous_month">前の月</string>
+    <string name="next_month">次の月</string>
+    <string name="invalid_format">無効な形式</string>
+    <string name="black">黒</string>
+    <string name="white">白</string>
+    <string name="select_app">アプリを選択</string>
+    <string name="backup">バックアップ</string>
+    <string name="more_options">その他のオプション</string>
+    <string name="indicators_description">その日の予定ごとにドットを表示します</string>
+    <string name="done">完了</string>
+    <string name="widget_agenda_label">SCW 予定リスト</string>
+    <string name="widget_month_label">SCW 月</string>
+    <string name="widget_agenda_description">今後の予定</string>
+    <string name="widget_month_description">予定インジケーター付きの月表示</string>
+    <string name="preview_event_1">チームミーティング</string>
+    <string name="preview_event_2">アンナとランチ</string>
+    <string name="preview_event_3">歯医者</string>
+    <string name="preview_event_4">休暇</string>
 </resources>

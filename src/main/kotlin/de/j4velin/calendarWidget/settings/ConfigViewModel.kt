@@ -31,7 +31,13 @@ internal class ConfigViewModel<S>(
     private val backupType: String,
     private val load: (Context, Int) -> S,
     private val store: S.(SharedPreferences, Int) -> Unit,
+    private val withCalendars: S.(Set<Long>) -> S,
+    /** a widget which is being placed right now, i.e. has not been configured before */
+    isNewWidget: Boolean,
 ) : AndroidViewModel(application) {
+
+    /** new widgets show all visible calendars by default */
+    private var preselectCalendars = isNewWidget
 
     private val repository = CalendarRepository(application)
 
@@ -64,7 +70,12 @@ internal class ConfigViewModel<S>(
 
     private fun loadCalendars() {
         viewModelScope.launch {
-            calendars = withContext(Dispatchers.IO) { repository.calendars() }
+            val loaded = withContext(Dispatchers.IO) { repository.calendars() }
+            if (preselectCalendars) {
+                preselectCalendars = false
+                settings = settings.withCalendars(loaded.filter { it.visible }.map { it.id }.toSet())
+            }
+            calendars = loaded
         }
     }
 
@@ -85,8 +96,10 @@ internal class ConfigViewModel<S>(
         val app = getApplication<Application>()
         val result = Backup.restore(app, widgetId, backupType)
         if (result == Backup.RestoreResult.RESTORED) {
+            // the restored settings are stored already
             settings = load(app, widgetId)
             version++
+            WidgetUpdates.refreshAsync(app, widgetId)
         }
         return result
     }

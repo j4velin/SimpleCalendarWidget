@@ -47,13 +47,40 @@ tools:ignore="MissingTranslation">
 <string name="appearance">Vzhled</string>
 <string name="settings">Nastavení</string>
 <string name="backupandrestore">Zálohování &amp; Obnovení</string>
-<string name="backuplocation">Toto uloží vaše nastavení do/obnoví nastavení z /Android/de.j4velin.calendarWidget/files/backup.\nPri obnovení dojde k přepsání nýnějšího nastavení widgetu!</string>
+<string name="backuplocation">Toto uloží vaše nastavení do/obnoví nastavení z /Android/de.j4velin.calendarWidget/files/backup.
+\nPri obnovení dojde k přepsání nýnějšího nastavení widgetu!</string>
 <string name="backupsaved">Záloha uložena</string>
 <string name="externalstorageerror">Chyba: Externí uložiště není k dispozici</string>
 <string name="restore">Obnovení</string>
 <string name="restored">Nastavení importováno</string>
 <string name="nobackup">Záloha nenalezena</string>
 <string name="moreapps">Další skvělé aplikace</string>
-<string name="donate">Podpoř</string>
-
+    <string name="launcher_info">Kalendářový widget aktivován!\nV seznamu widgetů by se nyní měla objevit nová položka. Přetáhněte ji na domovskou obrazovku a umístěte tam widget.\n\nTuto aktivitu již nemusíte spouštět, proto bude ikona odstraněna ze spouštěče.</string>
+    <string name="no_calendar_app">Nebyla nalezena žádná kalendářová aplikace</string>
+    <string name="ics_no_event">V tomto souboru nebyla nalezena žádná událost</string>
+    <string name="no_permission_widget">Chybí oprávnění ke čtení kalendáře</string>
+    <string name="permission_required">Tento widget potřebuje přístup k vašemu kalendáři, aby mohl zobrazit vaše události.</string>
+    <string name="grant_permission">Udělit oprávnění</string>
+    <string name="app_settings">Nastavení aplikace</string>
+    <string name="no_calendars">Ve vašem zařízení nebyly nalezeny žádné kalendáře!</string>
+    <string name="add_event">Přidat událost</string>
+    <string name="edit_widget">Upravit widget</string>
+    <string name="previous_month">Předchozí měsíc</string>
+    <string name="next_month">Další měsíc</string>
+    <string name="invalid_format">Neplatný formát</string>
+    <string name="black">černá</string>
+    <string name="white">bílá</string>
+    <string name="select_app">Vybrat aplikaci</string>
+    <string name="backup">Zálohovat</string>
+    <string name="more_options">Další možnosti</string>
+    <string name="indicators_description">Zobrazí tečku za každou událost v daném dni</string>
+    <string name="done">Hotovo</string>
+    <string name="widget_agenda_label">SCW Agenda</string>
+    <string name="widget_month_label">SCW Měsíc</string>
+    <string name="widget_agenda_description">Vaše nadcházející události</string>
+    <string name="widget_month_description">Přehled měsíce s ukazateli událostí</string>
+    <string name="preview_event_1">Porada týmu</string>
+    <string name="preview_event_2">Oběd s Annou</string>
+    <string name="preview_event_3">Zubař</string>
+    <string name="preview_event_4">Dovolená</string>
 </resources>

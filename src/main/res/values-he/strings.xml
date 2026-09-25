@@ -3,5 +3,32 @@
 
     <string name="today">היום</string>
     <string name="tomorrow">מחר</string>
-
+    <string name="launcher_info">ווידג\'ט לוח השנה הופעל!\nכעת אמורה להופיע רשומה חדשה ברשימת הווידג\'טים. גררו אותה למסך הבית כדי למקם שם את הווידג\'ט.\n\nאין צורך להפעיל שוב את הפעילות הזו, ולכן הסמל יוסר מהמשגר.</string>
+    <string name="no_calendar_app">לא נמצאה אפליקציית לוח שנה</string>
+    <string name="ics_no_event">לא נמצא אירוע בקובץ זה</string>
+    <string name="no_permission_widget">אין הרשאה לקרוא את לוח השנה</string>
+    <string name="permission_required">הווידג\'ט זקוק לגישה ללוח השנה שלך כדי להציג את האירועים.</string>
+    <string name="grant_permission">מתן הרשאה</string>
+    <string name="app_settings">הגדרות האפליקציה</string>
+    <string name="no_calendars">לא נמצאו לוחות שנה במכשיר!</string>
+    <string name="add_event">הוספת אירוע</string>
+    <string name="edit_widget">עריכת ווידג\'ט</string>
+    <string name="previous_month">החודש הקודם</string>
+    <string name="next_month">החודש הבא</string>
+    <string name="invalid_format">פורמט לא תקין</string>
+    <string name="black">שחור</string>
+    <string name="white">לבן</string>
+    <string name="select_app">בחירת אפליקציה</string>
+    <string name="backup">גיבוי</string>
+    <string name="more_options">אפשרויות נוספות</string>
+    <string name="indicators_description">מציג נקודה עבור כל אירוע באותו יום</string>
+    <string name="done">סיום</string>
+    <string name="widget_agenda_label">SCW סדר יום</string>
+    <string name="widget_month_label">SCW חודש</string>
+    <string name="widget_agenda_description">האירועים הקרובים שלך</string>
+    <string name="widget_month_description">תצוגה חודשית עם סימוני אירועים</string>
+    <string name="preview_event_1">פגישת צוות</string>
+    <string name="preview_event_2">ארוחת צהריים עם אנה</string>
+    <string name="preview_event_3">רופא שיניים</string>
+    <string name="preview_event_4">חופשה</string>
 </resources>

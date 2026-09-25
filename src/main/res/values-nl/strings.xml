@@ -47,13 +47,40 @@ tools:ignore="MissingTranslation">
 <string name="appearance">Uiterlijk </string>
 <string name="settings">Instellingen </string>
 <string name="backupandrestore">Backup en Herstel</string>
-<string name="backuplocation">Hiermee worden de instellingen opgeslagen in/hersteld vanuit /Android/de.j4velin.calendarWidget/files/backup.\nHerstellen overschrijft de huidige instellingen van de widget!</string>
+<string name="backuplocation">Hiermee worden de instellingen opgeslagen in/hersteld vanuit /Android/de.j4velin.calendarWidget/files/backup.
+\nHerstellen overschrijft de huidige instellingen van de widget!</string>
 <string name="backupsaved">Backup gemaakt:</string>
 <string name="externalstorageerror">Fout: Geen externe opslag </string>
 <string name="restore">Herstel</string>
 <string name="restored">Instellingen ingelezen</string>
 <string name="nobackup">Geen backup gevonden</string>
 <string name="moreapps">Meer coole apps</string>
-<string name="donate">Doneer</string>
-
+    <string name="launcher_info">Agendawidget geactiveerd!\nJe ziet nu een nieuw item in de widgetlijst. Sleep het naar je startscherm om de widget daar te plaatsen.\n\nJe hoeft deze activiteit niet opnieuw te starten, daarom wordt het pictogram uit je launcher verwijderd.</string>
+    <string name="no_calendar_app">Geen agenda-app gevonden</string>
+    <string name="ics_no_event">Geen afspraak gevonden in dit bestand</string>
+    <string name="no_permission_widget">Geen toestemming om de agenda te lezen</string>
+    <string name="permission_required">Deze widget heeft toegang tot je agenda nodig om je afspraken te tonen.</string>
+    <string name="grant_permission">Toestemming geven</string>
+    <string name="app_settings">App-instellingen</string>
+    <string name="no_calendars">Geen agenda\'s gevonden op je apparaat!</string>
+    <string name="add_event">Afspraak toevoegen</string>
+    <string name="edit_widget">Widget bewerken</string>
+    <string name="previous_month">Vorige maand</string>
+    <string name="next_month">Volgende maand</string>
+    <string name="invalid_format">Ongeldig formaat</string>
+    <string name="black">zwart</string>
+    <string name="white">wit</string>
+    <string name="select_app">App kiezen</string>
+    <string name="backup">Back-up</string>
+    <string name="more_options">Meer opties</string>
+    <string name="indicators_description">Toont een punt voor elke afspraak op die dag</string>
+    <string name="done">Klaar</string>
+    <string name="widget_agenda_label">SCW Agenda</string>
+    <string name="widget_month_label">SCW Maand</string>
+    <string name="widget_agenda_description">Je komende afspraken</string>
+    <string name="widget_month_description">Maandoverzicht met afspraakindicatoren</string>
+    <string name="preview_event_1">Teamoverleg</string>
+    <string name="preview_event_2">Lunch met Anna</string>
+    <string name="preview_event_3">Tandarts</string>
+    <string name="preview_event_4">Vakantie</string>
 </resources>

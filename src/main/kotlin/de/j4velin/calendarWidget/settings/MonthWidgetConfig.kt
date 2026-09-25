@@ -1,13 +1,8 @@
 package de.j4velin.calendarWidget.settings
 
-import android.appwidget.AppWidgetManager
 import android.content.Context
 import android.content.Intent
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.activity.viewModels
+import android.content.SharedPreferences
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -19,49 +14,30 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.initializer
-import androidx.lifecycle.viewmodel.viewModelFactory
 import de.j4velin.calendarWidget.R
 import de.j4velin.calendarWidget.data.Backup
 import de.j4velin.calendarWidget.data.MonthSettings
 
 /** Configuration of the month widget */
-class MonthWidgetConfig : ComponentActivity() {
+class MonthWidgetConfig : ConfigActivity<MonthSettings>() {
 
-    private var widgetId = AppWidgetManager.INVALID_APPWIDGET_ID
+    override val backupType = Backup.MONTH
+    override fun load(context: Context, widgetId: Int) = MonthSettings.load(context, widgetId)
+    override fun store(settings: MonthSettings, prefs: SharedPreferences, widgetId: Int) =
+        settings.save(prefs, widgetId)
 
-    private val viewModel: ConfigViewModel<MonthSettings> by viewModels {
-        viewModelFactory {
-            initializer {
-                ConfigViewModel(
-                    application, widgetId, Backup.MONTH, MonthSettings::load, MonthSettings::save
-                )
-            }
-        }
-    }
+    override fun withCalendars(settings: MonthSettings, calendarIds: Set<Long>) =
+        settings.copy(calendarIds = calendarIds)
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        widgetId = WidgetConfig.widgetIdFrom(intent)
-        if (widgetId == AppWidgetManager.INVALID_APPWIDGET_ID) {
-            setResult(RESULT_CANCELED)
-            finish()
-            return
-        }
-        setResult(RESULT_OK, Intent().putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, widgetId))
-        enableEdgeToEdge()
-        setContent { AppTheme { MonthConfigScreen(viewModel) } }
-    }
-
-    override fun onPause() {
-        super.onPause()
-        if (widgetId != AppWidgetManager.INVALID_APPWIDGET_ID) viewModel.save()
-    }
+    @Composable
+    override fun Screen(
+        viewModel: ConfigViewModel<MonthSettings>, onDone: () -> Unit, onCancel: () -> Unit,
+    ) = MonthConfigScreen(viewModel, onDone, onCancel)
 
     companion object {
         /** Intent to open the configuration of an existing widget */
         internal fun editIntent(context: Context, widgetId: Int): Intent =
-            Intent(context, MonthWidgetConfig::class.java).putExtra("editId", widgetId)
+            Intent(context, MonthWidgetConfig::class.java).putExtra(EXTRA_EDIT_ID, widgetId)
     }
 }
 
@@ -84,10 +60,16 @@ private fun TextAndBackgroundColor(
 }
 
 @Composable
-internal fun MonthConfigScreen(viewModel: ConfigViewModel<MonthSettings>) {
+internal fun MonthConfigScreen(
+    viewModel: ConfigViewModel<MonthSettings>,
+    onDone: () -> Unit = {},
+    onCancel: () -> Unit = {},
+) {
     // the calendar permission is only needed for the event indicators
     val requestPermission = rememberCalendarPermissionRequest(viewModel)
-    ConfigScaffold(viewModel, requirePermission = false, requestPermission) { padding ->
+    ConfigScaffold(
+        viewModel, requirePermission = false, requestPermission, onDone, onCancel
+    ) { padding ->
         key(viewModel.version) {
             val settings = viewModel.settings
             val update = viewModel::update

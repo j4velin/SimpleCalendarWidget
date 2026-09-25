@@ -47,13 +47,40 @@ tools:ignore="MissingTranslation">
 <string name="appearance">Apariencia</string>
 <string name="settings">Configuración</string>
 <string name="backupandrestore">Copia de seguridad y Restablecer</string>
-<string name="backuplocation">Esto grabará los ajustes del widget en/Restablecer desde /Android/de.j4velin.calendarWidget/files/backup.\nAl restablecer se sobreescribirán los ajustes de este widget</string>
+<string name="backuplocation">Esto grabará los ajustes del widget en/Restablecer desde /Android/de.j4velin.calendarWidget/files/backup.
+\nAl restablecer se sobreescribirán los ajustes de este widget</string>
 <string name="backupsaved">Copia de seguridad guardada:</string>
 <string name="externalstorageerror">Error: El almacén externo no está disponible </string>
 <string name="restore">Restablecer</string>
 <string name="restored">Ajustes recuperados</string>
 <string name="nobackup">No se encuentra la copia de seguridad</string>
 <string name="moreapps">Más aplicaciones interesantes</string>
-<string name="donate">Donativo</string>
-
+    <string name="launcher_info">¡Widget de calendario activado!\nAhora deberías ver una nueva entrada en la lista de widgets. Arrástrala a tu pantalla de inicio para colocar el widget allí.\n\nNo necesitas volver a abrir esta actividad, por lo que el icono se eliminará de tu launcher.</string>
+    <string name="no_calendar_app">No se encontró ninguna aplicación de calendario</string>
+    <string name="ics_no_event">No se encontró ningún evento en este archivo</string>
+    <string name="no_permission_widget">Sin permiso para leer el calendario</string>
+    <string name="permission_required">Este widget necesita acceso a tu calendario para mostrar tus eventos.</string>
+    <string name="grant_permission">Conceder permiso</string>
+    <string name="app_settings">Ajustes de la aplicación</string>
+    <string name="no_calendars">¡No se encontraron calendarios en tu dispositivo!</string>
+    <string name="add_event">Añadir evento</string>
+    <string name="edit_widget">Editar widget</string>
+    <string name="previous_month">Mes anterior</string>
+    <string name="next_month">Mes siguiente</string>
+    <string name="invalid_format">Formato no válido</string>
+    <string name="black">negro</string>
+    <string name="white">blanco</string>
+    <string name="select_app">Seleccionar aplicación</string>
+    <string name="backup">Copia de seguridad</string>
+    <string name="more_options">Más opciones</string>
+    <string name="indicators_description">Muestra un punto por cada evento de ese día</string>
+    <string name="done">Listo</string>
+    <string name="widget_agenda_label">SCW Agenda</string>
+    <string name="widget_month_label">SCW Mes</string>
+    <string name="widget_agenda_description">Tus próximos eventos</string>
+    <string name="widget_month_description">Vista mensual con indicadores de eventos</string>
+    <string name="preview_event_1">Reunión de equipo</string>
+    <string name="preview_event_2">Comida con Anna</string>
+    <string name="preview_event_3">Dentista</string>
+    <string name="preview_event_4">Vacaciones</string>
 </resources>

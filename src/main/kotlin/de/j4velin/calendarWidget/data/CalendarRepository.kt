@@ -14,6 +14,8 @@ internal data class CalendarInfo(
     val name: String,
     val account: String,
     val color: Int,
+    /** whether the user has chosen to show this calendar in the calendar app */
+    val visible: Boolean,
 )
 
 /** Read access to the system calendar provider */
@@ -30,6 +32,7 @@ internal class CalendarRepository(private val context: Context) {
             CalendarContract.Calendars.CALENDAR_DISPLAY_NAME,
             CalendarContract.Calendars.ACCOUNT_NAME,
             CalendarContract.Calendars.CALENDAR_COLOR,
+            CalendarContract.Calendars.VISIBLE,
         )
         return context.contentResolver.query(
             CalendarContract.Calendars.CONTENT_URI, projection, null, null, null
@@ -42,6 +45,7 @@ internal class CalendarRepository(private val context: Context) {
                             name = cursor.getString(1).orEmpty(),
                             account = cursor.getString(2).orEmpty(),
                             color = cursor.getInt(3),
+                            visible = cursor.getInt(4) == 1,
                         )
                     )
                 }

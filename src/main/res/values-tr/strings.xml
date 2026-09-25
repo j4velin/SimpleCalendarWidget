@@ -29,6 +29,32 @@
     <string name="restored">Ayarları içe aktar</string>
     <string name="nobackup">Yedekleme bulunamadı</string>
     <string name="moreapps">Daha fazla uygulama</string>
-    <string name="donate">Satın ak</string>
-
+    <string name="launcher_info">Takvim widget\'ı etkinleştirildi!\nWidget listesinde artık yeni bir öğe görmelisiniz. Widget\'ı yerleştirmek için onu ana ekranınıza sürükleyin.\n\nBu etkinliği tekrar çalıştırmanız gerekmez, bu nedenle simge başlatıcınızdan kaldırılacaktır.</string>
+    <string name="no_calendar_app">Takvim uygulaması bulunamadı</string>
+    <string name="ics_no_event">Bu dosyada etkinlik bulunamadı</string>
+    <string name="no_permission_widget">Takvimi okuma izni yok</string>
+    <string name="permission_required">Bu widget\'ın etkinliklerinizi göstermek için takviminize erişmesi gerekiyor.</string>
+    <string name="grant_permission">İzin ver</string>
+    <string name="app_settings">Uygulama ayarları</string>
+    <string name="no_calendars">Cihazınızda takvim bulunamadı!</string>
+    <string name="add_event">Etkinlik ekle</string>
+    <string name="edit_widget">Widget\'ı düzenle</string>
+    <string name="previous_month">Önceki ay</string>
+    <string name="next_month">Sonraki ay</string>
+    <string name="invalid_format">Geçersiz biçim</string>
+    <string name="black">siyah</string>
+    <string name="white">beyaz</string>
+    <string name="select_app">Uygulama seç</string>
+    <string name="backup">Yedekle</string>
+    <string name="more_options">Diğer seçenekler</string>
+    <string name="indicators_description">O gündeki her etkinlik için bir nokta gösterir</string>
+    <string name="done">Bitti</string>
+    <string name="widget_agenda_label">SCW Ajanda</string>
+    <string name="widget_month_label">SCW Ay</string>
+    <string name="widget_agenda_description">Yaklaşan etkinlikleriniz</string>
+    <string name="widget_month_description">Etkinlik göstergeli aylık görünüm</string>
+    <string name="preview_event_1">Ekip toplantısı</string>
+    <string name="preview_event_2">Anna ile öğle yemeği</string>
+    <string name="preview_event_3">Diş hekimi</string>
+    <string name="preview_event_4">Tatil</string>
 </resources>

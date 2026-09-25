@@ -3,5 +3,32 @@
 
     <string name="today">오늘</string>
     <string name="tomorrow">내일</string>
-
+    <string name="launcher_info">캘린더 위젯이 활성화되었습니다!\n이제 위젯 목록에 새 항목이 표시됩니다. 홈 화면으로 드래그하여 위젯을 배치하세요.\n\n이 화면을 다시 실행할 필요가 없으므로 런처에서 아이콘이 제거됩니다.</string>
+    <string name="no_calendar_app">캘린더 앱을 찾을 수 없습니다</string>
+    <string name="ics_no_event">이 파일에서 일정을 찾을 수 없습니다</string>
+    <string name="no_permission_widget">캘린더 읽기 권한이 없습니다</string>
+    <string name="permission_required">일정을 표시하려면 이 위젯에 캘린더 접근 권한이 필요합니다.</string>
+    <string name="grant_permission">권한 허용</string>
+    <string name="app_settings">앱 설정</string>
+    <string name="no_calendars">기기에서 캘린더를 찾을 수 없습니다!</string>
+    <string name="add_event">일정 추가</string>
+    <string name="edit_widget">위젯 편집</string>
+    <string name="previous_month">이전 달</string>
+    <string name="next_month">다음 달</string>
+    <string name="invalid_format">잘못된 형식</string>
+    <string name="black">검정</string>
+    <string name="white">흰색</string>
+    <string name="select_app">앱 선택</string>
+    <string name="backup">백업</string>
+    <string name="more_options">추가 옵션</string>
+    <string name="indicators_description">해당 날짜의 일정마다 점을 표시합니다</string>
+    <string name="done">완료</string>
+    <string name="widget_agenda_label">SCW 일정</string>
+    <string name="widget_month_label">SCW 월</string>
+    <string name="widget_agenda_description">다가오는 일정</string>
+    <string name="widget_month_description">일정 표시가 있는 월간 보기</string>
+    <string name="preview_event_1">팀 회의</string>
+    <string name="preview_event_2">안나와 점심</string>
+    <string name="preview_event_3">치과</string>
+    <string name="preview_event_4">휴가</string>
 </resources>

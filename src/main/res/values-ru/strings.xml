@@ -60,6 +60,32 @@
     <string name="restored">Настройки импортированы</string>
     <string name="nobackup">Резервных копий не найдено</string>
     <string name="moreapps">Много отличного ПО</string>
-    <string name="donate">Пожертвовать</string>
-
+    <string name="launcher_info">Виджет календаря активирован!\nТеперь в списке виджетов должен появиться новый пункт. Перетащите его на главный экран, чтобы разместить виджет.\n\nЗапускать это приложение снова не нужно, поэтому значок будет удалён из лаунчера.</string>
+    <string name="no_calendar_app">Приложение календаря не найдено</string>
+    <string name="ics_no_event">В этом файле не найдено событий</string>
+    <string name="no_permission_widget">Нет разрешения на чтение календаря</string>
+    <string name="permission_required">Этому виджету нужен доступ к календарю, чтобы показывать ваши события.</string>
+    <string name="grant_permission">Предоставить разрешение</string>
+    <string name="app_settings">Настройки приложения</string>
+    <string name="no_calendars">На устройстве не найдено календарей!</string>
+    <string name="add_event">Добавить событие</string>
+    <string name="edit_widget">Изменить виджет</string>
+    <string name="previous_month">Предыдущий месяц</string>
+    <string name="next_month">Следующий месяц</string>
+    <string name="invalid_format">Неверный формат</string>
+    <string name="black">чёрный</string>
+    <string name="white">белый</string>
+    <string name="select_app">Выберите приложение</string>
+    <string name="backup">Резервная копия</string>
+    <string name="more_options">Другие параметры</string>
+    <string name="indicators_description">Показывает точку для каждого события в этот день</string>
+    <string name="done">Готово</string>
+    <string name="widget_agenda_label">SCW Повестка</string>
+    <string name="widget_month_label">SCW Месяц</string>
+    <string name="widget_agenda_description">Ваши ближайшие события</string>
+    <string name="widget_month_description">Обзор месяца с отметками событий</string>
+    <string name="preview_event_1">Встреча команды</string>
+    <string name="preview_event_2">Обед с Анной</string>
+    <string name="preview_event_3">Стоматолог</string>
+    <string name="preview_event_4">Отпуск</string>
 </resources>

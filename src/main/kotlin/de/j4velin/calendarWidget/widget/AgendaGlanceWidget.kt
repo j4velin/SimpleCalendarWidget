@@ -1,5 +1,6 @@
 package de.j4velin.calendarWidget.widget
 
+import android.appwidget.AppWidgetManager
 import android.content.Context
 import android.content.Intent
 import androidx.compose.runtime.Composable
@@ -23,7 +24,7 @@ import androidx.glance.appwidget.GlanceAppWidgetManager
 import androidx.glance.appwidget.action.ActionCallback
 import androidx.glance.appwidget.action.actionRunCallback
 import androidx.glance.appwidget.action.actionStartActivity
-import androidx.glance.appwidget.appWidgetBackground
+import androidx.glance.appwidget.SizeMode
 import androidx.glance.appwidget.lazy.LazyColumn
 import androidx.glance.appwidget.provideContent
 import androidx.glance.appwidget.state.getAppWidgetState
@@ -60,6 +61,7 @@ import de.j4velin.calendarWidget.data.toLocalDate
 import de.j4velin.calendarWidget.settings.WidgetConfig
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import java.time.LocalDate
 import java.time.ZoneId
 import java.time.temporal.ChronoUnit
 import java.util.Locale
@@ -89,6 +91,14 @@ internal data class AgendaData(
 )
 
 internal class AgendaGlanceWidget : GlanceAppWidget() {
+
+    // the layout depends on the size (icons of small widgets)
+    override val sizeMode: SizeMode = SizeMode.Exact
+
+    override suspend fun providePreview(context: Context, widgetCategory: Int) {
+        val data = previewAgenda(context)
+        provideContent { AgendaContent(data) }
+    }
 
     override suspend fun provideGlance(context: Context, id: GlanceId) {
         val widgetId = GlanceAppWidgetManager(context).getAppWidgetId(id)
@@ -203,8 +213,7 @@ internal fun AgendaContent(data: AgendaData) {
     }
 
     Column(
-        modifier = GlanceModifier.fillMaxSize().appWidgetBackground()
-            .background(ColorProvider(Color(settings.backgroundColor)))
+        modifier = GlanceModifier.fillMaxSize().widgetBackground(settings.backgroundColor)
     ) {
         if (data.header != null) {
             Text(
@@ -260,7 +269,9 @@ private fun WidgetIcons(settings: AgendaSettings, widgetId: Int) {
     val context = LocalContext.current
     val tint = ColorFilter.tint(ColorProvider(Color(settings.iconColor.color)))
     val alpha = settings.iconAlpha / 255f
-    Box(modifier = GlanceModifier.fillMaxSize(), contentAlignment = Alignment.TopEnd) {
+    // small widgets only show a smaller settings icon, so the icons don't cover the events
+    val small = isSmallerThan(SMALL_AGENDA)
+    if (!small) Box(modifier = GlanceModifier.fillMaxSize(), contentAlignment = Alignment.TopEnd) {
         Image(
             provider = ImageProvider(R.drawable.ic_add),
             contentDescription = context.getString(R.string.add_event),
@@ -276,7 +287,8 @@ private fun WidgetIcons(settings: AgendaSettings, widgetId: Int) {
             contentDescription = context.getString(R.string.edit_widget),
             alpha = alpha,
             colorFilter = tint,
-            modifier = GlanceModifier.size(50.dp).padding(15.dp)
+            modifier = GlanceModifier.size(if (small) 36.dp else 50.dp)
+                .padding(if (small) 10.dp else 15.dp)
                 .clickable(actionStartActivity(WidgetConfig.editIntent(context, widgetId))),
         )
     }
@@ -340,4 +352,45 @@ private fun EventItem(
             }
         }
     }
+}
+
+/** Sample content for the widget picker */
+private fun previewAgenda(context: Context): AgendaData {
+    val zone = ZoneId.systemDefault()
+    val today = LocalDate.now(zone)
+    val timeFormat = SafeDateFormat(Defaults.timeFormat(context), "HH:mm", Locale.getDefault())
+    fun time(day: LocalDate, hour: Int) =
+        timeFormat.format(day.atTime(hour, 0).atZone(zone).toInstant().toEpochMilli()) + " "
+    fun event(title: Int, time: String?, color: Int) =
+        AgendaEventItem(context.getString(title), null, time, color, passed = false)
+    val tomorrow = today.plusDays(1)
+    val dateFormat = SafeDateFormat(Defaults.dateFormat, "EEEE", Locale.getDefault())
+    val later = today.plusDays(3)
+    return AgendaData(
+        widgetId = AppWidgetManager.INVALID_APPWIDGET_ID,
+        settings = AgendaSettings(timeFormat = Defaults.timeFormat(context), showCalendarColors = true),
+        hasPermission = true,
+        header = null,
+        days = listOf(
+            AgendaDayItem(
+                context.getString(R.string.today), isToday = true,
+                listOf(
+                    event(R.string.preview_event_1, time(today, 9), 0xFF2196F3.toInt()),
+                    event(R.string.preview_event_2, time(today, 12), 0xFF4CAF50.toInt()),
+                ),
+                Intent(),
+            ),
+            AgendaDayItem(
+                context.getString(R.string.tomorrow), isToday = false,
+                listOf(event(R.string.preview_event_3, time(tomorrow, 16), 0xFFFF9800.toInt())),
+                Intent(),
+            ),
+            AgendaDayItem(
+                dateFormat.format(later.atStartOfDay(zone).toInstant().toEpochMilli()),
+                isToday = false,
+                listOf(event(R.string.preview_event_4, null, 0xFF9C27B0.toInt())),
+                Intent(),
+            ),
+        ),
+    )
 }

@@ -2,4 +2,32 @@
 <resources>
     <string name="today">Hoje</string>
     <string name="tomorrow">Amanhã</string>
+    <string name="launcher_info">Widget de calendário ativado!\nAgora você deve ver uma nova entrada na lista de widgets. Arraste-a para a tela inicial para colocar o widget lá.\n\nNão é necessário executar esta atividade novamente, por isso o ícone será removido do seu launcher.</string>
+    <string name="no_calendar_app">Nenhum aplicativo de calendário encontrado</string>
+    <string name="ics_no_event">Nenhum evento encontrado neste arquivo</string>
+    <string name="no_permission_widget">Sem permissão para ler o calendário</string>
+    <string name="permission_required">Este widget precisa de acesso ao seu calendário para mostrar seus eventos.</string>
+    <string name="grant_permission">Conceder permissão</string>
+    <string name="app_settings">Configurações do app</string>
+    <string name="no_calendars">Nenhum calendário encontrado no seu dispositivo!</string>
+    <string name="add_event">Adicionar evento</string>
+    <string name="edit_widget">Editar widget</string>
+    <string name="previous_month">Mês anterior</string>
+    <string name="next_month">Próximo mês</string>
+    <string name="invalid_format">Formato inválido</string>
+    <string name="black">preto</string>
+    <string name="white">branco</string>
+    <string name="select_app">Selecionar app</string>
+    <string name="backup">Backup</string>
+    <string name="more_options">Mais opções</string>
+    <string name="indicators_description">Mostra um ponto para cada evento naquele dia</string>
+    <string name="done">Concluído</string>
+    <string name="widget_agenda_label">SCW Agenda</string>
+    <string name="widget_month_label">SCW Mês</string>
+    <string name="widget_agenda_description">Seus próximos eventos</string>
+    <string name="widget_month_description">Visão do mês com indicadores de eventos</string>
+    <string name="preview_event_1">Reunião de equipe</string>
+    <string name="preview_event_2">Almoço com Anna</string>
+    <string name="preview_event_3">Dentista</string>
+    <string name="preview_event_4">Férias</string>
 </resources>

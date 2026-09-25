@@ -61,6 +61,32 @@
     <string name="restored">Ustawienia przywrócone</string>
     <string name="nobackup">Nie znaleziono kopii zapasowej</string>
     <string name="moreapps">Więcej fajnych aplikacji</string>
-    <string name="donate">Przekaż darowiznę</string>
-
+    <string name="launcher_info">Widżet kalendarza aktywowany!\nNa liście widżetów powinna teraz pojawić się nowa pozycja. Przeciągnij ją na ekran główny, aby umieścić tam widżet.\n\nNie musisz ponownie uruchamiać tej aktywności, dlatego ikona zostanie usunięta z launchera.</string>
+    <string name="no_calendar_app">Nie znaleziono aplikacji kalendarza</string>
+    <string name="ics_no_event">Nie znaleziono wydarzenia w tym pliku</string>
+    <string name="no_permission_widget">Brak uprawnień do odczytu kalendarza</string>
+    <string name="permission_required">Ten widżet potrzebuje dostępu do kalendarza, aby wyświetlać Twoje wydarzenia.</string>
+    <string name="grant_permission">Przyznaj uprawnienie</string>
+    <string name="app_settings">Ustawienia aplikacji</string>
+    <string name="no_calendars">Nie znaleziono kalendarzy na urządzeniu!</string>
+    <string name="add_event">Dodaj wydarzenie</string>
+    <string name="edit_widget">Edytuj widżet</string>
+    <string name="previous_month">Poprzedni miesiąc</string>
+    <string name="next_month">Następny miesiąc</string>
+    <string name="invalid_format">Nieprawidłowy format</string>
+    <string name="black">czarny</string>
+    <string name="white">biały</string>
+    <string name="select_app">Wybierz aplikację</string>
+    <string name="backup">Kopia zapasowa</string>
+    <string name="more_options">Więcej opcji</string>
+    <string name="indicators_description">Pokazuje kropkę dla każdego wydarzenia tego dnia</string>
+    <string name="done">Gotowe</string>
+    <string name="widget_agenda_label">SCW Agenda</string>
+    <string name="widget_month_label">SCW Miesiąc</string>
+    <string name="widget_agenda_description">Twoje nadchodzące wydarzenia</string>
+    <string name="widget_month_description">Przegląd miesiąca ze wskaźnikami wydarzeń</string>
+    <string name="preview_event_1">Spotkanie zespołu</string>
+    <string name="preview_event_2">Lunch z Anną</string>
+    <string name="preview_event_3">Dentysta</string>
+    <string name="preview_event_4">Urlop</string>
 </resources>

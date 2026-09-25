@@ -16,7 +16,7 @@ internal const val PREFS_NAME = "calendarWidget"
 internal fun Context.widgetPrefs(): SharedPreferences =
     getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
 
-internal enum class IconColor(val prefValue: Int, val color: Int) {
+enum class IconColor(val prefValue: Int, val color: Int) {
     BLACK(1, Color.BLACK), WHITE(2, Color.WHITE);
 
     companion object {
@@ -24,7 +24,7 @@ internal enum class IconColor(val prefValue: Int, val color: Int) {
     }
 }
 
-internal enum class ClickAction { DEFAULT_APP, OTHER_APP, UPDATE }
+enum class ClickAction { DEFAULT_APP, OTHER_APP, UPDATE }
 
 internal object Defaults {
     const val BG_COLOR = 1694498816 // black, ~40% transparent
@@ -60,7 +60,7 @@ private const val LAYOUT_TEXT_LIGHT = 2
 private const val LAYOUT_ALL_LIGHT = 3
 
 /** Settings of the agenda widget */
-internal data class AgendaSettings(
+data class AgendaSettings(
     // events
     val calendarIds: Set<Long> = emptySet(),
     val lookAheadUnit: Int = 1,
@@ -171,7 +171,7 @@ internal data class AgendaSettings(
             remove("otherApp_$widgetId")
         }
         putBoolean("openCalendar_$widgetId", clickAction == ClickAction.DEFAULT_APP)
-        putBoolean("update_$widgetId", clickAction == ClickAction.UPDATE)
+        remove("update_$widgetId") // no longer used
         putBoolean("openEvent_$widgetId", openSingleEvent)
         putInt("icon_$widgetId", iconColor.prefValue)
         putInt("icon_alpha_$widgetId", iconAlpha)
@@ -250,7 +250,7 @@ internal data class AgendaSettings(
 }
 
 /** Settings of the month widget */
-internal data class MonthSettings(
+data class MonthSettings(
     val calendarIds: Set<Long> = emptySet(),
     val startOnMonday: Boolean = Defaults.startOnMonday,
     val todayTextColor: Int = Color.BLACK,

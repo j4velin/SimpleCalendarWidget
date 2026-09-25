@@ -9,6 +9,32 @@
         <item>months</item>
         <item>years</item>
     </string-array>
-
-
+    <string name="launcher_info">تم تفعيل أداة التقويم!\nمن المفترض أن ترى الآن عنصرًا جديدًا في قائمة الأدوات. اسحبه إلى الشاشة الرئيسية لوضع الأداة هناك.\n\nلا تحتاج إلى تشغيل هذا النشاط مرة أخرى، لذلك ستتم إزالة الأيقونة من المشغّل.</string>
+    <string name="no_calendar_app">لم يتم العثور على تطبيق تقويم</string>
+    <string name="ics_no_event">لم يتم العثور على أي حدث في هذا الملف</string>
+    <string name="no_permission_widget">لا يوجد إذن لقراءة التقويم</string>
+    <string name="permission_required">تحتاج هذه الأداة إلى الوصول إلى التقويم لعرض أحداثك.</string>
+    <string name="grant_permission">منح الإذن</string>
+    <string name="app_settings">إعدادات التطبيق</string>
+    <string name="no_calendars">لم يتم العثور على أي تقويم على جهازك!</string>
+    <string name="add_event">إضافة حدث</string>
+    <string name="edit_widget">تعديل الأداة</string>
+    <string name="previous_month">الشهر السابق</string>
+    <string name="next_month">الشهر التالي</string>
+    <string name="invalid_format">تنسيق غير صالح</string>
+    <string name="black">أسود</string>
+    <string name="white">أبيض</string>
+    <string name="select_app">اختر تطبيقًا</string>
+    <string name="backup">نسخ احتياطي</string>
+    <string name="more_options">خيارات إضافية</string>
+    <string name="indicators_description">يعرض نقطة لكل حدث في ذلك اليوم</string>
+    <string name="done">تم</string>
+    <string name="widget_agenda_label">SCW الأجندة</string>
+    <string name="widget_month_label">SCW الشهر</string>
+    <string name="widget_agenda_description">أحداثك القادمة</string>
+    <string name="widget_month_description">نظرة شهرية مع مؤشرات الأحداث</string>
+    <string name="preview_event_1">اجتماع الفريق</string>
+    <string name="preview_event_2">غداء مع آنا</string>
+    <string name="preview_event_3">طبيب الأسنان</string>
+    <string name="preview_event_4">إجازة</string>
 </resources>

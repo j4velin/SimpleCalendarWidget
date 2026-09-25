@@ -10,6 +10,7 @@ import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 import androidx.glance.appwidget.ExperimentalGlanceRemoteViewsApi
 import androidx.glance.appwidget.GlanceRemoteViews
+import androidx.glance.appwidget.composeForPreview
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import de.j4velin.calendarWidget.data.AgendaSettings
@@ -67,6 +68,15 @@ class WidgetRenderingTest {
         )
         val texts = render { AgendaContent(data) }.texts()
         assertTrue(texts.toString(), "Friday, 25. September" in texts)
+    }
+
+    @Test
+    fun generatedPreviews() = runBlocking {
+        val category = android.appwidget.AppWidgetProviderInfo.WIDGET_CATEGORY_HOME_SCREEN
+        AgendaGlanceWidget().composeForPreview(context, category).apply(context, FrameLayout(context))
+        val month = MonthGlanceWidget().composeForPreview(context, category)
+            .apply(context, FrameLayout(context)).texts()
+        assertEquals(42, month.count { it.toIntOrNull() != null })
     }
 
     @Test

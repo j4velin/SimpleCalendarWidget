@@ -54,7 +54,6 @@
     <string name="restored">Settings imported</string>
     <string name="nobackup">No backup found</string>
     <string name="moreapps">More cool apps</string>
-    <string name="donate">Donate</string>
     <string name="background_color">Background color:</string>
     <string name="text_color">Text color:</string>
     <string name="current_month">Current month</string>
@@ -95,4 +94,13 @@
     <string name="website" translatable="false">Website</string>
     <string name="more_options">More options</string>
     <string name="indicators_description">Shows a dot for each event occurring on that day</string>
+    <string name="done">Done</string>
+    <string name="widget_agenda_label">SCW Agenda</string>
+    <string name="widget_month_label">SCW Month</string>
+    <string name="widget_agenda_description">Your upcoming events</string>
+    <string name="widget_month_description">Month overview with event indicators</string>
+    <string name="preview_event_1">Team meeting</string>
+    <string name="preview_event_2">Lunch with Anna</string>
+    <string name="preview_event_3">Dentist</string>
+    <string name="preview_event_4">Vacation</string>
 </resources>

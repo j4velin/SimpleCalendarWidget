@@ -1,13 +1,8 @@
 package de.j4velin.calendarWidget.settings
 
-import android.appwidget.AppWidgetManager
 import android.content.Context
 import android.content.Intent
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.activity.viewModels
+import android.content.SharedPreferences
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -33,8 +28,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringArrayResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.initializer
-import androidx.lifecycle.viewmodel.viewModelFactory
 import de.j4velin.calendarWidget.R
 import de.j4velin.calendarWidget.data.AgendaSettings
 import de.j4velin.calendarWidget.data.Backup
@@ -42,57 +35,38 @@ import de.j4velin.calendarWidget.data.ClickAction
 import kotlinx.coroutines.launch
 
 /** Configuration of the agenda widget */
-class WidgetConfig : ComponentActivity() {
+class WidgetConfig : ConfigActivity<AgendaSettings>() {
 
-    private var widgetId = AppWidgetManager.INVALID_APPWIDGET_ID
+    override val backupType = Backup.AGENDA
+    override fun load(context: Context, widgetId: Int) = AgendaSettings.load(context, widgetId)
+    override fun store(settings: AgendaSettings, prefs: SharedPreferences, widgetId: Int) =
+        settings.save(prefs, widgetId)
 
-    private val viewModel: ConfigViewModel<AgendaSettings> by viewModels {
-        viewModelFactory {
-            initializer {
-                ConfigViewModel(
-                    application, widgetId, Backup.AGENDA, AgendaSettings::load, AgendaSettings::save
-                )
-            }
-        }
-    }
+    override fun withCalendars(settings: AgendaSettings, calendarIds: Set<Long>) =
+        settings.copy(calendarIds = calendarIds)
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        widgetId = widgetIdFrom(intent)
-        if (widgetId == AppWidgetManager.INVALID_APPWIDGET_ID) {
-            setResult(RESULT_CANCELED)
-            finish()
-            return
-        }
-        setResult(RESULT_OK, Intent().putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, widgetId))
-        enableEdgeToEdge()
-        setContent { AppTheme { AgendaConfigScreen(viewModel) } }
-    }
-
-    override fun onPause() {
-        super.onPause()
-        if (widgetId != AppWidgetManager.INVALID_APPWIDGET_ID) viewModel.save()
-    }
+    @Composable
+    override fun Screen(
+        viewModel: ConfigViewModel<AgendaSettings>, onDone: () -> Unit, onCancel: () -> Unit,
+    ) = AgendaConfigScreen(viewModel, onDone, onCancel)
 
     companion object {
-        private const val EXTRA_EDIT_ID = "editId"
-
         /** Intent to open the configuration of an existing widget */
         internal fun editIntent(context: Context, widgetId: Int): Intent =
             Intent(context, WidgetConfig::class.java).putExtra(EXTRA_EDIT_ID, widgetId)
-
-        internal fun widgetIdFrom(intent: Intent): Int = intent.getIntExtra(
-            EXTRA_EDIT_ID, intent.getIntExtra(
-                AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID
-            )
-        )
     }
 }
 
 @Composable
-internal fun AgendaConfigScreen(viewModel: ConfigViewModel<AgendaSettings>) {
+internal fun AgendaConfigScreen(
+    viewModel: ConfigViewModel<AgendaSettings>,
+    onDone: () -> Unit = {},
+    onCancel: () -> Unit = {},
+) {
     val requestPermission = rememberCalendarPermissionRequest(viewModel)
-    ConfigScaffold(viewModel, requirePermission = true, requestPermission) { padding ->
+    ConfigScaffold(
+        viewModel, requirePermission = true, requestPermission, onDone, onCancel
+    ) { padding ->
         val tabs = listOf(R.string.events, R.string.appearance, R.string.settings)
         val pagerState = rememberPagerState { tabs.size }
         val scope = rememberCoroutineScope()

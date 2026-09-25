@@ -39,7 +39,8 @@ class ConfigScreenTest {
     @Test
     fun agendaConfigShowsAllTabsAndSaves() {
         val viewModel = ConfigViewModel(
-            app, 7, Backup.AGENDA, AgendaSettings::load, AgendaSettings::save
+            app, 7, Backup.AGENDA, AgendaSettings::load, AgendaSettings::save,
+            { copy(calendarIds = it) }, isNewWidget = false,
         )
         compose.setContent { AppTheme { AgendaConfigScreen(viewModel) } }
 
@@ -57,7 +58,8 @@ class ConfigScreenTest {
     @Test
     fun monthConfig() {
         val viewModel = ConfigViewModel(
-            app, 8, Backup.MONTH, MonthSettings::load, MonthSettings::save
+            app, 8, Backup.MONTH, MonthSettings::load, MonthSettings::save,
+            { copy(calendarIds = it) }, isNewWidget = false,
         )
         compose.setContent { AppTheme { MonthConfigScreen(viewModel) } }
 
