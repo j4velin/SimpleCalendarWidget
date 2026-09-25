@@ -2,7 +2,6 @@
 
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:spinner="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:fillViewport="true">
@@ -43,7 +42,7 @@
             android:text="@string/color"
             android:textAppearance="@android:style/TextAppearance"/>
 
-        <de.j4velin.lib.colorpicker.ColorPreviewButton
+        <de.j4velin.calendarWidget.settings.ColorPreviewButton
             android:id="@+id/currentDateColor"
             android:layout_width="20dp"
             android:layout_height="20dp"
@@ -91,13 +90,13 @@
             android:text="@string/dateformat"
             android:textAppearance="@android:style/TextAppearance"/>
 
-        <de.j4velin.dateFormatSpinner.DateFormatSpinner
+        <EditText
             android:id="@+id/currentDateFormat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@id/currentDateFormatLabel"
             android:layout_toRightOf="@+id/currentDateFormatLabel"
-            spinner:defaultFormats="date"/>
+            android:inputType="text"/>
 
         <!-- DATE //-->
 
@@ -123,7 +122,7 @@
             android:text="@string/color"
             android:textAppearance="@android:style/TextAppearance"/>
 
-        <de.j4velin.lib.colorpicker.ColorPreviewButton
+        <de.j4velin.calendarWidget.settings.ColorPreviewButton
             android:id="@+id/dateColor"
             android:layout_width="20dp"
             android:layout_height="20dp"
@@ -181,13 +180,13 @@
             android:text="@string/dateformat"
             android:textAppearance="@android:style/TextAppearance"/>
 
-        <de.j4velin.dateFormatSpinner.DateFormatSpinner
+        <EditText
             android:id="@+id/dateFormat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@id/dateFormatLabel"
             android:layout_toRightOf="@+id/dateFormatLabel"
-            spinner:defaultFormats="date"/>
+            android:inputType="text"/>
 
         <!-- TIME //-->
 
@@ -213,7 +212,7 @@
             android:text="@string/color"
             android:textAppearance="@android:style/TextAppearance"/>
 
-        <de.j4velin.lib.colorpicker.ColorPreviewButton
+        <de.j4velin.calendarWidget.settings.ColorPreviewButton
             android:id="@+id/timeColor"
             android:layout_width="20dp"
             android:layout_height="20dp"
@@ -262,13 +261,13 @@
             android:text="@string/timeformat"
             android:textAppearance="@android:style/TextAppearance"/>
 
-        <de.j4velin.dateFormatSpinner.DateFormatSpinner
+        <EditText
             android:id="@+id/timeFormat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@id/timeFormatLabel"
             android:layout_toRightOf="@+id/timeFormatLabel"
-            spinner:defaultFormats="time"/>
+            android:inputType="text"/>
 
 
         <CheckBox
@@ -304,7 +303,7 @@
             android:text="@string/color"
             android:textAppearance="@android:style/TextAppearance"/>
 
-        <de.j4velin.lib.colorpicker.ColorPreviewButton
+        <de.j4velin.calendarWidget.settings.ColorPreviewButton
             android:id="@+id/eventColor"
             android:layout_width="20dp"
             android:layout_height="20dp"
@@ -393,7 +392,7 @@
             android:text="@string/color"
             android:textAppearance="@android:style/TextAppearance"/>
 
-        <de.j4velin.lib.colorpicker.ColorPreviewButton
+        <de.j4velin.calendarWidget.settings.ColorPreviewButton
             android:id="@+id/locationColor"
             android:layout_width="18dp"
             android:layout_height="18dp"
@@ -465,7 +464,7 @@
             android:text="@string/color"
             android:textAppearance="@android:style/TextAppearance"/>
 
-        <de.j4velin.lib.colorpicker.ColorPreviewButton
+        <de.j4velin.calendarWidget.settings.ColorPreviewButton
             android:id="@+id/todayEventColor"
             android:layout_width="20dp"
             android:layout_height="20dp"
@@ -541,7 +540,7 @@
                 android:text="@string/color"
                 android:textAppearance="@android:style/TextAppearance"/>
 
-            <de.j4velin.lib.colorpicker.ColorPreviewButton
+            <de.j4velin.calendarWidget.settings.ColorPreviewButton
                 android:id="@+id/todayPassedEventColor"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
@@ -641,7 +640,7 @@
             android:text="@string/color"
             android:textAppearance="@android:style/TextAppearance"/>
 
-        <de.j4velin.lib.colorpicker.ColorPreviewButton
+        <de.j4velin.calendarWidget.settings.ColorPreviewButton
             android:id="@+id/backgroundColor"
             android:layout_width="20dp"
             android:layout_height="20dp"

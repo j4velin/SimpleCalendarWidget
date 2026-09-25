@@ -39,8 +39,6 @@ import de.j4velin.calendarWidget.BuildConfig;
 import de.j4velin.calendarWidget.Logger;
 import de.j4velin.calendarWidget.MonthWidget;
 import de.j4velin.calendarWidget.R;
-import de.j4velin.lib.colorpicker.ColorPickerDialog;
-import de.j4velin.lib.colorpicker.ColorPreviewButton;
 
 public class MonthWidgetConfig extends Activity implements View.OnClickListener {
 

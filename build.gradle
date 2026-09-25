@@ -1,59 +1,59 @@
-apply plugin: 'com.android.application'
+plugins {
+    id 'com.android.application' version '8.13.2'
+}
+
+def keyProperties = new Properties()
+def keyPropertiesFile = rootProject.file('key.properties')
+if (keyPropertiesFile.exists()) {
+    keyPropertiesFile.withInputStream { keyProperties.load(it) }
+}
 
 android {
-    if (rootProject.ext.has("compileSdkVersion")) {
-        compileSdkVersion = rootProject.ext.compileSdkVersion
-        buildToolsVersion = rootProject.ext.buildToolsVersion
-    } else {
-        logger.warn('compileSdkVersion not found in rootProject')
-        compileSdkVersion = 34
-        buildToolsVersion = "34.0.0"
-    }
+    namespace 'de.j4velin.calendarWidget'
+    compileSdk 34
 
     defaultConfig {
-        applicationId "de.j4velin.calendarWidget"
-        minSdkVersion 21
+        applicationId 'de.j4velin.calendarWidget'
+        minSdk 21
         targetSdk 34
     }
 
-    signingConfigs {
-        release
+    buildFeatures {
+        buildConfig true
     }
 
+    signingConfigs {
+        if (keyPropertiesFile.exists()) {
+            release {
+                storeFile rootProject.file(keyProperties.keyStore)
+                storePassword keyProperties.keyStorePassword
+                keyAlias keyProperties.keyAlias
+                keyPassword keyProperties.keyAliasPassword
+            }
+        }
+    }
 
     buildTypes {
         release {
-            signingConfig signingConfigs.release
+            if (keyPropertiesFile.exists()) {
+                signingConfig signingConfigs.release
+            }
             minifyEnabled true
             shrinkResources true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-project.txt'
-            debuggable false
-        }
-        debug {
-            debuggable true
-            signingConfig signingConfigs.release
-            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-project.txt'
         }
     }
-    namespace 'de.j4velin.calendarWidget'
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    lint {
+        abortOnError false
+    }
 }
 
 dependencies {
-    implementation project(':dateFormatSpinner')
-    implementation project(':colorpicker')
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    wearApp project(':CalendarWidgetWear')
-    implementation 'com.google.android.gms:play-services-wearable:18.2.0'
 }
-
-def props = new Properties()
-
-props.load(new FileInputStream(project.file("key.properties")))
-
-android.signingConfigs.release.storeFile rootProject.file(props.keyStore)
-
-android.signingConfigs.release.storePassword props.keyStorePassword
-
-android.signingConfigs.release.keyAlias props.keyAlias
-
-android.signingConfigs.release.keyPassword props.keyAliasPassword

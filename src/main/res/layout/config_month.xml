@@ -43,7 +43,7 @@
             android:text="@string/text_color"
             android:textAppearance="@android:style/TextAppearance"/>
 
-        <de.j4velin.lib.colorpicker.ColorPreviewButton
+        <de.j4velin.calendarWidget.settings.ColorPreviewButton
             android:id="@+id/currentDateTextColor"
             android:layout_width="20dp"
             android:layout_height="20dp"
@@ -62,7 +62,7 @@
             android:text="@string/background_color"
             android:textAppearance="@android:style/TextAppearance"/>
 
-        <de.j4velin.lib.colorpicker.ColorPreviewButton
+        <de.j4velin.calendarWidget.settings.ColorPreviewButton
             android:id="@+id/currentDateBackgroundColor"
             android:layout_width="20dp"
             android:layout_height="20dp"
@@ -94,7 +94,7 @@
             android:text="@string/text_color"
             android:textAppearance="@android:style/TextAppearance"/>
 
-        <de.j4velin.lib.colorpicker.ColorPreviewButton
+        <de.j4velin.calendarWidget.settings.ColorPreviewButton
             android:id="@+id/currentMonthTextColor"
             android:layout_width="20dp"
             android:layout_height="20dp"
@@ -113,7 +113,7 @@
             android:text="@string/background_color"
             android:textAppearance="@android:style/TextAppearance"/>
 
-        <de.j4velin.lib.colorpicker.ColorPreviewButton
+        <de.j4velin.calendarWidget.settings.ColorPreviewButton
             android:id="@+id/currentMonthBackgroundColor"
             android:layout_width="20dp"
             android:layout_height="20dp"
@@ -145,7 +145,7 @@
             android:text="@string/text_color"
             android:textAppearance="@android:style/TextAppearance"/>
 
-        <de.j4velin.lib.colorpicker.ColorPreviewButton
+        <de.j4velin.calendarWidget.settings.ColorPreviewButton
             android:id="@+id/otherDaysTextColor"
             android:layout_width="20dp"
             android:layout_height="20dp"
@@ -164,7 +164,7 @@
             android:text="@string/background_color"
             android:textAppearance="@android:style/TextAppearance"/>
 
-        <de.j4velin.lib.colorpicker.ColorPreviewButton
+        <de.j4velin.calendarWidget.settings.ColorPreviewButton
             android:id="@+id/otherDaysBackgroundColor"
             android:layout_width="20dp"
             android:layout_height="20dp"
@@ -196,7 +196,7 @@
             android:text="@string/text_color"
             android:textAppearance="@android:style/TextAppearance"/>
 
-        <de.j4velin.lib.colorpicker.ColorPreviewButton
+        <de.j4velin.calendarWidget.settings.ColorPreviewButton
             android:id="@+id/weekDayLabelTextColor"
             android:layout_width="20dp"
             android:layout_height="20dp"
@@ -229,7 +229,7 @@
             android:text="@string/text_color"
             android:textAppearance="@android:style/TextAppearance"/>
 
-        <de.j4velin.lib.colorpicker.ColorPreviewButton
+        <de.j4velin.calendarWidget.settings.ColorPreviewButton
             android:id="@+id/monthLabelTextColor"
             android:layout_width="20dp"
             android:layout_height="20dp"
@@ -272,7 +272,7 @@
             android:text="@string/background_color"
             android:textAppearance="@android:style/TextAppearance"/>
 
-        <de.j4velin.lib.colorpicker.ColorPreviewButton
+        <de.j4velin.calendarWidget.settings.ColorPreviewButton
             android:id="@+id/backgroundColor"
             android:layout_width="20dp"
             android:layout_height="20dp"

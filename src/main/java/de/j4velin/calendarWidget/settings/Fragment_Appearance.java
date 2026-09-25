@@ -22,9 +22,6 @@ import java.util.Locale;
 
 import de.j4velin.calendarWidget.R;
 import de.j4velin.calendarWidget.WidgetService;
-import de.j4velin.dateFormatSpinner.DateFormatSpinner;
-import de.j4velin.lib.colorpicker.ColorPickerDialog;
-import de.j4velin.lib.colorpicker.ColorPreviewButton;
 
 public class Fragment_Appearance extends WidgetSettingsFragment implements View.OnClickListener {
 
@@ -190,7 +187,7 @@ public class Fragment_Appearance extends WidgetSettingsFragment implements View.
                 ((ColorPreviewButton) getView().findViewById(R.id.currentDateColor)).getColor());
 
 
-        String datef = ((DateFormatSpinner) getView().findViewById(R.id.dateFormat)).getValue();
+        String datef = ((EditText) getView().findViewById(R.id.dateFormat)).getText().toString();
         try {
             new SimpleDateFormat(datef).format(System.currentTimeMillis());
             edit.putString("dateformat_" + widgetId, datef);
@@ -199,7 +196,7 @@ public class Fragment_Appearance extends WidgetSettingsFragment implements View.
                     Toast.LENGTH_LONG).show();
         }
 
-        String timef = ((DateFormatSpinner) getView().findViewById(R.id.timeFormat)).getValue();
+        String timef = ((EditText) getView().findViewById(R.id.timeFormat)).getText().toString();
         try {
             new SimpleDateFormat(timef).format(System.currentTimeMillis());
             edit.putString("timeformat_" + widgetId, timef);
@@ -211,7 +208,7 @@ public class Fragment_Appearance extends WidgetSettingsFragment implements View.
         CheckBox today = (CheckBox) getView().findViewById(R.id.showCurrentDate);
         if (today.isChecked()) {
             String currentf =
-                    ((DateFormatSpinner) getView().findViewById(R.id.currentDateFormat)).getValue();
+                    ((EditText) getView().findViewById(R.id.currentDateFormat)).getText().toString();
             try {
                 new SimpleDateFormat(currentf).format(System.currentTimeMillis());
                 edit.putString("today_" + widgetId, currentf);
@@ -312,9 +309,9 @@ public class Fragment_Appearance extends WidgetSettingsFragment implements View.
                         .toString());
 
 
-        ((DateFormatSpinner) v.findViewById(R.id.dateFormat))
-                .setValue(prefs.getString("dateformat_" + widgetId, DEFAULT_DATE_FORMAT));
-        ((DateFormatSpinner) v.findViewById(R.id.timeFormat)).setValue(
+        ((EditText) v.findViewById(R.id.dateFormat))
+                .setText(prefs.getString("dateformat_" + widgetId, DEFAULT_DATE_FORMAT));
+        ((EditText) v.findViewById(R.id.timeFormat)).setText(
                 prefs.getString("timeformat_" + widgetId, getDefaultTimeFormat(getActivity())));
 
         CheckBox cbShowLocation = v.findViewById(R.id.showLocation);
@@ -327,8 +324,8 @@ public class Fragment_Appearance extends WidgetSettingsFragment implements View.
         CheckBox cbShowCurrentDate = v.findViewById(R.id.showCurrentDate);
         cbShowCurrentDate.setChecked(prefs.getString("today_" + widgetId, null) != null);
         compoundButtons.add(cbShowCurrentDate);
-        ((DateFormatSpinner) v.findViewById(R.id.currentDateFormat))
-                .setValue(prefs.getString("today_" + widgetId, DEFAULT_TODAY_DATE_FORMAT));
+        ((EditText) v.findViewById(R.id.currentDateFormat))
+                .setText(prefs.getString("today_" + widgetId, DEFAULT_TODAY_DATE_FORMAT));
 
         // bold
         CheckBox cbBoldDate = v.findViewById(R.id.dateBold);
