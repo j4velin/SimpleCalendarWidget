@@ -62,6 +62,7 @@ private fun onWidgetsUpdated(context: Context, appWidgetIds: IntArray) {
 }
 
 private fun onWidgetsDeleted(context: Context, appWidgetIds: IntArray) {
+    appWidgetIds.forEach { WidgetUpdates.cancelUpdates(context, it) }
     val prefs = context.widgetPrefs()
     val suffixes = appWidgetIds.map { "_$it" }
     prefs.edit {
@@ -82,9 +83,12 @@ class WidgetReceiver : BroadcastReceiver() {
                 }
             }
 
-            Intent.ACTION_PROVIDER_CHANGED, Intent.ACTION_TIME_CHANGED,
-            Intent.ACTION_TIMEZONE_CHANGED, Intent.ACTION_DATE_CHANGED ->
+            // alarms and jobs are cleared on reboot, reloading the widgets schedules them again
+            Intent.ACTION_BOOT_COMPLETED, Intent.ACTION_MY_PACKAGE_REPLACED,
+            Intent.ACTION_TIME_CHANGED, Intent.ACTION_TIMEZONE_CHANGED -> {
+                WidgetUpdates.scheduleCalendarObserver(context)
                 launchAsync { WidgetUpdates.refreshAll(context) }
+            }
         }
     }
 

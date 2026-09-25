@@ -55,6 +55,7 @@ internal object WidgetUpdates {
     val RefreshKey = longPreferencesKey("refresh")
 
     private const val JOB_CALENDAR_CHANGED = 1
+    private const val UPDATE_WINDOW_MS = 60_000L
 
     /** Upper bound of the JobScheduler ids used by this app, WorkManager uses the ids above */
     const val JOB_ID_MAX = 1000
@@ -100,6 +101,15 @@ internal object WidgetUpdates {
     fun nextMidnight(zone: ZoneId = ZoneId.systemDefault()): Long =
         LocalDate.now(zone).plusDays(1).atStartOfDay(zone).toInstant().toEpochMilli() + 1000
 
+    private fun updateIntent(context: Context, appWidgetId: Int): PendingIntent =
+        PendingIntent.getBroadcast(
+            context, appWidgetId,
+            Intent(context, WidgetReceiver::class.java)
+                .setAction(WidgetReceiver.UPDATE)
+                .putExtra(WidgetReceiver.EXTRA_WIDGET_ID, appWidgetId),
+            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+        )
+
     /**
      * Schedules an update of the given widget. If there already is an earlier update scheduled,
      * that one is kept.
@@ -110,17 +120,18 @@ internal object WidgetUpdates {
         val prefs = context.widgetPrefs()
         val scheduled = prefs.getLong("nextUpdate_$appWidgetId", 0)
         val next = if (scheduled > now) minOf(time, scheduled) else time
-        val intent = Intent(context, WidgetReceiver::class.java)
-            .setAction(WidgetReceiver.UPDATE)
-            .putExtra(WidgetReceiver.EXTRA_WIDGET_ID, appWidgetId)
-        context.getSystemService(AlarmManager::class.java).set(
-            AlarmManager.RTC, next, PendingIntent.getBroadcast(
-                context, appWidgetId, intent,
-                PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
-            )
+        // set() may be deferred by a large fraction of the delay, use a small window instead.
+        // Non-wakeup: while the screen is off nobody sees the widget, and pending alarms are
+        // delivered as soon as the device wakes up.
+        context.getSystemService(AlarmManager::class.java).setWindow(
+            AlarmManager.RTC, next, UPDATE_WINDOW_MS, updateIntent(context, appWidgetId)
         )
         prefs.edit { putLong("nextUpdate_$appWidgetId", next) }
         log("next update for widget $appWidgetId at $next")
+    }
+
+    fun cancelUpdates(context: Context, appWidgetId: Int) {
+        context.getSystemService(AlarmManager::class.java).cancel(updateIntent(context, appWidgetId))
     }
 
     /** Schedules a job which updates all widgets as soon as the calendar data changes */
@@ -128,8 +139,9 @@ internal object WidgetUpdates {
         val job = JobInfo.Builder(
             JOB_CALENDAR_CHANGED, ComponentName(context, UpdaterJob::class.java)
         ).addTriggerContentUri(
+            // the calendar provider notifies changes on its root uri
             JobInfo.TriggerContentUri(
-                CalendarContract.Instances.CONTENT_URI,
+                CalendarContract.CONTENT_URI,
                 JobInfo.TriggerContentUri.FLAG_NOTIFY_FOR_DESCENDANTS
             )
         ).setTriggerContentUpdateDelay(1000).build()

@@ -4,6 +4,7 @@
     android:installLocation="internalOnly">
 
     <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <queries>
         <!-- needed to list the apps for the "open another app" option -->
@@ -23,17 +24,12 @@
         <receiver
             android:name=".WidgetReceiver"
             android:exported="true">
-            <intent-filter android:priority="1000">
-                <action android:name="android.intent.action.PROVIDER_CHANGED" />
-
-                <data
-                    android:host="com.android.calendar"
-                    android:scheme="content" />
-            </intent-filter>
+            <!-- calendar changes are observed by UpdaterJob, the date change by an alarm -->
             <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
                 <action android:name="android.intent.action.TIME_SET" />
                 <action android:name="android.intent.action.TIMEZONE_CHANGED" />
-                <action android:name="android.intent.action.DATE_CHANGED" />
             </intent-filter>
         </receiver>
         <receiver

@@ -25,7 +25,6 @@ import androidx.glance.appwidget.action.actionRunCallback
 import androidx.glance.appwidget.action.actionStartActivity
 import androidx.glance.appwidget.appWidgetBackground
 import androidx.glance.appwidget.lazy.LazyColumn
-import androidx.glance.appwidget.lazy.items
 import androidx.glance.appwidget.provideContent
 import androidx.glance.appwidget.state.getAppWidgetState
 import androidx.glance.background
@@ -234,8 +233,20 @@ internal fun AgendaContent(data: AgendaData) {
                     modifier = GlanceModifier.fillMaxSize()
                         .padding(start = 5.dp, top = 5.dp, end = 10.dp, bottom = 5.dp)
                 ) {
-                    items(data.days) { day ->
-                        DayItem(day, settings, GlanceModifier.clickable(dayClick(day)))
+                    // one row per day title and per event: Glance drops all children of a
+                    // Column after the 10th, so a day's events can't be nested in one item
+                    data.days.forEach { day ->
+                        val click = GlanceModifier.clickable(dayClick(day))
+                        item { DayTitle(day, settings, click) }
+                        day.events.forEachIndexed { index, event ->
+                            item {
+                                val last = index == day.events.lastIndex
+                                EventItem(
+                                    event, day.isToday, settings,
+                                    click.padding(bottom = if (last) 5.dp else 0.dp),
+                                )
+                            }
+                        }
                     }
                 }
             }
@@ -272,18 +283,18 @@ private fun WidgetIcons(settings: AgendaSettings, widgetId: Int) {
 }
 
 @Composable
-private fun DayItem(day: AgendaDayItem, settings: AgendaSettings, modifier: GlanceModifier) {
-    Column(modifier = modifier.fillMaxWidth().padding(bottom = 5.dp)) {
-        Text(
-            text = day.title,
-            style = textStyle(settings.dateColor, settings.dateSize, settings.dateBold, settings.dateLight),
-        )
-        day.events.forEach { EventItem(it, day.isToday, settings) }
-    }
+private fun DayTitle(day: AgendaDayItem, settings: AgendaSettings, modifier: GlanceModifier) {
+    Text(
+        text = day.title,
+        style = textStyle(settings.dateColor, settings.dateSize, settings.dateBold, settings.dateLight),
+        modifier = modifier.fillMaxWidth(),
+    )
 }
 
 @Composable
-private fun EventItem(event: AgendaEventItem, isToday: Boolean, settings: AgendaSettings) {
+private fun EventItem(
+    event: AgendaEventItem, isToday: Boolean, settings: AgendaSettings, modifier: GlanceModifier,
+) {
     val (color, size, singleLine) = when {
         !isToday -> Triple(settings.eventColor, settings.eventSize, settings.singleLineEvent)
         event.passed -> Triple(
@@ -298,7 +309,7 @@ private fun EventItem(event: AgendaEventItem, isToday: Boolean, settings: Agenda
     val locationColor = if (sameAsEvent) color else settings.locationColor
     val locationSize = if (sameAsEvent) size else settings.locationSize
 
-    Row(modifier = GlanceModifier.fillMaxWidth()) {
+    Row(modifier = modifier.fillMaxWidth()) {
         if (settings.showCalendarColors) {
             Box(
                 modifier = GlanceModifier.width(5.dp).fillMaxHeight()
