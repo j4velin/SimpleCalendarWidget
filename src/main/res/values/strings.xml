@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation">
+
+    <string-array name="lookAheadTimes">
+        <item>days</item>
+        <item>weeks</item>
+        <item>months</item>
+        <item>years</item>
+    </string-array>
+
+    <string name="today">Today</string>
+    <string name="tomorrow">Tomorrow</string>
+    <string name="curentdate">Current date</string>
+    <string name="showcurrentdate">Show current date</string>
+    <string name="color">Color:</string>
+    <string name="size">Size:</string>
+    <string name="bold">Bold</string>
+    <string name="dateformat">Date format:</string>
+    <string name="eventdate">Event date</string>
+    <string name="light">Light</string>
+    <string name="eventtime">Event time</string>
+    <string name="timeformat">Time format:</string>
+    <string name="showendtimes">Show event end times</string>
+    <string name="eventname">Event name</string>
+    <string name="todayevent">Today\'s events</string>
+    <string name="eventlocation">Event location</string>
+    <string name="showlocation">Show location</string>
+    <string name="background">Widget background</string>
+    <string name="calendars">Show events from these calendars:</string>
+    <string name="lookahead">Look ahead time:</string>
+    <string name="calendarcolor">Show event/calendar colors in the widget</string>
+    <string name="todaytomorrow">Show \'today\'/\'tomorrow\' instead of dates</string>
+    <string name="multidayevents">Multi-day events</string>
+    <string name="multiday">How events, which last several days, should be displayed:</string>
+    <string name="onlyonfirst">Only on one day with end date</string>
+    <string name="oneveryday">On every day</string>
+    <string name="calendarapp">Calendar app</string>
+    <string name="calendarappsummary">Determine which app should be started when clicking on the widget:</string>
+    <string name="defaultapp">default calendar app</string>
+    <string name="otherapp">another app</string>
+    <string name="icons">Icons</string>
+    <string name="transparency">Transparency:</string>
+    <string name="iconposition">Icon position: Top right widget corner to add new events, bottom right corner to open widget configuration</string>
+    <string name="events">Events</string>
+    <string name="appearance">Appearance</string>
+    <string name="settings">Settings</string>
+    <string name="backupandrestore">Backup &amp; Restore</string>
+    <string name="backuplocation">This will save your widget setting to/restore them from /Android/de.j4velin.calendarWidget/files/backup.\nWhen restoring, it will overwrite the current settings for this widget!</string>
+    <string name="backupsaved">Backup saved:</string>
+    <string name="externalstorageerror">Error: External storage not available</string>
+    <string name="restore">Restore</string>
+    <string name="restored">Settings imported</string>
+    <string name="nobackup">No backup found</string>
+    <string name="moreapps">More cool apps</string>
+    <string name="donate">Donate</string>
+    <string name="background_color">Background color:</string>
+    <string name="text_color">Text color:</string>
+    <string name="current_month">Current month</string>
+    <string name="other_days">Other days</string>
+    <string name="day_label">Days label</string>
+    <string name="month_label">Month label</string>
+    <string name="month_label_config">Tip: Click the month label to open this configuration again</string>
+    <string name="widget_background">Widget background</string>
+    <string name="week_start">Start week with Monday</string>
+    <string name="prev_next_month_icons">Previous/next month icons</string>
+    <string name="indicators">Event indicators</string>
+    <string name="open_event">If there is only 1 event on a day, open that event directly when clicking on that day</string>
+    <string name="single_line">Truncate to single line</string>
+    <string name="todaypassedevent">Today\'s passed events</string>
+    <string name="skippedpassed">Do not show already passed events</string>
+    <string name="same_as_event">same as event</string>
+    <string name="same_as_on_other_days">same as on other days</string>
+    <string name="time_location_for_todays_events">Time/Location for today\'s events</string>
+    <string name="update_on_click">don\'t start any app but update widget content instead</string>
+</resources>

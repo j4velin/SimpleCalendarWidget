@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources
+xmlns:tools="http://schemas.android.com/tools"
+tools:ignore="MissingTranslation">
+
+<string-array name="lookAheadTimes">
+<item>dage</item>
+<item>uger</item>
+<item>måneder</item>
+<item>år</item>
+</string-array>
+
+<string name="today">I dag</string>
+<string name="tomorrow">I morgen</string>
+<string name="curentdate">Dags dato</string>
+<string name="showcurrentdate">Vis dags dato</string>
+<string name="color">Farve:</string>
+<string name="size">Størrelse:</string>
+<string name="bold">Fed</string>
+<string name="dateformat">Dato format:</string>
+<string name="eventdate">Begivenheds dato</string>
+<string name="light">Lyst</string>
+<string name="eventtime">Begivenheds tidspunkt</string>
+<string name="timeformat">Tidsformat:</string>
+<string name="showendtimes">Vis begivenheds slut tid</string>
+<string name="eventname">Begivenheds navn</string>
+<string name="todayevent">Dagens begivenheder</string>
+<string name="eventlocation">Begivenheds placering</string>
+<string name="showlocation">Vis placering</string>
+<string name="background">Widget baggrund</string>
+<string name="calendars">Vis begivenheder fra disse kalendere:</string>
+<string name="lookahead">Tidsrum som dækkes:</string>
+<string name="calendarcolor">Vis begivenhed/kalender farve i widget</string>
+<string name="todaytomorrow">Vis \'I dag\'/\'I morgen\' i stedet for datoer</string>
+<string name="multidayevents">Begivenheder over flere dage</string>
+<string name="multiday">Hvordan begivenheder, som varer flere dage, skal vises:</string>
+<string name="onlyonfirst">Kun én dag med slutdato</string>
+<string name="oneveryday">Alle dage</string>
+<string name="calendarapp">Kalender app</string>
+<string name="calendarappsummary">Hvilken appsom skal startes når der klikkes på widget:</string>
+<string name="defaultapp">default kalender app</string>
+<string name="otherapp">en anden app</string>
+<string name="icons">Ikoner</string>
+<string name="transparency">Transparens:</string>
+<string name="iconposition">Ikon position: Widgets højre hjørne i toppen \'Tilføj ny begivenhed\', højre hjørne i bunden \'Åben indstillinger\'</string>
+<string name="events">Begivenheder</string>
+<string name="appearance">Udseende</string>
+<string name="settings">Indstillinger</string>
+<string name="backupandrestore">Backup &amp; Gendan</string>
+<string name="backuplocation">Dette vil gemme/gendanne indstillinger for widget til /Android/de.j4velin.calendarWidget/files/backup.
+\nHvis du gendanner indstillinger, vil den nuværende opsætning blive overskrevet!</string>
+<string name="backupsaved">Backup gemt:</string>
+<string name="externalstorageerror">Fejl: Eksternt lager ikke tilgængeligt</string>
+<string name="restore">Gendan</string>
+<string name="restored">Indstillinger importeret</string>
+<string name="nobackup">Ingen backup fundet</string>
+<string name="moreapps">Flere cool apps</string>
+<string name="donate">Doner</string>
+<string name="background_color">Baggrunds farve:</string>
+<string name="text_color">Tekst farve:</string>
+<string name="current_month">Indeværende måned</string>
+<string name="other_days">Andre dage</string>
+<string name="day_label">Etiket dag</string>
+<string name="month_label">Etiket måned</string>
+<string name="month_label_config">Tip: Klik på måneds etiket for at åbne denne indstilling igen</string>
+<string name="widget_background">Widget baggrund</string>
+<string name="week_start">Ugen starter på en Mandag</string>
+<string name="prev_next_month_icons">Tidligere/næste måned ikon</string>
+<string name="indicators">Begivenheds indikator</string>
+<string name="open_event">Hvis der kun er 1 begivenhed på en dag, så åbnes denne begivenhed direkte når der klikkes på dagen</string>
+<string name="single_line">Trunker til en enkelt linie</string>
+
+</resources>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources
+xmlns:tools="http://schemas.android.com/tools"
+tools:ignore="MissingTranslation">
+
+<string-array name="lookAheadTimes">
+<item>dagen</item>
+<item>weken</item>
+<item>maanden</item>
+<item>jaren</item>
+</string-array>
+
+<string name="today">Vandaag</string>
+<string name="tomorrow">Morgen </string>
+<string name="curentdate">Huidige datum</string>
+<string name="showcurrentdate">Laat huidige datum zien</string>
+<string name="color">Kleur:</string>
+<string name="size">Grootte:</string>
+<string name="bold">Vet</string>
+<string name="dateformat">Datum notatie:</string>
+<string name="eventdate">Datum gebeurtenis</string>
+<string name="light">Licht</string>
+<string name="eventtime">Tijd gebeurtenis </string>
+<string name="timeformat">Tijd notatie:</string>
+<string name="showendtimes">Toon eindtijden</string>
+<string name="eventname">Naam gebeurtenis </string>
+<string name="todayevent">Gebeurtenissen van vandaag</string>
+<string name="eventlocation">Locatie gebeurtenis</string>
+<string name="showlocation">Toon locatie</string>
+<string name="background">Widget achtergrond </string>
+<string name="calendars">Toon gebeurtenissen van deze agenda\'s:</string>
+<string name="lookahead">Aantal dagen vooruit tonen:</string>
+<string name="calendarcolor">Kleuren uit agenda laten zien</string>
+<string name="todaytomorrow">\'vandaag\' en \'morgen\' in plaats van datum</string>
+<string name="multidayevents">Gebeurtenis beslaat meerdere dagen </string>
+<string name="multiday">Hoe gebeurtenissen die meerdere dagen duren moeten worden weergegevenb</string>
+<string name="onlyonfirst">Alleen op eerste dag, met einddatum </string>
+<string name="oneveryday">Op iedere dag</string>
+<string name="calendarapp">Agenda app</string>
+<string name="calendarappsummary">Bepaal welke app opgestart wordt na klikken op de widget:</string>
+<string name="defaultapp">Standaard agenda app</string>
+<string name="otherapp">Andere app</string>
+<string name="icons">Icoon</string>
+<string name="transparency">Transparantie:</string>
+<string name="iconposition">Plaats icoontjes: rechtsboven in hoek van widget om nieuwe gebeurtenis toe te voegen, rechtsonder om instellingen widget te openen </string>
+<string name="events">Gebeurtenissen </string>
+<string name="appearance">Uiterlijk </string>
+<string name="settings">Instellingen </string>
+<string name="backupandrestore">Backup en Herstel</string>
+<string name="backuplocation">Hiermee worden de instellingen opgeslagen in/hersteld vanuit /Android/de.j4velin.calendarWidget/files/backup.\nHerstellen overschrijft de huidige instellingen van de widget!</string>
+<string name="backupsaved">Backup gemaakt:</string>
+<string name="externalstorageerror">Fout: Geen externe opslag </string>
+<string name="restore">Herstel</string>
+<string name="restored">Instellingen ingelezen</string>
+<string name="nobackup">Geen backup gevonden</string>
+<string name="moreapps">Meer coole apps</string>
+<string name="donate">Doneer</string>
+
+</resources>

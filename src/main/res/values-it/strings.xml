@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources
+xmlns:tools="http://schemas.android.com/tools"
+tools:ignore="MissingTranslation">
+
+<string-array name="lookAheadTimes">
+<item>giorni</item>
+<item>settimane</item>
+<item>mesi</item>
+<item>anni</item>
+</string-array>
+
+<string name="today">Oggi</string>
+<string name="tomorrow">Domani</string>
+<string name="curentdate">DATA CORRENTE</string>
+<string name="showcurrentdate">Mostra la data corrente</string>
+<string name="color">Colore:</string>
+<string name="size">Dimensione:</string>
+<string name="bold">Grassetto</string>
+<string name="dateformat">Formato data:</string>
+<string name="eventdate">DATA EVENTO</string>
+<string name="light">Sottile</string>
+<string name="eventtime">ORA EVENTO</string>
+<string name="timeformat">Formato ora:</string>
+<string name="showendtimes">Mostra l\'ora di fine evento</string>
+<string name="eventname">NOME EVENTO</string>
+<string name="todayevent">EVENTI OGGI</string>
+<string name="eventlocation">LUOGO DELL\'EVENTO</string>
+<string name="showlocation">Mostra luogo</string>
+<string name="background">Sfondo del Widget</string>
+<string name="calendars">Mostra gli eventi di questi calendari:</string>
+<string name="lookahead">Guarda in avanti di:</string>
+<string name="calendarcolor">Mostra i colori degli eventi del calendario nel widget</string>
+<string name="todaytomorrow">Mostra \'oggi\'/\'domani\' invece delle date</string>
+<string name="multidayevents">EVENTI DI PIU\' GIORNI</string>
+<string name="multiday">Come dovrebbero essere visualizzati gli eventi, che durano diversi giorni:</string>
+<string name="onlyonfirst">solo il primo giorno con la data di fine</string>
+<string name="oneveryday">tutti i giorni</string>
+<string name="calendarapp">APP CALENDARIO</string>
+<string name="calendarappsummary">Determina quale app dovrebbe essere avviata quando si fa clic sul widget:</string>
+<string name="defaultapp">il calendario predefinito</string>
+<string name="otherapp">un\'altra app</string>
+<string name="icons">ICONE</string>
+<string name="transparency">Transparenza:</string>
+<string name="iconposition">Posizione delle icone: angolo in alto a destra del widget per aggiungere nuovi eventi, angolo in basso a destra per aprire la configurazione del widget</string>
+<string name="events">EVENTI</string>
+<string name="appearance">ASPETTO</string>
+<string name="settings">IMPOSTAZIONI</string>
+<string name="backupandrestore">Backup &amp; Ripristina</string>
+<string name="backuplocation">Salva le impostazioni del widget per ripristinarle da /Android/de.j4velin.calendarWidget/files/backup.
+\nQuando ripritini, sovrascriverai le impostazioni correnti del widget!</string>
+<string name="backupsaved">Backup salvato:</string>
+<string name="externalstorageerror">Errore: Disco esterno non disponibile</string>
+<string name="restore">Ripristina</string>
+<string name="restored">Impostazioni importate</string>
+<string name="nobackup">Backup non trovato</string>
+<string name="moreapps">Altre interessanti app</string>
+<string name="donate">Donazioni</string>
+<string name="background_color">Colore dello sfondo:</string>
+<string name="text_color">Colore del testo:</string>
+<string name="current_month">Mese corrente</string>
+<string name="other_days">Altri giorni</string>
+<string name="day_label">Etichetta giorni</string>
+<string name="month_label">Etichetta mese</string>
+<string name="month_label_config">Suggerimento: Fare clic sull\'etichetta mese per aprire nuovamente la configurazione</string>
+<string name="widget_background">Sfondo del widget</string>
+<string name="week_start">Inizia la settimana con Lunedì</string>
+<string name="prev_next_month_icons">Icone del mese precedente/successivo</string>
+<string name="indicators">Indicatori di evento</string>
+<string name="open_event">Se c\'è solo 1 evento in una giornata, apri tale evento direttamente con un clic su quel giorno</string>
+<string name="single_line">Tronca a riga singola</string>
+
+</resources>

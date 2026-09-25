@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources
+xmlns:tools="http://schemas.android.com/tools"
+tools:ignore="MissingTranslation">
+
+<string-array name="lookAheadTimes">
+<item>días</item>
+<item>semanas</item>
+<item>meses</item>
+<item>años</item>
+</string-array>
+
+<string name="today">Hoy</string>
+<string name="tomorrow">Mañana</string>
+<string name="curentdate">Fecha actual</string>
+<string name="showcurrentdate">Mostrar fecha actual</string>
+<string name="color">Color:</string>
+<string name="size">Tamaño:</string>
+<string name="bold">Negrita</string>
+<string name="dateformat">Formato fecha:</string>
+<string name="eventdate">Fecha del evento</string>
+<string name="light">Delgada</string>
+<string name="eventtime">Hora del evento</string>
+<string name="timeformat">Formato hora:</string>
+<string name="showendtimes">Mostrar hora de finalización</string>
+<string name="eventname">Descripción del evento</string>
+<string name="todayevent">Eventos para hoy</string>
+<string name="eventlocation">Localización</string>
+<string name="showlocation">Mostrar localización</string>
+<string name="background">Fondo del widget</string>
+<string name="calendars">Mostrar eventos de estos calendarios:</string>
+<string name="lookahead">Tiempo restante:</string>
+<string name="calendarcolor">Mostrar el color de los calendarios en el widget</string>
+<string name="todaytomorrow">Mostrar \'hoy\'/\'mañana\' en lugar de la fecha</string>
+<string name="multidayevents">Eventos de varios días</string>
+<string name="multiday">Cómo se deben muestran los eventos que duran varios días:</string>
+<string name="onlyonfirst">Sólo en el primer día con la fecha de finalización</string>
+<string name="oneveryday">En cada día</string>
+<string name="calendarapp">Aplicación de calendario</string>
+<string name="calendarappsummary">Aplicación que se ejecutará al hacer click en el widget:</string>
+<string name="defaultapp">Aplicación de calendario por defecto:</string>
+<string name="otherapp">Otra aplicación</string>
+<string name="icons">Iconos</string>
+<string name="transparency">Transparencia:</string>
+<string name="iconposition">Posición del icono: Arriba a la izquierda para añadir eventos, abajo a la derecha para la configuración del widget</string>
+<string name="events">Eventos</string>
+<string name="appearance">Apariencia</string>
+<string name="settings">Configuración</string>
+<string name="backupandrestore">Copia de seguridad y Restablecer</string>
+<string name="backuplocation">Esto grabará los ajustes del widget en/Restablecer desde /Android/de.j4velin.calendarWidget/files/backup.\nAl restablecer se sobreescribirán los ajustes de este widget</string>
+<string name="backupsaved">Copia de seguridad guardada:</string>
+<string name="externalstorageerror">Error: El almacén externo no está disponible </string>
+<string name="restore">Restablecer</string>
+<string name="restored">Ajustes recuperados</string>
+<string name="nobackup">No se encuentra la copia de seguridad</string>
+<string name="moreapps">Más aplicaciones interesantes</string>
+<string name="donate">Donativo</string>
+
+</resources>

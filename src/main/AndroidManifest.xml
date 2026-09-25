@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    android:installLocation="internalOnly"
+    android:versionCode="251"
+    android:versionName="2.5.1">
+
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/launcher"
+        android:label="Simple Calendar Widget">
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version"/>
+
+
+        <receiver
+            android:name=".WidgetReceiver"
+            android:exported="true">
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.PROVIDER_CHANGED" />
+
+                <data
+                    android:host="com.android.calendar"
+                    android:scheme="content" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.TIME_SET" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+                <action android:name="android.intent.action.DATE_CHANGED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".Widget"
+            android:exported="true"
+            android:label="SCW Agenda">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget" />
+        </receiver>
+        <receiver
+            android:name=".MonthWidget"
+            android:exported="true"
+            android:label="SCW Month">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/monthwidget" />
+        </receiver>
+
+        <activity
+            android:name=".settings.WidgetConfig"
+            android:exported="true"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".settings.MonthWidgetConfig"
+            android:exported="true"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".WidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+        <service
+            android:name=".MonthWidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
+        <activity
+            android:name=".Dummy"
+            android:enabled="true"
+            android:exported="true"
+            android:theme="@android:style/Theme.DeviceDefault.Dialog.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".Wear"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.android.gms.wearable.DATA_CHANGED" />
+                <action android:name="com.google.android.gms.wearable.MESSAGE_RECEIVED" />
+
+                <data
+                    android:host="*"
+                    android:pathPrefix="/scw"
+                    android:scheme="wear" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".IcsImporter"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/calendar" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="*"
+                    android:mimeType="text/*"
+                    android:pathPattern=".*\\.ics"
+                    android:scheme="file" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="*"
+                    android:mimeType="text/*"
+                    android:pathPattern=".*\\.ical"
+                    android:scheme="file" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".MonthReceiver" />
+
+        <service
+            android:name=".UpdaterJob"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+    </application>
+
+</manifest>

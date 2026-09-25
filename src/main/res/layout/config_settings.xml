@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <CheckBox
+            android:id="@+id/todaytext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/todaytomorrow"/>
+
+        <TextView
+            style="?android:attr/listSeparatorTextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/multidayevents"
+        />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/multiday"
+            android:textAppearance="@android:style/TextAppearance"
+        />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp">
+
+            <RadioButton
+                android:id="@+id/allday_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/onlyonfirst"/>
+
+            <RadioButton
+                android:id="@+id/allday_every"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/oneveryday"/>
+        </RadioGroup>
+
+        <TextView
+            style="?android:attr/listSeparatorTextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/calendarapp"
+        />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/calendarappsummary"
+            android:textAppearance="@android:style/TextAppearance"
+        />
+
+        <RadioGroup
+            android:id="@+id/clickgroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp">
+
+            <RadioButton
+                android:id="@+id/opendefault"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/defaultapp"/>
+
+            <RadioButton
+                android:id="@+id/otherapp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/otherapp"/>
+
+            <RadioButton
+                android:id="@+id/update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/update_on_click"/>
+        </RadioGroup>
+
+        <CheckBox
+            android:id="@+id/openevent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/open_event"/>
+
+        <!-- ICONS //-->
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/iconsTitle"
+                style="?android:attr/listSeparatorTextViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="20dp"
+                android:text="@string/icons"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/iconsColorLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iconsTitle"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/color"
+                android:textAppearance="@android:style/TextAppearance"/>
+
+            <Spinner
+                android:id="@+id/iconsColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/iconsColorLabel"
+                android:layout_below="@id/iconsTitle"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/iconsColorLabel"/>
+
+            <TextView
+                android:id="@+id/iconTransparencyTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iconsColorLabel"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/transparency"
+                android:textAppearance="@android:style/TextAppearance"
+            />
+
+            <ImageView
+                android:id="@+id/iconpreview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/iconsColorLabel"
+                android:src="@drawable/ic_add_white"/>
+
+            <SeekBar
+                android:id="@+id/alpha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iconsColorLabel"
+                android:layout_marginTop="10dp"
+                android:layout_toLeftOf="@id/iconpreview"
+                android:layout_toRightOf="@id/iconTransparencyTitle"
+                android:max="255"
+                android:progress="255"/>
+
+            <TextView
+                android:id="@+id/iconPosition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iconTransparencyTitle"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:paddingBottom="20dp"
+                android:text="@string/iconposition"
+                android:textAppearance="@android:style/TextAppearance"
+            />
+        </RelativeLayout>
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources
+xmlns:tools="http://schemas.android.com/tools"
+tools:ignore="MissingTranslation">
+
+<string-array name="lookAheadTimes">
+<item>jours</item>
+<item>semaines</item>
+<item>mois</item>
+<item>années</item>
+</string-array>
+
+<string name="today">Aujourd\'hui</string>
+<string name="tomorrow">Demain</string>
+<string name="curentdate">Date actuelle</string>
+<string name="showcurrentdate">Afficher la date actuelle</string>
+<string name="color">Couleur:</string>
+<string name="size">Taille:</string>
+<string name="bold">Gras</string>
+<string name="dateformat">Format de la date:</string>
+<string name="eventdate">Date de l\'événement</string>
+<string name="light">Léger</string>
+<string name="eventtime">Heure de l\'événement</string>
+<string name="timeformat">Format de l\'heure</string>
+<string name="showendtimes">Afficher l\'heure de fin d\'événement</string>
+<string name="eventname">Nom de l\'événement</string>
+<string name="todayevent">Événement du jour</string>
+<string name="eventlocation">Endroit de l\'événement</string>
+<string name="showlocation">Montrer l\'endroit</string>
+<string name="background">Fond du widget</string>
+<string name="calendars">Afficher les événements depuis ces calendriers:</string>
+<string name="lookahead">Aller chercher dans le temps:</string>
+<string name="calendarcolor">Afficher les couleurs des calendriers dans le widget</string>
+<string name="todaytomorrow">Afficher \'aujourd\'hui\'/\'demain\' à la place des dates</string>
+<string name="multidayevents">Événement sur plusieurs jours</string>
+<string name="multiday">Comment les événements sur plusieurs jours doivent être affichés:</string>
+<string name="onlyonfirst">Seulement le premier jour avec une date de fin</string>
+<string name="oneveryday">Sur chaque jour</string>
+<string name="calendarapp">Application calendrier</string>
+<string name="calendarappsummary">Indiquez quel application doit être démarrée quand on clique sur le widget:</string>
+<string name="defaultapp">application calendrier par défaut</string>
+<string name="otherapp">autre application</string>
+<string name="icons">Icônes</string>
+<string name="transparency">Transparence:</string>
+<string name="iconposition">Position de l\'icône: Dans le coin en haut à droite pour ajouter des nouveaux événements, dans le coin en bas à droite pour ouvrir la fenêtre de configuration</string>
+<string name="events">Événements</string>
+<string name="appearance">Apparence</string>
+<string name="settings">Paramètres</string>
+<string name="backupandrestore">Sauvegarde &amp; Restauration</string>
+<string name="backuplocation">Cela sauvegardera les paramètres ou les restaurera depuis /Android/de.j4velin.calendarWidget/files/backup.
+\nLors de la restauration, les paramètres actuels du widget seront remplacés!</string>
+<string name="backupsaved">Sauvegarde enregistré:</string>
+<string name="externalstorageerror">Erreur: Le stockage externe n\'est pas disponible</string>
+<string name="restore">Restaurer</string>
+<string name="restored">Paramètres importé</string>
+<string name="nobackup">Aucune sauvegarde trouvée</string>
+<string name="moreapps">Plus d\'applications cool</string>
+<string name="donate">Faire un don</string>
+<string name="background_color">Couleur du fond:</string>
+<string name="text_color">Couleur du texte:</string>
+<string name="current_month">Mois courant</string>
+<string name="other_days">Autres jours</string>
+<string name="day_label">Libelle du jour</string>
+<string name="month_label">Libelle du mois</string>
+<string name="month_label_config">Astuce: Cliquer sur le libelle du mois pour ouvrir cette configuration de nouveau</string>
+<string name="widget_background">Couleur du fond de la widget</string>
+<string name="week_start">Commencer la semaine avec Lundi</string>
+<string name="prev_next_month_icons">Icone mois Précedant/Suivant </string>
+<string name="indicators">Indicateurs d\'evenements</string>
+<string name="open_event">S\'il y a un seul evenement par jour, ouvrir l\'evenement directement en cliquant sur le jour</string>
+<string name="single_line">Réduire à une seule ligne</string>
+
+</resources>

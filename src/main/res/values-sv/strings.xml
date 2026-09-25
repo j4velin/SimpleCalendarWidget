@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources
+xmlns:tools="http://schemas.android.com/tools"
+tools:ignore="MissingTranslation">
+
+<string-array name="lookAheadTimes">
+<item>dagar</item>
+<item>veckor</item>
+<item>månader</item>
+<item>år</item>
+</string-array>
+
+<string name="today">Idag</string>
+<string name="tomorrow">Imorgon</string>
+<string name="curentdate">Aktuellt datum</string>
+<string name="showcurrentdate">Visa aktuellt datum</string>
+<string name="color">Färg:</string>
+<string name="size">Storlek:</string>
+<string name="bold">Fet</string>
+<string name="dateformat">Datumformat:</string>
+<string name="eventdate">Händelsedatum</string>
+<string name="light">Ljus</string>
+<string name="eventtime">Händelsetid</string>
+<string name="timeformat">Tidsformat:</string>
+<string name="showendtimes">Visa händelsers sluttider</string>
+<string name="eventname">Händelsenamn</string>
+<string name="todayevent">Dagens händelser</string>
+<string name="eventlocation">Händelseplats</string>
+<string name="showlocation">Visa plats</string>
+<string name="background">Widgetbakgrund</string>
+<string name="calendars">Visa händelser från dessa kalendrar:</string>
+<string name="lookahead">Händelsespann:</string>
+<string name="calendarcolor">Visa händelse-/kalenderfärger i widget</string>
+<string name="todaytomorrow">Visa \'Idag\'/\'Imorgon\' istället för daturm</string>
+<string name="multidayevents">Händelser över flera dagar</string>
+<string name="multiday">Hur händelser över flera dagar ska visas:</string>
+<string name="onlyonfirst">Enbart på sista dagen</string>
+<string name="oneveryday">På varje dag</string>
+<string name="calendarapp">Kalanderapp</string>
+<string name="calendarappsummary">Avgör vilken app som ska startas vid tryck på widget:</string>
+<string name="defaultapp">standard kalenderapp</string>
+<string name="otherapp">annat app</string>
+<string name="icons">Ikoner</string>
+<string name="transparency">Transparens:</string>
+<string name="iconposition">Ikonposition: Uppe till höger i widget för att lägga till händelse, nere till höger för att öppna widgetkonfiguration</string>
+<string name="events">Händelser</string>
+<string name="appearance">Utseende</string>
+<string name="settings">Inställningar</string>
+<string name="backupandrestore">Backup &amp; återställning</string>
+<string name="backuplocation">Detta sparar widgetinställningar till/återställer dem från /Android/de.j4velin.calendarWidget/files/backup.
+\nVid återställning skrivs aktuella inställningar över!</string>
+<string name="backupsaved">Backup sparad:</string>
+<string name="externalstorageerror">Fel: Eternt minne inte tillgängligt</string>
+<string name="restore">Återställ</string>
+<string name="restored">Inställningar importerade</string>
+<string name="nobackup">Backup hittades inte</string>
+<string name="moreapps">Fler coola appar</string>
+<string name="donate">Donera</string>
+<string name="background_color">Backgrundfärg:</string>
+<string name="text_color">Textfärg:</string>
+<string name="current_month">Aktuell månad</string>
+<string name="other_days">Andra dagar</string>
+<string name="day_label">Etikett dag</string>
+<string name="month_label">Etikett månad</string>
+<string name="month_label_config">Tips: Klicka på månaden för att öppna konfigurationen igen</string>
+<string name="widget_background">Widgetbakgrund</string>
+<string name="week_start">Börja vecka med måndag</string>
+<string name="prev_next_month_icons">Ikon för föregående/nästa månad</string>
+<string name="indicators">Händelseindikator</string>
+<string name="open_event">Om det bara finns en händelse för en dag, öppna händelse direkt vid tryck på dagen</string>
+<string name="single_line">Avkorta till en rad</string>
+
+</resources>

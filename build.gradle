@@ -1,0 +1,59 @@
+apply plugin: 'com.android.application'
+
+android {
+    if (rootProject.ext.has("compileSdkVersion")) {
+        compileSdkVersion = rootProject.ext.compileSdkVersion
+        buildToolsVersion = rootProject.ext.buildToolsVersion
+    } else {
+        logger.warn('compileSdkVersion not found in rootProject')
+        compileSdkVersion = 34
+        buildToolsVersion = "34.0.0"
+    }
+
+    defaultConfig {
+        applicationId "de.j4velin.calendarWidget"
+        minSdkVersion 21
+        targetSdk 34
+    }
+
+    signingConfigs {
+        release
+    }
+
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-project.txt'
+            debuggable false
+        }
+        debug {
+            debuggable true
+            signingConfig signingConfigs.release
+            minifyEnabled false
+        }
+    }
+    namespace 'de.j4velin.calendarWidget'
+}
+
+dependencies {
+    implementation project(':dateFormatSpinner')
+    implementation project(':colorpicker')
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    wearApp project(':CalendarWidgetWear')
+    implementation 'com.google.android.gms:play-services-wearable:18.2.0'
+}
+
+def props = new Properties()
+
+props.load(new FileInputStream(project.file("key.properties")))
+
+android.signingConfigs.release.storeFile rootProject.file(props.keyStore)
+
+android.signingConfigs.release.storePassword props.keyStorePassword
+
+android.signingConfigs.release.keyAlias props.keyAlias
+
+android.signingConfigs.release.keyPassword props.keyAliasPassword

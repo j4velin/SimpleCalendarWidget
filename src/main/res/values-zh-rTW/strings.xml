@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources
+xmlns:tools="http://schemas.android.com/tools"
+tools:ignore="MissingTranslation">
+
+<string-array name="lookAheadTimes">
+<item>日</item>
+<item>週</item>
+<item>月</item>
+<item>年</item>
+</string-array>
+
+<string name="today">今天</string>
+<string name="tomorrow">明天</string>
+<string name="curentdate">日期</string>
+<string name="showcurrentdate">顯示目前日期</string>
+<string name="color">顏色:</string>
+<string name="size">大小:</string>
+<string name="bold">粗體</string>
+<string name="dateformat">日期格式:</string>
+<string name="eventdate">行程日期</string>
+<string name="light">亮度</string>
+<string name="eventtime">行程時間</string>
+<string name="timeformat">時間格式:</string>
+<string name="showendtimes">顯示行程結束時間</string>
+<string name="eventname">行程標題</string>
+<string name="todayevent">今日行程</string>
+<string name="eventlocation">行程地點</string>
+<string name="showlocation">顯示地點</string>
+<string name="background">小工具背景</string>
+<string name="calendars">顯示來自下列日曆的行程:</string>
+<string name="lookahead">設定提前顯示:</string>
+<string name="calendarcolor">小工具上的日曆顏色</string>
+<string name="todaytomorrow">以顯示\'今天\'/\'明天\'來取代顯示日期</string>
+<string name="multidayevents">多天數行程</string>
+<string name="multiday">設定多天數行程顯示方式:</string>
+<string name="onlyonfirst">僅在行程開始第一天與最後一天顯示</string>
+<string name="oneveryday">行程期間每天顯示</string>
+<string name="calendarapp">日曆程式</string>
+<string name="calendarappsummary">設定點擊小工具時，預設開啟的程式:</string>
+<string name="defaultapp">預設日曆程式</string>
+<string name="otherapp">其他程式</string>
+<string name="icons">圖示</string>
+<string name="transparency">透明度:</string>
+<string name="iconposition">圖示位置:小工具右上方可新增行程，小工具右下方可開啟小工具配置</string>
+<string name="events">行程</string>
+<string name="appearance">外觀</string>
+<string name="settings">設定</string>
+<string name="backupandrestore">備份 &amp; 還原</string>
+<string name="backuplocation">小工具設定備份於路徑 /Android/de.j4velin.calendarWidget/files/backup資料夾內，可用於還原設定。\n當進行還原後，將會覆蓋目前小工具的設定項目內容!</string>
+<string name="backupsaved">備份已儲存:</string>
+<string name="externalstorageerror">錯誤:沒有可用的外部儲存空間</string>
+<string name="restore">還原</string>
+<string name="restored">已匯入設定</string>
+<string name="nobackup">沒有備份項目</string>
+<string name="moreapps">更多程式</string>
+<string name="donate">贊助開發</string>
+
+</resources>

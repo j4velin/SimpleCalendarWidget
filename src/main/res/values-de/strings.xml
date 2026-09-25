@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation">
+
+    <string-array name="lookAheadTimes">
+        <item>Tage</item>
+        <item>Wochen</item>
+        <item>Monate</item>
+        <item>Jahre</item>
+    </string-array>
+
+    <string name="today">Heute</string>
+    <string name="tomorrow">Morgen</string>
+    <string name="curentdate">Aktuelles Datum</string>
+    <string name="showcurrentdate">Zeige aktuelles Datum</string>
+    <string name="color">Farbe:</string>
+    <string name="size">Größe:</string>
+    <string name="bold">Fett</string>
+    <string name="dateformat">Datums-Format:</string>
+    <string name="eventdate">Ereignis-Datum</string>
+    <string name="light">Dünn</string>
+    <string name="eventtime">Ereignis-Zeit</string>
+    <string name="timeformat">Zeit-Format:</string>
+    <string name="showendtimes">Zeige Ereignis End-Zeiten</string>
+    <string name="eventname">Ereignis-Name</string>
+    <string name="todayevent">Heutige Ereignisse</string>
+    <string name="eventlocation">Ereignis-Ort</string>
+    <string name="showlocation">Zeige Ort-Information</string>
+    <string name="background">Widget Hintergrund</string>
+    <string name="calendars">Zeige Ereignisse aus diesen Kalendern:</string>
+    <string name="lookahead">Darzustellender Zeitraum:</string>
+    <string name="calendarcolor">Zeige Ereignis/Kalender-Farbe im Widget</string>
+    <string name="todaytomorrow">Zeige \'Heute\'/\'Morgen\' statt Datum</string>
+    <string name="multidayevents">Mehrtägige Ereignisse</string>
+    <string name="multiday">Mehrtägigen Ereignisse sollen folgendermaßen dargestellt werden:
+    </string>
+    <string name="onlyonfirst">Nur an einem Tag mit End-Datum</string>
+    <string name="oneveryday">An jedem Tag</string>
+    <string name="calendarapp">Kalender-App</string>
+    <string name="calendarappsummary">Bestimme, welche App beim Klicken auf das Widget gestartet
+        werden soll:
+    </string>
+    <string name="defaultapp">Standard Kalender-App</string>
+    <string name="otherapp">Andere App</string>
+    <string name="icons">Icons</string>
+    <string name="transparency">Transparenz:</string>
+    <string name="iconposition">Icon Position: Oben rechts im Widget um Ereignisse hinzuzufügen,
+        unten rechts um die Widget-Konfiguration zu ändern
+    </string>
+    <string name="events">Ereignisse</string>
+    <string name="appearance">Darstellung</string>
+    <string name="settings">Einstellungen</string>
+    <string name="backupandrestore">Sichern &amp; Wiederherstellen</string>
+    <string name="backuplocation">Dies wird die Widget-Konfiguration von folgendem Pfad speicher
+        oder wiederherstellen: /Android/de.j4velin.calendarWidget/files/backup. Beim
+        Wiederherstellen werden die aktuellen Einstellungen für dieses Widget überschrieben!
+    </string>
+    <string name="backupsaved">Sicherung gespeichert:</string>
+    <string name="externalstorageerror">Fehler: Externer Speicher nicht verfügbar</string>
+    <string name="restore">Wiederherstellen</string>
+    <string name="restored">Einstellungen wiederhergestellt</string>
+    <string name="nobackup">Keine Sicherung gefunden</string>
+    <string name="moreapps">Weitere coole Apps</string>
+    <string name="donate">Spenden</string>
+    <string name="background_color">Hintergrund-Farbe:</string>
+    <string name="text_color">Text-Farbe:</string>
+    <string name="current_month">Aktueller Monat</string>
+    <string name="other_days">Andere Tage</string>
+    <string name="day_label">Tag-Label</string>
+    <string name="month_label">Monat-Label</string>
+    <string name="month_label_config">Tipp: Klicke auf das Monat-Label um diese Konfiguration erneut zu öffnen!</string>
+    <string name="widget_background">Widget Hintergrund</string>
+    <string name="week_start">Woche startet mit Montag</string>
+    <string name="prev_next_month_icons">Icons für vorherigen/nächsten Monat</string>
+    <string name="indicators">Ereignis-Indikatoren</string>
+    <string name="open_event">Bei nur einem Ereignis an einem Tag, öffne direkt dieses Ereignis beim Klick auf den Tag</string>
+    <string name="single_line">Auf eine Textzeile kürzen</string>
+    <string name="todaypassedevent">Heutige vergangene Ereignisse</string>
+    <string name="skippedpassed">Vergangene Ereignisse ausblenden</string>
+    <string name="same_as_event">wie Ereignis-Name</string>
+    <string name="same_as_on_other_days">wie bei anderen Tagen</string>
+    <string name="time_location_for_todays_events">Zeit &amp; Ort für heutige Ereignisse</string>
+    <string name="update_on_click">Widget aktualisieren aber keine App starten</string>
+</resources>

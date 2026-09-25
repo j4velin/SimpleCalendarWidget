@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources
+xmlns:tools="http://schemas.android.com/tools"
+tools:ignore="MissingTranslation">
+
+<string-array name="lookAheadTimes">
+<item>dnů</item>
+<item>týdnů</item>
+<item>měsíců</item>
+<item>roků</item>
+</string-array>
+
+<string name="today">Dnes</string>
+<string name="tomorrow">Zítra</string>
+<string name="curentdate">Dnešní datum</string>
+<string name="showcurrentdate">Zobraz dnešní datum</string>
+<string name="color">Barva</string>
+<string name="size">Velikost</string>
+<string name="bold">Tlusté</string>
+<string name="dateformat">Formát data</string>
+<string name="eventdate">Datum události</string>
+<string name="light">Tenké</string>
+<string name="eventtime">Čas události</string>
+<string name="timeformat">Formát času</string>
+<string name="showendtimes">Zobraz čas ukončení události</string>
+<string name="eventname">Jméno události</string>
+<string name="todayevent">Dnešní událost</string>
+<string name="eventlocation">Místo události</string>
+<string name="showlocation">Zobraz místo konání</string>
+<string name="background">Pozadí widgetu</string>
+<string name="calendars">Zobraz události z těchto kalendářů</string>
+<string name="lookahead">Náhled</string>
+<string name="calendarcolor">Zobraz barvy kalendářů ve widgetu</string>
+<string name="todaytomorrow">Zobraz \'Dnes\'/\'Zítra\' místo datumu</string>
+<string name="multidayevents">Vícedenní události</string>
+<string name="multiday">Zobrazení vídedenní události:</string>
+<string name="onlyonfirst">Pouze počáteční a končné datum</string>
+<string name="oneveryday">Každý den</string>
+<string name="calendarapp">Aplikace kalendáře</string>
+<string name="calendarappsummary">Nastavte jaká aplikace má být spuštěna kliknutím na widget:</string>
+<string name="defaultapp">Výchozí aplikace kalendáře</string>
+<string name="otherapp">Další aplikace</string>
+<string name="icons">Ikony</string>
+<string name="transparency">Průhlednost</string>
+<string name="iconposition">Pozice ikony: V pravém horním rohu pro přidání události, spodní pravý roh k otevření nastavení</string>
+<string name="events">Události</string>
+<string name="appearance">Vzhled</string>
+<string name="settings">Nastavení</string>
+<string name="backupandrestore">Zálohování &amp; Obnovení</string>
+<string name="backuplocation">Toto uloží vaše nastavení do/obnoví nastavení z /Android/de.j4velin.calendarWidget/files/backup.\nPri obnovení dojde k přepsání nýnějšího nastavení widgetu!</string>
+<string name="backupsaved">Záloha uložena</string>
+<string name="externalstorageerror">Chyba: Externí uložiště není k dispozici</string>
+<string name="restore">Obnovení</string>
+<string name="restored">Nastavení importováno</string>
+<string name="nobackup">Záloha nenalezena</string>
+<string name="moreapps">Další skvělé aplikace</string>
+<string name="donate">Podpoř</string>
+
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="today">오늘</string>
+    <string name="tomorrow">내일</string>
+
+</resources>

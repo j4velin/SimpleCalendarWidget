@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation">
+
+    <string-array name="lookAheadTimes">
+        <item>days</item>
+        <item>weeks</item>
+        <item>months</item>
+        <item>years</item>
+    </string-array>
+
+
+</resources>

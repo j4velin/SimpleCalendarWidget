@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation">
+
+    <string-array name="lookAheadTimes">
+        <item>дней</item>
+        <item>недель</item>
+        <item>месяцев</item>
+        <item>лет</item>
+    </string-array>
+
+    <string name="today">Сегодня</string>
+    <string name="tomorrow">Завтра</string>
+    <string name="curentdate">Текущая дата</string>
+    <string name="showcurrentdate">Показать текущую дату</string>
+    <string name="color">Цвет:</string>
+    <string name="size">Размер:</string>
+    <string name="bold">Жирный</string>
+    <string name="dateformat">Формат даты:</string>
+    <string name="eventdate">Дата события</string>
+    <string name="light">Бледный</string>
+    <string name="eventtime">Время события</string>
+    <string name="timeformat">Формат времени:</string>
+    <string name="showendtimes">Показывать время окончания события</string>
+    <string name="eventname">Название события</string>
+    <string name="todayevent">Сегодняшнее событие</string>
+    <string name="eventlocation">Место события</string>
+    <string name="showlocation">Показывать место</string>
+    <string name="background">Фон виджета</string>
+    <string name="calendars">Показывать события из календарей:</string>
+    <string name="lookahead">Поиск событий:</string>
+    <string name="calendarcolor">Показывать цветовые метки календаря на виджете</string>
+    <string name="todaytomorrow">Показывать \'сегодня\'/\'завтра\' вместо дат</string>
+    <string name="multidayevents">Многодневные события</string>
+    <string name="multiday">Как отображать события, длящиеся несколько дней:</string>
+    <string name="onlyonfirst">Только в первый день с датой окончания</string>
+    <string name="oneveryday">Каждый день</string>
+    <string name="calendarapp">Приложение календаря</string>
+    <string name="calendarappsummary">Задайте приложение, запускаемое при нажатии на виджет:
+    </string>
+    <string name="defaultapp">календарь по умолчанию</string>
+    <string name="otherapp">другое приложение</string>
+    <string name="icons">Значки</string>
+    <string name="transparency">Прозрачность:</string>
+    <string name="iconposition">Положение значка: Правый верхний угол виджета для добавления новых
+        событий, правый нижний угол для открытия настроек виджета
+    </string>
+    <string name="events">События</string>
+    <string name="appearance">Вид</string>
+    <string name="settings">Настройки</string>
+    <string name="backupandrestore">поддерживать и полностью восстанавливать</string>
+    <string name="backuplocation">Позволяет сохранить/восстановить настройки Вашего виджета в/из
+        /Android/de.j4velin.calendarWidget/files/backup.
+        \nПри восстановлении текущие настройки виджета будут затерты!
+    </string>
+    <string name="backupsaved">Резервная копия сохранена:</string>
+    <string name="externalstorageerror">Ошибка: Внешняя память недоступна</string>
+    <string name="restore">восстанавливать</string>
+    <string name="restored">Настройки импортированы</string>
+    <string name="nobackup">Резервных копий не найдено</string>
+    <string name="moreapps">Много отличного ПО</string>
+    <string name="donate">Пожертвовать</string>
+
+</resources>

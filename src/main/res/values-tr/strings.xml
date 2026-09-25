@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation">
+
+    <string-array name="lookAheadTimes">
+        <item>Günler</item>
+        <item>Haftalar</item>
+        <item>Aylar</item>
+        <item>Yıllar</item>
+    </string-array>
+
+    <string name="today">Bugün</string>
+    <string name="tomorrow">Yarın</string>
+    <string name="curentdate">Geçerli tarih</string>
+    <string name="showcurrentdate">Geçerli tarihi göster</string>
+    <string name="color">Renk:</string>
+    <string name="size">Boyut:</string>
+    <string name="oneveryday">Hergün</string>
+    <string name="calendarapp">Takvim uygulaması</string>
+    <string name="defaultapp">Varsayılan takvim uygulaması</string>
+    <string name="icons">Simgeler</string>
+    <string name="transparency">Şeffaflık:</string>
+    <string name="appearance">Görünüm</string>
+    <string name="settings">Ayarlar</string>
+    <string name="backupsaved">Yedekleme kaydedildi:</string>
+    <string name="externalstorageerror">Hata:Harici depolama kullanılamıyor</string>
+    <string name="restore">Geri yükle</string>
+    <string name="restored">Ayarları içe aktar</string>
+    <string name="nobackup">Yedekleme bulunamadı</string>
+    <string name="moreapps">Daha fazla uygulama</string>
+    <string name="donate">Satın ak</string>
+
+</resources>

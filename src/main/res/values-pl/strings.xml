@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation">
+
+    <string-array name="lookAheadTimes">
+        <item>dni</item>
+        <item>tygodnie</item>
+        <item>miesiące</item>
+        <item>lata</item>
+    </string-array>
+
+    <string name="today">Dziś</string>
+    <string name="tomorrow">Jutro</string>
+    <string name="curentdate">Bieżąca data</string>
+    <string name="showcurrentdate">Pokaż dzień bieżący</string>
+    <string name="color">Kolor</string>
+    <string name="size">Wielkość</string>
+    <string name="bold">Pogrubienie</string>
+    <string name="dateformat">Format daty</string>
+    <string name="eventdate">Data wydarzenia</string>
+    <string name="light">Lekki</string>
+    <string name="eventtime">Czas wydarzenia</string>
+    <string name="timeformat">Format czasu</string>
+    <string name="showendtimes">Pokaż czas zakończenia wydarzeń</string>
+    <string name="eventname">Nazwa wydarzenia</string>
+    <string name="todayevent">Dzisiejsze wydarzenia</string>
+    <string name="eventlocation">Lokalizacja wydarzenia</string>
+    <string name="showlocation">Pokaż lokalizację</string>
+    <string name="background">Tło widżetu</string>
+    <string name="calendars">Pokaż wydarzenia z tych kalendarzy</string>
+    <string name="lookahead">Wyświetl przyszłe wydarzenia</string>
+    <string name="calendarcolor">Pokaż kolory kalendarza w widżecie</string>
+    <string name="todaytomorrow">Pokaż \'dziś\'/\'jutro\' zamiast dat</string>
+    <string name="multidayevents">Wydarzenia kilkudniowe</string>
+    <string name="multiday">Jak powinny być wyświetlane wydarzenia, które trwają kilka dni</string>
+    <string name="onlyonfirst">Tylko w pierwszym dniu z datą końcową</string>
+    <string name="oneveryday">Każdego dnia</string>
+    <string name="calendarapp">Aplikacja Kalendarz</string>
+    <string name="calendarappsummary">Określ, która aplikacja powinna zostać uruchomiona po
+        kliknięciu na widżet
+    </string>
+    <string name="defaultapp">Domyślna aplikacja kalendarza</string>
+    <string name="otherapp">Inna aplikacja</string>
+    <string name="icons">Ikony</string>
+    <string name="transparency">Przezroczystość</string>
+    <string name="iconposition">Pozycja ikon: Prawy górny róg widżetu, aby dodać nowe wydarzenie,
+        prawy dolny róg, aby otworzyć konfigurację
+    </string>
+    <string name="events">Wydarzenia</string>
+    <string name="appearance">Wygląd</string>
+    <string name="settings">Ustawienia</string>
+    <string name="backupandrestore">Kopia zapasowa ; Przywracanie</string>
+    <string name="backuplocation">Pozwoli to zapisać ustawienia widżetu do / lub przywrócić je z:
+        /Android/de.j4velin.calendarWidget/files/backup.
+        \nPodczas przywracania zastąpione będą bieżące ustawienia dla tego widżetu!
+    </string>
+    <string name="backupsaved">Kopia zapasowa zapisana</string>
+    <string name="externalstorageerror">Błąd: Pamięć zewnętrzna nie jest dostępna</string>
+    <string name="restore">Przywróć</string>
+    <string name="restored">Ustawienia przywrócone</string>
+    <string name="nobackup">Nie znaleziono kopii zapasowej</string>
+    <string name="moreapps">Więcej fajnych aplikacji</string>
+    <string name="donate">Przekaż darowiznę</string>
+
+</resources>
