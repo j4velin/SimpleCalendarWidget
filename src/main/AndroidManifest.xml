@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:installLocation="internalOnly">
 
     <uses-permission android:name="android.permission.READ_CALENDAR" />
@@ -13,10 +14,11 @@
     </queries>
 
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@drawable/launcher"
-        android:label="Simple Calendar Widget">
-
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
 
         <receiver
             android:name=".WidgetReceiver"
@@ -62,8 +64,7 @@
         <activity
             android:name=".settings.WidgetConfig"
             android:exported="true"
-            android:theme="@style/AppTheme"
-            android:windowSoftInputMode="stateHidden">
+            android:windowSoftInputMode="adjustResize|stateHidden">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
             </intent-filter>
@@ -71,25 +72,24 @@
         <activity
             android:name=".settings.MonthWidgetConfig"
             android:exported="true"
-            android:theme="@style/AppTheme"
-            android:windowSoftInputMode="stateHidden">
+            android:windowSoftInputMode="adjustResize|stateHidden">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
             </intent-filter>
         </activity>
 
-        <service
-            android:name=".WidgetService"
-            android:permission="android.permission.BIND_REMOTEVIEWS" />
-        <service
-            android:name=".MonthWidgetService"
-            android:permission="android.permission.BIND_REMOTEVIEWS" />
+        <activity
+            android:name=".CalendarActionActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:noHistory="true"
+            android:taskAffinity=""
+            android:theme="@style/InvisibleTheme" />
 
         <activity
             android:name=".Dummy"
-            android:enabled="true"
             android:exported="true"
-            android:theme="@android:style/Theme.DeviceDefault.Dialog.NoActionBar">
+            android:theme="@style/InvisibleTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -99,7 +99,10 @@
 
         <activity
             android:name=".IcsImporter"
-            android:exported="true">
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:noHistory="true"
+            android:theme="@style/InvisibleTheme">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -110,11 +113,21 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".MonthReceiver" />
-
         <service
             android:name=".UpdaterJob"
             android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <!-- WorkManager is configured by App -->
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="${applicationId}.androidx-startup"
+            android:exported="false"
+            tools:node="merge">
+            <meta-data
+                android:name="androidx.work.WorkManagerInitializer"
+                android:value="androidx.startup"
+                tools:node="remove" />
+        </provider>
     </application>
 
 </manifest>

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<lint>
-    <issue id="NewApi">
-        <ignore path="src\de\j4velin\calendarWidget\Parser.java" />
-        <ignore path="src\de\j4velin\calendarWidget\WidgetConfig.java" />
-    </issue>
-</lint>

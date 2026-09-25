@@ -1,123 +1,101 @@
-# Modernization plan
+# Modernization
 
-## Where the code stands
+The work was planned up front and done in three phases, each in its own commit. This file
+records the plan and what actually changed.
 
-* A single Android app module (`build.gradle` + `src/main`) that was cut out of a
-  larger multi-project build. There is no `settings.gradle`, no root build file and
-  no Gradle wrapper, and the module reads `compileSdkVersion` from `rootProject.ext`.
-* Three dependencies point at modules that aren't in this repo, so they can't be
+## Starting point
+
+* A single Android app module that was cut out of a larger multi-project build. There was no
+  `settings.gradle`, no root build file and no Gradle wrapper, and the module read
+  `compileSdkVersion` from `rootProject.ext`.
+* Three dependencies pointed at modules that aren't in this repository, so they couldn't be
   resolved:
-  * `project(':dateFormatSpinner')` provides `DateFormatSpinner`, used in the appearance settings.
-  * `project(':colorpicker')` provides `ColorPickerDialog` and `ColorPreviewButton`, used in both config screens.
-  * `wearApp project(':CalendarWidgetWear')` is the Wear OS companion app.
-* `com.google.android.gms:play-services-wearable` can still be downloaded, but it's
-  only there for the `Wear` listener service. That service is useless without the
-  watch app, and it relies on the removed `GoogleApiClient` / `Wearable.DataApi`
-  APIs.
-* The build loads `key.properties` for release signing unconditionally, so it fails
-  without that local file. The debug build also uses the release keys.
-* The code is Java with XML layouts. It uses Holo/Material framework themes,
-  `ActionBar` navigation tabs (deprecated since API 21), `AsyncTask`,
-  `ProgressDialog` and a `ViewPager` of support fragments. The widgets are built
-  with `RemoteViews` plus `RemoteViewsService` list/grid adapters.
+  * `:dateFormatSpinner` provided `DateFormatSpinner`.
+  * `:colorpicker` provided `ColorPickerDialog` and `ColorPreviewButton`.
+  * `wearApp ':CalendarWidgetWear'` was the Wear OS companion app. The phone-side `Wear`
+    listener service used the removed `GoogleApiClient` / `Wearable.DataApi` APIs.
+* The build always loaded `key.properties` for release signing, even for debug builds.
+* The code was Java with XML layouts: Holo/Material framework themes, `ActionBar`
+  navigation tabs, `AsyncTask`, a `ViewPager` of fragments, and widgets built with
+  `RemoteViews` + `RemoteViewsService`.
 
-## Phase 1 – make it build (Java, same features)
+## Phase 1: make it build (done)
 
-1. Make it a standalone Gradle project: `settings.gradle.kts`, root
-   `build.gradle.kts`, a Gradle wrapper, `gradle.properties` (AndroidX) and a
-   version catalog.
-2. Remove the missing modules:
-   * **Wear OS support (dropped feature).** Remove the `wearApp` dependency,
-     `play-services-wearable`, the `Wear` service, and the GMS meta-data in the
-     manifest.
-   * **Color picker (replaced).** Add a small in-app color preview button and a
-     hex/ARGB input dialog.
-   * **Date format spinner (replaced).** Use a plain text field for the pattern.
-     The pattern is still validated when it's saved.
-3. Make release signing optional: use `key.properties` only if it exists, and sign
-   debug builds with the default debug key.
-4. Pass criterion: `./gradlew assembleDebug` succeeds.
+* Made it a standalone Gradle project (settings file, wrapper, `gradle.properties`).
+* **Dropped Wear OS support**: the `wearApp` dependency, `play-services-wearable` and the
+  `Wear` service.
+* Replaced the color picker and date format spinner libraries with minimal in-app
+  stand-ins. Those stand-ins were themselves replaced by Compose in phase 3.
+* Release signing now only applies if `key.properties` exists. Debug builds use the debug
+  key.
 
-## Phase 2 – update to the latest Android
+## Phase 2: latest Android (done)
 
-1. Toolchain: Gradle 9.8, AGP 9.4, JDK 21 toolchain, and compileSdk / targetSdk 37
-   (Android 17).
-2. Raise minSdk from 21 to **26** (Android 8.0). This allows `java.time` and
-   adaptive icons, removes most `SDK_INT` branches, and meets current
-   Compose/Glance minimums.
-3. Deal with the behavior changes between targetSdk 34 and 37:
-   * Remove `WRITE_EXTERNAL_STORAGE` and its runtime request. Backups go to
-     `getExternalFilesDir()`, which hasn't needed a permission since API 19.
-   * Add a `<queries>` block for launcher activities so the "open another app"
-     picker still lists apps under package visibility (API 30+).
-   * Make the collection click template `PendingIntent`s `FLAG_MUTABLE`. With
-     `FLAG_IMMUTABLE`, the per-item fill-in extras (`beginTime`, `eventid`) are
-     dropped on API 31+, so tapping a day or event currently always opens "now".
-   * Open the calendar and add events through a no-UI trampoline activity instead
-     of `startActivity` from a `BroadcastReceiver`, which background-activity-start
-     rules block.
-   * Edge-to-edge (enforced from targetSdk 35) is handled by the Compose UI in
-     phase 3.
-   * Mark both widgets `reconfigurable` (API 31+).
-4. Fix existing bugs found along the way:
-   * `UpdaterJob` and `WidgetReceiver` refresh only agenda-widget IDs, so month
-     widgets never react to calendar or time changes.
-   * `TIMEZONE_CHANGED` is registered but never handled.
-   * `IcsImporter` upper-cases each whole line, so imported titles, descriptions and
-     locations come out in ALL CAPS.
-5. Drop the dead `file://` .ics intent filters. File URIs can't be shared since
-   API 24; `content://` + `text/calendar` stays.
+* Gradle 9.8, AGP 9.4, Kotlin DSL build scripts with a version catalog, Java 21.
+* compileSdk/targetSdk **37** (Android 17), minSdk **26** (Android 8.0).
+* Removed `WRITE_EXTERNAL_STORAGE`. Backups live in `getExternalFilesDir()`.
+* Added a `<queries>` block so the "open another app" picker can see launcher apps.
+* Collection click templates are `FLAG_MUTABLE`. Before, per-day/per-event taps lost their
+  extras on API 31+, so every tap opened the calendar at "now".
+* Month widgets now also refresh on calendar/time changes; before, only agenda widget IDs
+  were refreshed. `TIMEZONE_CHANGED` is handled too.
+* Removed the dead `file://` .ics intent filters. Both widgets are marked `reconfigurable`.
 
-## Phase 3 – Kotlin and Compose
+## Phase 3: Kotlin, Compose and Glance (done)
 
-1. **Kotlin everywhere.** Convert the domain and data code to idiomatic Kotlin:
-   `Event`/`Day` data classes, the `Parser` calendar query, `CalendarSet`, backup,
-   and a typed `WidgetPrefs` wrapper around the existing `calendarWidget`
-   SharedPreferences. **Preference keys and the backup file format stay unchanged**,
-   so existing widgets and backups keep working after the update.
-2. **Widgets become Jetpack Glance (Compose for app widgets).**
-   * Agenda widget: current-date header with add/settings icons, then a
-     `LazyColumn` of days with their events. It keeps every appearance option:
-     colors, sizes, bold, light font, single line, location, end times,
-     today/tomorrow labels, passed events, calendar color bar and icon
-     color/alpha.
-   * Month widget: header with previous/next and a 7×7 grid (weekday labels + 6
-     weeks) with event dots and today/current-month/other-day colors. Paging uses a
-     Glance `ActionCallback` instead of `MonthReceiver`.
-   * Refresh triggers: the midnight/next-event-end alarm, a calendar
-     content-change `JobScheduler` job, time/date/time-zone broadcasts, and saving
-     the config. Each one bumps a Glance state key so both widgets reload.
-   * The `RemoteViews` layouts, `WidgetService`, `MonthWidgetService` and the XML
-     item layouts are deleted.
-3. **Config UI becomes Compose + Material 3.**
-   * Agenda config: a top bar with the old overflow menu (Backup & Restore, More
-     apps, Website) and tabs **Events / Appearance / Settings** over a
-     `HorizontalPager`.
-   * Month config: a single scrolling screen.
-   * New Compose building blocks: color swatch + color picker dialog (ARGB
-     sliders, hex field, preview), a date-format field (editable text + preset
-     dropdown + live preview), a Compose app picker, and the calendar permission
-     request.
-   * State lives in a `ViewModel` and is written back to SharedPreferences when
-     the screen pauses, then the widget is updated (same as before).
-   * Existing string resources and translations are reused.
-4. Smaller screens (launcher `Dummy` info dialog, `.ics` importer) move to
-   Kotlin/Compose. All Java sources, fragments, `ViewPager` code and XML config
-   layouts are removed.
-5. JVM unit tests for the pure logic: grouping events into days, month grid
-   start, time-label formatting and `CalendarSet`.
+* All Java code was replaced by Kotlin. There are no XML layouts left.
+* **Widgets use Jetpack Glance.** Class names (`Widget`, `MonthWidget`,
+  `settings.WidgetConfig`, …) and **all SharedPreferences keys stay the same**, so placed
+  widgets and their settings survive the update. The backup file format is also unchanged.
+  * A per-widget Glance state key (`WidgetUpdates.RefreshKey`) is bumped whenever the data
+    must reload: alarms, the calendar content-change job, time broadcasts and saving the
+    config. Without it, a running Glance session would not recompose.
+  * Calendar taps go through `CalendarActionActivity`, a no-UI trampoline. Starting other
+    apps from a `BroadcastReceiver` is blocked by background activity start restrictions.
+  * The month widget runs a single calendar query per render instead of one per day (42
+    queries).
+* **The config screens use Compose + Material 3**, with dynamic color and edge-to-edge.
+  The agenda config has Events / Appearance / Settings tabs; the month config is a single
+  scrolling page. New in-app components: a color picker (presets, ARGB sliders, hex), a
+  date format field (presets + live preview + validation), an app picker, and a permission
+  screen.
+* Glance uses WorkManager internally. `App` limits WorkManager to JobScheduler IDs above
+  1000 so its jobs can't collide with the app's own calendar observer job.
+
+### Bugs fixed along the way
+
+* All-day events are stored at UTC midnight. They are now converted to local midnight, so
+  users west of UTC no longer see them on the previous day.
+* A running event that started in the previous year was shown on its start date instead of
+  today.
+* Events that ended late yesterday could show up as all-day events today.
+* The month widget highlighted "today" by day of year only, so the same date in the
+  adjacent year was highlighted too.
+* The .ics import upper-cased titles, descriptions and locations. It now also handles folded
+  lines, escaped characters and all-day (`VALUE=DATE`) events.
+* Settings of deleted widgets are now removed.
+
+### Dropped
+
+* Wear OS companion support.
+* The explicit HTC / Motorola calendar fallbacks when opening the calendar. The standard
+  `VIEW` / `INSERT` intents plus the AOSP/Google calendar fallbacks remain.
+* Devices below Android 8.0.
 
 ## Verification
 
-There's no emulator in this environment (no KVM), so every phase is checked with
-`./gradlew assembleDebug lint testDebugUnitTest`, and each phase is committed
-separately. Test on a device before releasing: placing both widgets, the
-calendar-permission flow, tapping days/events, month paging, and backup/restore.
+`./gradlew assembleDebug assembleRelease lintDebug testDebugUnitTest`
 
-## Out of scope / dropped
+* JVM unit tests cover agenda building, the month grid and event counting, time/date
+  labels, calendar ID parsing and the .ics parser.
+* Robolectric tests render both widgets through `GlanceRemoteViews` and inflate the
+  resulting `RemoteViews`. They also drive the Compose config screens and the color picker.
 
-* Wear OS companion. Its source isn't in this repo, and the old Data API it used
-  is gone.
-* The external `dateFormatSpinner` and `colorpicker` libraries, replaced by
-  in-app Compose equivalents.
-* Android 5.0–7.1 devices (minSdk 26).
+Still to test on a real device before release:
+
+* Placing both widgets.
+* The calendar-permission flow.
+* Tapping days and events, including "open another app".
+* Month paging.
+* Backup and restore.
+* Updating over an installed 2.5.1 with configured widgets.
