@@ -55,7 +55,7 @@ public class MonthWidgetConfig extends Activity implements View.OnClickListener 
             setContentView(R.layout.config_month);
             if (Build.VERSION.SDK_INT >= 23 && PermissionChecker
                     .checkSelfPermission(this, Manifest.permission.READ_CALENDAR) ==
-                    PackageManager.PERMISSION_DENIED) {
+                    PermissionChecker.PERMISSION_DENIED) {
                 permissionRequestRunning = true;
                 requestPermissions(new String[]{Manifest.permission.READ_CALENDAR},
                         PERMISSION_CALENDAR);
@@ -122,7 +122,7 @@ public class MonthWidgetConfig extends Activity implements View.OnClickListener 
         final Cursor cursor;
         if (Build.VERSION.SDK_INT >= 23 &&
                 PermissionChecker.checkSelfPermission(this, Manifest.permission.READ_CALENDAR) ==
-                        PackageManager.PERMISSION_DENIED) {
+                        PermissionChecker.PERMISSION_DENIED) {
             permissionRequestRunning = true;
             requestPermissions(new String[]{Manifest.permission.READ_CALENDAR},
                     PERMISSION_CALENDAR);
@@ -173,11 +173,7 @@ public class MonthWidgetConfig extends Activity implements View.OnClickListener 
     public void onRequestPermissionsResult(int requestCode, final String[] permissions,
                                            final int[] grantResults) {
         permissionRequestRunning = false;
-        if (requestCode == WidgetConfig.PERMISSION_EXTERNAL_STORAGE && grantResults.length > 0) {
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                showBackupDialog();
-            }
-        } else if (requestCode == WidgetConfig.PERMISSION_CALENDAR && grantResults.length > 0) {
+        if (requestCode == WidgetConfig.PERMISSION_CALENDAR && grantResults.length > 0) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 addCalendars();
             }
@@ -187,14 +183,6 @@ public class MonthWidgetConfig extends Activity implements View.OnClickListener 
     }
 
     private void showBackupDialog() {
-        if (Build.VERSION.SDK_INT >= 23 && PermissionChecker
-                .checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) ==
-                PackageManager.PERMISSION_DENIED) {
-            permissionRequestRunning = true;
-            requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                    WidgetConfig.PERMISSION_EXTERNAL_STORAGE);
-            return;
-        }
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.backupandrestore).setMessage(R.string.backuplocation)
                 .setPositiveButton("Backup", new DialogInterface.OnClickListener() {
@@ -249,22 +237,19 @@ public class MonthWidgetConfig extends Activity implements View.OnClickListener 
 
     @Override
     public boolean onOptionsItemSelected(final MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.website:
-                startActivity(
-                        new Intent(Intent.ACTION_VIEW, Uri.parse("https://j4velin.de/contact.php"))
-                                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-                break;
-            case R.id.apps:
-                startActivity(
-                        new Intent(Intent.ACTION_VIEW, Uri.parse("market://search?q=pub:j4velin"))
-                                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-                break;
-            case R.id.backup:
-                showBackupDialog();
-                break;
-            default:
-                return super.onOptionsItemSelected(item);
+        int id = item.getItemId();
+        if (id == R.id.website) {
+            startActivity(
+                    new Intent(Intent.ACTION_VIEW, Uri.parse("https://j4velin.de/contact.php"))
+                            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+        } else if (id == R.id.apps) {
+            startActivity(
+                    new Intent(Intent.ACTION_VIEW, Uri.parse("market://search?q=pub:j4velin"))
+                            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+        } else if (id == R.id.backup) {
+            showBackupDialog();
+        } else {
+            return super.onOptionsItemSelected(item);
         }
         return true;
     }
@@ -374,28 +359,18 @@ public class MonthWidgetConfig extends Activity implements View.OnClickListener 
 
     @Override
     public void onClick(final View v) {
-        switch (v.getId()) {
-            case R.id.currentDateTextColor:
-            case R.id.currentDateBackgroundColor:
-            case R.id.currentMonthTextColor:
-            case R.id.currentMonthBackgroundColor:
-            case R.id.otherDaysTextColor:
-            case R.id.otherDaysBackgroundColor:
-            case R.id.weekDayLabelTextColor:
-            case R.id.monthLabelTextColor:
-            case R.id.backgroundColor:
-                ColorPickerDialog dialog = new ColorPickerDialog(this,
-                        ((ColorPreviewButton) v).getColor());
-                dialog.setHexValueEnabled(true);
-                dialog.setAlphaSliderVisible(true);
-                dialog.setOnColorChangedListener(new ColorPickerDialog.OnColorChangedListener() {
-                    @Override
-                    public void onColorChanged(int color) {
-                        ((ColorPreviewButton) v).setColor(color);
-                    }
-                });
-                dialog.show();
-                break;
+        if (v instanceof ColorPreviewButton) {
+            ColorPickerDialog dialog = new ColorPickerDialog(this,
+                    ((ColorPreviewButton) v).getColor());
+            dialog.setHexValueEnabled(true);
+            dialog.setAlphaSliderVisible(true);
+            dialog.setOnColorChangedListener(new ColorPickerDialog.OnColorChangedListener() {
+                @Override
+                public void onColorChanged(int color) {
+                    ((ColorPreviewButton) v).setColor(color);
+                }
+            });
+            dialog.show();
         }
     }
 }

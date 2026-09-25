@@ -102,28 +102,19 @@ public class Fragment_Appearance extends WidgetSettingsFragment implements View.
 
     @Override
     public void onClick(final View v) {
-        switch (v.getId()) {
-            case R.id.dateColor:
-            case R.id.timeColor:
-            case R.id.eventColor:
-            case R.id.locationColor:
-            case R.id.backgroundColor:
-            case R.id.currentDateColor:
-            case R.id.todayEventColor:
-            case R.id.todayPassedEventColor:
-                ColorPickerDialog dialog =
-                        new ColorPickerDialog(getActivity(), ((ColorPreviewButton) v).getColor());
-                dialog.setHexValueEnabled(true);
-                dialog.setAlphaSliderVisible(v.getId() == R.id.backgroundColor);
-                dialog.setOnColorChangedListener(new ColorPickerDialog.OnColorChangedListener() {
-                    @Override
-                    public void onColorChanged(int color) {
-                        ((ColorPreviewButton) v).setColor(color);
-                        v.setTag(color);
-                    }
-                });
-                dialog.show();
-                break;
+        if (v instanceof ColorPreviewButton) {
+            ColorPickerDialog dialog =
+                    new ColorPickerDialog(getActivity(), ((ColorPreviewButton) v).getColor());
+            dialog.setHexValueEnabled(true);
+            dialog.setAlphaSliderVisible(v.getId() == R.id.backgroundColor);
+            dialog.setOnColorChangedListener(new ColorPickerDialog.OnColorChangedListener() {
+                @Override
+                public void onColorChanged(int color) {
+                    ((ColorPreviewButton) v).setColor(color);
+                    v.setTag(color);
+                }
+            });
+            dialog.show();
         }
     }
 

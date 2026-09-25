@@ -29,7 +29,6 @@ import de.j4velin.calendarWidget.Widget;
 
 public class WidgetConfig extends FragmentActivity {
 
-    public final static int PERMISSION_EXTERNAL_STORAGE = 1;
     public final static int PERMISSION_CALENDAR = 2;
 
     public static int widgetId;
@@ -118,11 +117,7 @@ public class WidgetConfig extends FragmentActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull final String[] permissions,
                                            @NonNull final int[] grantResults) {
         permissionRequestRunning = false;
-        if (requestCode == PERMISSION_EXTERNAL_STORAGE && grantResults.length > 0) {
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                showBackupDialog();
-            }
-        } else if (requestCode == PERMISSION_CALENDAR && grantResults.length > 0) {
+        if (requestCode == PERMISSION_CALENDAR && grantResults.length > 0) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 init();
             } else {
@@ -134,14 +129,6 @@ public class WidgetConfig extends FragmentActivity {
     }
 
     private void showBackupDialog() {
-        if (Build.VERSION.SDK_INT >= 23 && PermissionChecker
-                .checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) ==
-                PermissionChecker.PERMISSION_DENIED) {
-            permissionRequestRunning = true;
-            requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                    PERMISSION_EXTERNAL_STORAGE);
-            return;
-        }
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.backupandrestore).setMessage(R.string.backuplocation)
                 .setPositiveButton("Backup", (dialog, id) -> {
@@ -190,22 +177,19 @@ public class WidgetConfig extends FragmentActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.website:
-                startActivity(
-                        new Intent(Intent.ACTION_VIEW, Uri.parse("https://j4velin.de/contact.php"))
-                                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-                break;
-            case R.id.apps:
-                startActivity(
-                        new Intent(Intent.ACTION_VIEW, Uri.parse("market://search?q=pub:j4velin"))
-                                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-                break;
-            case R.id.backup:
-                showBackupDialog();
-                break;
-            default:
-                return super.onOptionsItemSelected(item);
+        int id = item.getItemId();
+        if (id == R.id.website) {
+            startActivity(
+                    new Intent(Intent.ACTION_VIEW, Uri.parse("https://j4velin.de/contact.php"))
+                            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+        } else if (id == R.id.apps) {
+            startActivity(
+                    new Intent(Intent.ACTION_VIEW, Uri.parse("market://search?q=pub:j4velin"))
+                            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+        } else if (id == R.id.backup) {
+            showBackupDialog();
+        } else {
+            return super.onOptionsItemSelected(item);
         }
         return true;
     }

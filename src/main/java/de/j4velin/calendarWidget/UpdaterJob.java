@@ -19,8 +19,7 @@ public class UpdaterJob extends JobService {
         final AppWidgetManager awm = AppWidgetManager.getInstance(this);
         final SharedPreferences prefs =
                 getSharedPreferences("calendarWidget", Context.MODE_PRIVATE);
-        int[] ids = awm.getAppWidgetIds(new ComponentName(this, Widget.class));
-        for (int id : ids) {
+        for (int id : Widget.getAllWidgetIds(this)) {
             boolean isMonthWidget = prefs.contains("month_offset_" + id);
             if (isMonthWidget) {
                 awm.updateAppWidget(id, MonthWidget.updateWidget(id, this));

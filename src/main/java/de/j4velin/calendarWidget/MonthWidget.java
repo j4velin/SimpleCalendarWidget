@@ -49,9 +49,10 @@ public class MonthWidget extends AppWidgetProvider {
 
         Widget.setNextAlarm(prefs, Widget.getNextMidnight(), appWidgetId, context);
 
+        // must be mutable as it is also used as template for the collection items' fill-in intents
         PendingIntent openCalendar = PendingIntent.getBroadcast(context, appWidgetId,
                 new Intent(context, WidgetReceiver.class).setAction(WidgetReceiver.OPEN_CALENDAR)
-                        .putExtra("widgetID", appWidgetId), PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+                        .putExtra("widgetID", appWidgetId), PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_MUTABLE);
 
         RemoteViews monthview = new RemoteViews(context.getPackageName(), R.layout.monthview);
 

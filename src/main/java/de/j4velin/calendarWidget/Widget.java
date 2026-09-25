@@ -6,6 +6,7 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -71,6 +72,18 @@ public class Widget extends AppWidgetProvider {
         }
     }
 
+    /**
+     * @return the ids of all agenda and month widgets
+     */
+    static int[] getAllWidgetIds(final Context context) {
+        AppWidgetManager awm = AppWidgetManager.getInstance(context);
+        int[] agenda = awm.getAppWidgetIds(new ComponentName(context, Widget.class));
+        int[] month = awm.getAppWidgetIds(new ComponentName(context, MonthWidget.class));
+        int[] all = Arrays.copyOf(agenda, agenda.length + month.length);
+        System.arraycopy(month, 0, all, agenda.length, month.length);
+        return all;
+    }
+
     public static long getNextMidnight() {
         Calendar cal = Calendar.getInstance();
         cal.setTimeInMillis(System.currentTimeMillis());
@@ -91,9 +104,10 @@ public class Widget extends AppWidgetProvider {
 
         setNextAlarm(prefs, getNextMidnight(), appWidgetId, context);
 
+        // must be mutable as it is also used as template for the collection items' fill-in intents
         PendingIntent openCalendar = PendingIntent.getBroadcast(context, appWidgetId,
                 new Intent(context, WidgetReceiver.class).setAction(WidgetReceiver.OPEN_CALENDAR)
-                        .putExtra("widgetID", appWidgetId), PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+                        .putExtra("widgetID", appWidgetId), PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_MUTABLE);
 
         int layout = prefs.getInt("layout_" + appWidgetId, WidgetService.LAYOUT_NONE_LIGHT);
         RemoteViews views;

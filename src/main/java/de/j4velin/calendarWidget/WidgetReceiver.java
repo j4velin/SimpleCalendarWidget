@@ -226,9 +226,9 @@ public class WidgetReceiver extends BroadcastReceiver {
                         Widget.setNextAlarm(prefs, cal.getTimeInMillis(), ID, context);
                     } else if (intent.getAction().equals(Intent.ACTION_PROVIDER_CHANGED) ||
                             intent.getAction().equals(Intent.ACTION_TIME_CHANGED) ||
+                            intent.getAction().equals(Intent.ACTION_TIMEZONE_CHANGED) ||
                             intent.getAction().equals(Intent.ACTION_DATE_CHANGED)) {
-                        int[] ids = awm.getAppWidgetIds(new ComponentName(context, Widget.class));
-                        for (int id : ids) {
+                        for (int id : Widget.getAllWidgetIds(context)) {
                             boolean isMonthWidget = prefs.contains("month_offset_" + id);
                             if (isMonthWidget) {
                                 awm.updateAppWidget(id, MonthWidget.updateWidget(id, context));
