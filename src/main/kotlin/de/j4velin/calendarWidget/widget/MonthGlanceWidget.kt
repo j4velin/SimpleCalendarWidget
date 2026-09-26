@@ -149,7 +149,8 @@ private fun monthData(
         today = today,
         label = labelFormat.format(grid.month.atDay(1).startMillis(zone)),
         weekDayLabels = grid.weekDays.map {
-            it.getDisplayName(DateTextStyle.SHORT, locale).uppercase(locale)
+            // some locales abbreviate with a trailing dot, e.g. "Mo." in German
+            it.getDisplayName(DateTextStyle.SHORT, locale).removeSuffix(".").uppercase(locale)
         },
         eventCounts = eventCounts(GridRequest(grid, settings.calendarIds)),
         zone = zone,
