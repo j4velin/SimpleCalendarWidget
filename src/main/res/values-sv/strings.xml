@@ -47,7 +47,7 @@ tools:ignore="MissingTranslation">
 <string name="appearance">Utseende</string>
 <string name="settings">Inställningar</string>
 <string name="backupandrestore">Backup &amp; återställning</string>
-<string name="backuplocation">Detta sparar widgetinställningar till/återställer dem från /Android/de.j4velin.calendarWidget/files/backup.
+<string name="backuplocation">Detta sparar widgetinställningar till/återställer dem från /Android/data/de.j4velin.calendarWidget/files.
 \nVid återställning skrivs aktuella inställningar över!</string>
 <string name="backupsaved">Backup sparad:</string>
 <string name="externalstorageerror">Fel: Eternt minne inte tillgängligt</string>
@@ -100,4 +100,10 @@ tools:ignore="MissingTranslation">
     <string name="discard">Släng</string>
     <string name="keep_editing">Fortsätt redigera</string>
     <string name="discard_new_widget">Widgeten läggs inte till på hemskärmen.</string>
+    <string name="todaypassedevent">Dagens passerade händelser</string>
+    <string name="skippedpassed">Visa inte händelser som redan har passerat</string>
+    <string name="same_as_event">samma som händelsen</string>
+    <string name="same_as_on_other_days">samma som andra dagar</string>
+    <string name="time_location_for_todays_events">Tid/plats för dagens händelser</string>
+    <string name="update_on_click">starta ingen app utan uppdatera widgetens innehåll i stället</string>
 </resources>

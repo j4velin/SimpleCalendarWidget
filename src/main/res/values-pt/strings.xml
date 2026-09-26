@@ -34,4 +34,71 @@
     <string name="discard">Descartar</string>
     <string name="keep_editing">Continuar editando</string>
     <string name="discard_new_widget">O widget não será adicionado à tela inicial.</string>
+    <string name="curentdate">Data atual</string>
+    <string name="showcurrentdate">Mostrar a data atual</string>
+    <string name="color">Cor:</string>
+    <string name="size">Tamanho:</string>
+    <string name="bold">Negrito</string>
+    <string name="dateformat">Formato de data:</string>
+    <string name="eventdate">Data do evento</string>
+    <string name="light">Fino</string>
+    <string name="eventtime">Hora do evento</string>
+    <string name="timeformat">Formato de hora:</string>
+    <string name="showendtimes">Mostrar horário de término dos eventos</string>
+    <string name="eventname">Nome do evento</string>
+    <string name="todayevent">Eventos de hoje</string>
+    <string name="eventlocation">Local do evento</string>
+    <string name="showlocation">Mostrar local</string>
+    <string name="background">Fundo do widget</string>
+    <string name="calendars">Mostrar eventos destes calendários:</string>
+    <string name="lookahead">Período exibido:</string>
+    <string name="calendarcolor">Mostrar as cores dos eventos/calendários no widget</string>
+    <string name="todaytomorrow">Mostrar \'hoje\'/\'amanhã\' em vez de datas</string>
+    <string name="multidayevents">Eventos de vários dias</string>
+    <string name="multiday">Como exibir eventos que duram vários dias:</string>
+    <string name="onlyonfirst">Somente em um dia, com a data de término</string>
+    <string name="oneveryday">Em todos os dias</string>
+    <string name="calendarapp">App de calendário</string>
+    <string name="calendarappsummary">Escolha qual app deve ser aberto ao tocar no widget:</string>
+    <string name="defaultapp">app de calendário padrão</string>
+    <string name="otherapp">outro app</string>
+    <string name="icons">Ícones</string>
+    <string name="transparency">Transparência:</string>
+    <string name="iconposition">Posição dos ícones: canto superior direito para adicionar eventos, canto inferior direito para abrir as configurações do widget</string>
+    <string name="events">Eventos</string>
+    <string name="appearance">Aparência</string>
+    <string name="settings">Configurações</string>
+    <string name="backupandrestore">Backup e restauração</string>
+    <string name="backuplocation">Isso salvará as configurações do widget em /Android/data/de.j4velin.calendarWidget/files ou as restaurará de lá.\nAo restaurar, as configurações atuais deste widget serão substituídas!</string>
+    <string name="backupsaved">Backup salvo:</string>
+    <string name="externalstorageerror">Erro: armazenamento externo indisponível</string>
+    <string name="restore">Restaurar</string>
+    <string name="restored">Configurações importadas</string>
+    <string name="nobackup">Nenhum backup encontrado</string>
+    <string name="moreapps">Mais apps legais</string>
+    <string name="background_color">Cor de fundo:</string>
+    <string name="text_color">Cor do texto:</string>
+    <string name="current_month">Mês atual</string>
+    <string name="other_days">Outros dias</string>
+    <string name="day_label">Rótulos dos dias</string>
+    <string name="month_label">Rótulo do mês</string>
+    <string name="month_label_config">Dica: toque no nome do mês para abrir estas configurações novamente</string>
+    <string name="widget_background">Fundo do widget</string>
+    <string name="week_start">Começar a semana na segunda-feira</string>
+    <string name="prev_next_month_icons">Ícones de mês anterior/próximo</string>
+    <string name="indicators">Indicadores de eventos</string>
+    <string name="open_event">Se houver apenas 1 evento em um dia, abri-lo diretamente ao tocar nesse dia</string>
+    <string name="single_line">Cortar em uma linha</string>
+    <string name="todaypassedevent">Eventos já passados de hoje</string>
+    <string name="skippedpassed">Não mostrar eventos que já passaram</string>
+    <string name="same_as_event">igual ao evento</string>
+    <string name="same_as_on_other_days">igual aos outros dias</string>
+    <string name="time_location_for_todays_events">Hora/local dos eventos de hoje</string>
+    <string name="update_on_click">não abrir nenhum app, apenas atualizar o conteúdo do widget</string>
+    <string-array name="lookAheadTimes">
+        <item>dias</item>
+        <item>semanas</item>
+        <item>meses</item>
+        <item>anos</item>
+    </string-array>
 </resources>

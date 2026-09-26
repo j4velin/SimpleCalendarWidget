@@ -53,7 +53,7 @@
     <string name="settings">Einstellungen</string>
     <string name="backupandrestore">Sichern &amp; Wiederherstellen</string>
     <string name="backuplocation">Dies wird die Widget-Konfiguration von folgendem Pfad speicher
-        oder wiederherstellen: /Android/de.j4velin.calendarWidget/files/backup. Beim
+        oder wiederherstellen: /Android/data/de.j4velin.calendarWidget/files. Beim
         Wiederherstellen werden die aktuellen Einstellungen für dieses Widget überschrieben!
     </string>
     <string name="backupsaved">Sicherung gespeichert:</string>

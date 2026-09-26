@@ -51,7 +51,7 @@
     <string name="settings">Настройки</string>
     <string name="backupandrestore">поддерживать и полностью восстанавливать</string>
     <string name="backuplocation">Позволяет сохранить/восстановить настройки Вашего виджета в/из
-        /Android/de.j4velin.calendarWidget/files/backup.
+        /Android/data/de.j4velin.calendarWidget/files.
         \nПри восстановлении текущие настройки виджета будут затерты!
     </string>
     <string name="backupsaved">Резервная копия сохранена:</string>
@@ -92,4 +92,23 @@
     <string name="discard">Отменить</string>
     <string name="keep_editing">Продолжить</string>
     <string name="discard_new_widget">Виджет не будет добавлен на главный экран.</string>
+    <string name="background_color">Цвет фона:</string>
+    <string name="text_color">Цвет текста:</string>
+    <string name="current_month">Текущий месяц</string>
+    <string name="other_days">Другие дни</string>
+    <string name="day_label">Названия дней</string>
+    <string name="month_label">Название месяца</string>
+    <string name="month_label_config">Совет: нажмите на название месяца, чтобы снова открыть эти настройки</string>
+    <string name="widget_background">Фон виджета</string>
+    <string name="week_start">Начинать неделю с понедельника</string>
+    <string name="prev_next_month_icons">Значки предыдущего/следующего месяца</string>
+    <string name="indicators">Отметки событий</string>
+    <string name="open_event">Если в день только 1 событие, открывать его сразу при нажатии на этот день</string>
+    <string name="single_line">Обрезать до одной строки</string>
+    <string name="todaypassedevent">Прошедшие события сегодня</string>
+    <string name="skippedpassed">Не показывать прошедшие события</string>
+    <string name="same_as_event">как у события</string>
+    <string name="same_as_on_other_days">как в другие дни</string>
+    <string name="time_location_for_todays_events">Время/место сегодняшних событий</string>
+    <string name="update_on_click">не запускать приложение, а обновить виджет</string>
 </resources>

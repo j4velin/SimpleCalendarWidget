@@ -47,7 +47,7 @@ tools:ignore="MissingTranslation">
 <string name="appearance">ASPETTO</string>
 <string name="settings">IMPOSTAZIONI</string>
 <string name="backupandrestore">Backup &amp; Ripristina</string>
-<string name="backuplocation">Salva le impostazioni del widget per ripristinarle da /Android/de.j4velin.calendarWidget/files/backup.
+<string name="backuplocation">Salva le impostazioni del widget per ripristinarle da /Android/data/de.j4velin.calendarWidget/files.
 \nQuando ripritini, sovrascriverai le impostazioni correnti del widget!</string>
 <string name="backupsaved">Backup salvato:</string>
 <string name="externalstorageerror">Errore: Disco esterno non disponibile</string>
@@ -100,4 +100,10 @@ tools:ignore="MissingTranslation">
     <string name="discard">Annulla modifiche</string>
     <string name="keep_editing">Continua a modificare</string>
     <string name="discard_new_widget">Il widget non verrà aggiunto alla schermata home.</string>
+    <string name="todaypassedevent">Eventi passati di oggi</string>
+    <string name="skippedpassed">Non mostrare gli eventi già passati</string>
+    <string name="same_as_event">come l\'evento</string>
+    <string name="same_as_on_other_days">come negli altri giorni</string>
+    <string name="time_location_for_todays_events">Ora/luogo degli eventi di oggi</string>
+    <string name="update_on_click">non avviare alcuna app, ma aggiorna il contenuto del widget</string>
 </resources>

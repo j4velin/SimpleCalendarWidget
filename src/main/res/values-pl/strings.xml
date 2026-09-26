@@ -52,7 +52,7 @@
     <string name="settings">Ustawienia</string>
     <string name="backupandrestore">Kopia zapasowa ; Przywracanie</string>
     <string name="backuplocation">Pozwoli to zapisać ustawienia widżetu do / lub przywrócić je z:
-        /Android/de.j4velin.calendarWidget/files/backup.
+        /Android/data/de.j4velin.calendarWidget/files.
         \nPodczas przywracania zastąpione będą bieżące ustawienia dla tego widżetu!
     </string>
     <string name="backupsaved">Kopia zapasowa zapisana</string>
@@ -93,4 +93,23 @@
     <string name="discard">Odrzuć</string>
     <string name="keep_editing">Kontynuuj edycję</string>
     <string name="discard_new_widget">Widżet nie zostanie dodany do ekranu głównego.</string>
+    <string name="background_color">Kolor tła:</string>
+    <string name="text_color">Kolor tekstu:</string>
+    <string name="current_month">Bieżący miesiąc</string>
+    <string name="other_days">Pozostałe dni</string>
+    <string name="day_label">Etykiety dni</string>
+    <string name="month_label">Etykieta miesiąca</string>
+    <string name="month_label_config">Wskazówka: dotknij nazwy miesiąca, aby ponownie otworzyć te ustawienia</string>
+    <string name="widget_background">Tło widżetu</string>
+    <string name="week_start">Zaczynaj tydzień od poniedziałku</string>
+    <string name="prev_next_month_icons">Ikony poprzedniego/następnego miesiąca</string>
+    <string name="indicators">Wskaźniki wydarzeń</string>
+    <string name="open_event">Jeśli danego dnia jest tylko 1 wydarzenie, otwórz je od razu po dotknięciu dnia</string>
+    <string name="single_line">Skróć do jednej linii</string>
+    <string name="todaypassedevent">Dzisiejsze minione wydarzenia</string>
+    <string name="skippedpassed">Nie pokazuj minionych wydarzeń</string>
+    <string name="same_as_event">jak wydarzenie</string>
+    <string name="same_as_on_other_days">jak w inne dni</string>
+    <string name="time_location_for_todays_events">Godzina/miejsce dzisiejszych wydarzeń</string>
+    <string name="update_on_click">nie uruchamiaj aplikacji, tylko odśwież widżet</string>
 </resources>

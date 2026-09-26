@@ -47,7 +47,7 @@ tools:ignore="MissingTranslation">
 <string name="appearance">Udseende</string>
 <string name="settings">Indstillinger</string>
 <string name="backupandrestore">Backup &amp; Gendan</string>
-<string name="backuplocation">Dette vil gemme/gendanne indstillinger for widget til /Android/de.j4velin.calendarWidget/files/backup.
+<string name="backuplocation">Dette vil gemme/gendanne indstillinger for widget til /Android/data/de.j4velin.calendarWidget/files.
 \nHvis du gendanner indstillinger, vil den nuværende opsætning blive overskrevet!</string>
 <string name="backupsaved">Backup gemt:</string>
 <string name="externalstorageerror">Fejl: Eksternt lager ikke tilgængeligt</string>
@@ -100,4 +100,10 @@ tools:ignore="MissingTranslation">
     <string name="discard">Kassér</string>
     <string name="keep_editing">Fortsæt redigering</string>
     <string name="discard_new_widget">Widgetten bliver ikke tilføjet til din startskærm.</string>
+    <string name="todaypassedevent">Dagens overståede begivenheder</string>
+    <string name="skippedpassed">Vis ikke begivenheder, der allerede er overstået</string>
+    <string name="same_as_event">samme som begivenheden</string>
+    <string name="same_as_on_other_days">samme som på andre dage</string>
+    <string name="time_location_for_todays_events">Tid/sted for dagens begivenheder</string>
+    <string name="update_on_click">start ingen app, men opdater widgettens indhold i stedet</string>
 </resources>

@@ -35,4 +35,71 @@
     <string name="discard">ביטול שינויים</string>
     <string name="keep_editing">המשך עריכה</string>
     <string name="discard_new_widget">הווידג\'ט לא יתווסף למסך הבית.</string>
+    <string name="curentdate">התאריך הנוכחי</string>
+    <string name="showcurrentdate">הצגת התאריך הנוכחי</string>
+    <string name="color">צבע:</string>
+    <string name="size">גודל:</string>
+    <string name="bold">מודגש</string>
+    <string name="dateformat">תבנית תאריך:</string>
+    <string name="eventdate">תאריך האירוע</string>
+    <string name="light">דק</string>
+    <string name="eventtime">שעת האירוע</string>
+    <string name="timeformat">תבנית שעה:</string>
+    <string name="showendtimes">הצגת שעות סיום של אירועים</string>
+    <string name="eventname">שם האירוע</string>
+    <string name="todayevent">אירועי היום</string>
+    <string name="eventlocation">מיקום האירוע</string>
+    <string name="showlocation">הצגת מיקום</string>
+    <string name="background">רקע הווידג\'ט</string>
+    <string name="calendars">הצגת אירועים מלוחות השנה האלה:</string>
+    <string name="lookahead">טווח תצוגה קדימה:</string>
+    <string name="calendarcolor">הצגת צבעי אירועים/לוחות שנה בווידג\'ט</string>
+    <string name="todaytomorrow">הצגת \'היום\'/\'מחר\' במקום תאריכים</string>
+    <string name="multidayevents">אירועים של כמה ימים</string>
+    <string name="multiday">כיצד להציג אירועים שנמשכים כמה ימים:</string>
+    <string name="onlyonfirst">רק ביום אחד עם תאריך סיום</string>
+    <string name="oneveryday">בכל יום</string>
+    <string name="calendarapp">אפליקציית לוח שנה</string>
+    <string name="calendarappsummary">בחירת האפליקציה שתיפתח בלחיצה על הווידג\'ט:</string>
+    <string name="defaultapp">אפליקציית לוח השנה המוגדרת כברירת מחדל</string>
+    <string name="otherapp">אפליקציה אחרת</string>
+    <string name="icons">סמלים</string>
+    <string name="transparency">שקיפות:</string>
+    <string name="iconposition">מיקום הסמלים: הפינה הימנית העליונה להוספת אירועים, הפינה הימנית התחתונה לפתיחת הגדרות הווידג\'ט</string>
+    <string name="events">אירועים</string>
+    <string name="appearance">מראה</string>
+    <string name="settings">הגדרות</string>
+    <string name="backupandrestore">גיבוי ושחזור</string>
+    <string name="backuplocation">פעולה זו תשמור את הגדרות הווידג\'ט ב-/Android/data/de.j4velin.calendarWidget/files או תשחזר אותן משם.\nבשחזור, ההגדרות הנוכחיות של הווידג\'ט יוחלפו!</string>
+    <string name="backupsaved">הגיבוי נשמר:</string>
+    <string name="externalstorageerror">שגיאה: האחסון החיצוני אינו זמין</string>
+    <string name="restore">שחזור</string>
+    <string name="restored">ההגדרות יובאו</string>
+    <string name="nobackup">לא נמצא גיבוי</string>
+    <string name="moreapps">עוד אפליקציות מגניבות</string>
+    <string name="background_color">צבע רקע:</string>
+    <string name="text_color">צבע טקסט:</string>
+    <string name="current_month">החודש הנוכחי</string>
+    <string name="other_days">ימים אחרים</string>
+    <string name="day_label">תוויות הימים</string>
+    <string name="month_label">תווית החודש</string>
+    <string name="month_label_config">טיפ: לחיצה על שם החודש פותחת שוב את ההגדרות האלה</string>
+    <string name="widget_background">רקע הווידג\'ט</string>
+    <string name="week_start">התחלת השבוע ביום שני</string>
+    <string name="prev_next_month_icons">סמלי החודש הקודם/הבא</string>
+    <string name="indicators">סימוני אירועים</string>
+    <string name="open_event">אם יש רק אירוע אחד ביום, לפתוח אותו ישירות בלחיצה על היום</string>
+    <string name="single_line">קיצור לשורה אחת</string>
+    <string name="todaypassedevent">אירועי היום שהסתיימו</string>
+    <string name="skippedpassed">לא להציג אירועים שהסתיימו</string>
+    <string name="same_as_event">כמו האירוע</string>
+    <string name="same_as_on_other_days">כמו בימים אחרים</string>
+    <string name="time_location_for_todays_events">שעה/מיקום לאירועי היום</string>
+    <string name="update_on_click">לא לפתוח אפליקציה, אלא לרענן את תוכן הווידג\'ט</string>
+    <string-array name="lookAheadTimes">
+        <item>ימים</item>
+        <item>שבועות</item>
+        <item>חודשים</item>
+        <item>שנים</item>
+    </string-array>
 </resources>

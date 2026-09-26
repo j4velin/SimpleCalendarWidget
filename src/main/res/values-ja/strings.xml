@@ -35,4 +35,71 @@
     <string name="discard">破棄</string>
     <string name="keep_editing">編集を続ける</string>
     <string name="discard_new_widget">ウィジェットはホーム画面に追加されません。</string>
+    <string name="curentdate">現在の日付</string>
+    <string name="showcurrentdate">現在の日付を表示</string>
+    <string name="color">色：</string>
+    <string name="size">サイズ：</string>
+    <string name="bold">太字</string>
+    <string name="dateformat">日付の形式：</string>
+    <string name="eventdate">予定の日付</string>
+    <string name="light">細字</string>
+    <string name="eventtime">予定の時刻</string>
+    <string name="timeformat">時刻の形式：</string>
+    <string name="showendtimes">予定の終了時刻を表示</string>
+    <string name="eventname">予定の名前</string>
+    <string name="todayevent">今日の予定</string>
+    <string name="eventlocation">予定の場所</string>
+    <string name="showlocation">場所を表示</string>
+    <string name="background">ウィジェットの背景</string>
+    <string name="calendars">表示するカレンダー：</string>
+    <string name="lookahead">表示期間：</string>
+    <string name="calendarcolor">ウィジェットに予定/カレンダーの色を表示</string>
+    <string name="todaytomorrow">日付の代わりに「今日」/「明日」を表示</string>
+    <string name="multidayevents">複数日の予定</string>
+    <string name="multiday">複数日にわたる予定の表示方法：</string>
+    <string name="onlyonfirst">終了日付きで1日だけ表示</string>
+    <string name="oneveryday">毎日表示</string>
+    <string name="calendarapp">カレンダーアプリ</string>
+    <string name="calendarappsummary">ウィジェットをタップしたときに起動するアプリ：</string>
+    <string name="defaultapp">既定のカレンダーアプリ</string>
+    <string name="otherapp">別のアプリ</string>
+    <string name="icons">アイコン</string>
+    <string name="transparency">透明度：</string>
+    <string name="iconposition">アイコンの位置：右上で予定を追加、右下でウィジェットの設定を開きます</string>
+    <string name="events">予定</string>
+    <string name="appearance">外観</string>
+    <string name="settings">設定</string>
+    <string name="backupandrestore">バックアップと復元</string>
+    <string name="backuplocation">ウィジェットの設定を /Android/data/de.j4velin.calendarWidget/files に保存、またはそこから復元します。\n復元すると、このウィジェットの現在の設定は上書きされます！</string>
+    <string name="backupsaved">バックアップを保存しました：</string>
+    <string name="externalstorageerror">エラー：外部ストレージを利用できません</string>
+    <string name="restore">復元</string>
+    <string name="restored">設定をインポートしました</string>
+    <string name="nobackup">バックアップが見つかりません</string>
+    <string name="moreapps">その他のアプリ</string>
+    <string name="background_color">背景色：</string>
+    <string name="text_color">文字色：</string>
+    <string name="current_month">今月</string>
+    <string name="other_days">その他の日</string>
+    <string name="day_label">曜日ラベル</string>
+    <string name="month_label">月ラベル</string>
+    <string name="month_label_config">ヒント：月のラベルをタップするとこの設定を再度開けます</string>
+    <string name="widget_background">ウィジェットの背景</string>
+    <string name="week_start">週の始まりを月曜日にする</string>
+    <string name="prev_next_month_icons">前月/翌月アイコン</string>
+    <string name="indicators">予定インジケーター</string>
+    <string name="open_event">その日の予定が1件だけの場合、日付をタップしたときに予定を直接開く</string>
+    <string name="single_line">1行に切り詰める</string>
+    <string name="todaypassedevent">今日の終了した予定</string>
+    <string name="skippedpassed">終了した予定を表示しない</string>
+    <string name="same_as_event">予定と同じ</string>
+    <string name="same_as_on_other_days">他の日と同じ</string>
+    <string name="time_location_for_todays_events">今日の予定の時刻/場所</string>
+    <string name="update_on_click">アプリを起動せず、ウィジェットの内容を更新する</string>
+    <string-array name="lookAheadTimes">
+        <item>日</item>
+        <item>週</item>
+        <item>か月</item>
+        <item>年</item>
+    </string-array>
 </resources>
