@@ -83,4 +83,8 @@ tools:ignore="MissingTranslation">
     <string name="preview_event_2">與安娜共進午餐</string>
     <string name="preview_event_3">牙醫</string>
     <string name="preview_event_4">度假</string>
+    <string name="discard_changes">要捨棄變更嗎？</string>
+    <string name="discard">捨棄</string>
+    <string name="keep_editing">繼續編輯</string>
+    <string name="discard_new_widget">小工具不會新增到主畫面。</string>
 </resources>

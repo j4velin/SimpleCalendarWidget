@@ -88,4 +88,8 @@
     <string name="preview_event_2">Обед с Анной</string>
     <string name="preview_event_3">Стоматолог</string>
     <string name="preview_event_4">Отпуск</string>
+    <string name="discard_changes">Отменить изменения?</string>
+    <string name="discard">Отменить</string>
+    <string name="keep_editing">Продолжить</string>
+    <string name="discard_new_widget">Виджет не будет добавлен на главный экран.</string>
 </resources>

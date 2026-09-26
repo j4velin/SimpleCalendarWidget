@@ -92,19 +92,54 @@ class ConfigLifecycleTest {
         assertEquals(setOf(1L, 3L), AgendaSettings.load(app, 11).calendarIds)
     }
 
+    private fun string(id: Int) = app.getString(id)
+
+    private fun pressCancel() =
+        compose.onNodeWithContentDescription(string(android.R.string.cancel)).performClick()
+
     @Test
-    fun cancelDiscardsAndDoesNotPlaceTheWidget() {
+    fun cancelAsksAndThenDiscardsTheNewWidget() {
         val scenario = placeWidget(12)
-        compose.onNodeWithContentDescription(app.getString(android.R.string.cancel)).performClick()
+        pressCancel()
+        compose.onNodeWithText(string(R.string.discard_new_widget)).assertExists()
+        compose.onNodeWithText(string(R.string.discard)).performClick()
         assertEquals(Activity.RESULT_CANCELED, scenario.result.resultCode)
         assertFalse(app.widgetPrefs().all.keys.any { it.endsWith("_12") })
     }
 
     @Test
-    fun backCancels() {
+    fun backAsksAndKeepEditingStays() {
         val scenario = placeWidget(13)
         scenario.onActivity { it.onBackPressedDispatcher.onBackPressed() }
-        assertEquals(Activity.RESULT_CANCELED, scenario.result.resultCode)
+        compose.onNodeWithText(string(R.string.keep_editing)).performClick()
+        compose.onNodeWithText(string(R.string.discard_changes)).assertDoesNotExist()
+        scenario.onActivity { assertFalse(it.isFinishing) }
         assertTrue(app.widgetPrefs().all.keys.none { it.endsWith("_13") })
+    }
+
+    @Test
+    fun editingWithoutChangesClosesWithoutAsking() {
+        AgendaSettings(timeFormat = "HH:mm", calendarIds = setOf(1L)).save(app.widgetPrefs(), 15)
+        val scenario = ActivityScenario.launchActivityForResult<WidgetConfig>(
+            WidgetConfig.editIntent(app, 15)
+        )
+        compose.onNodeWithText("Work (me@example.com)").assertExists()
+        pressCancel()
+        compose.onNodeWithText(string(R.string.discard_changes)).assertDoesNotExist()
+        assertEquals(Activity.RESULT_CANCELED, scenario.result.resultCode)
+    }
+
+    @Test
+    fun editingWithChangesAsksAndDiscards() {
+        AgendaSettings(timeFormat = "HH:mm", calendarIds = setOf(1L)).save(app.widgetPrefs(), 16)
+        val scenario = ActivityScenario.launchActivityForResult<WidgetConfig>(
+            WidgetConfig.editIntent(app, 16)
+        )
+        compose.onNodeWithText("Private (me@example.com)").performClick()
+        pressCancel()
+        compose.onNodeWithText(string(R.string.discard_new_widget)).assertDoesNotExist()
+        compose.onNodeWithText(string(R.string.discard)).performClick()
+        assertEquals(Activity.RESULT_CANCELED, scenario.result.resultCode)
+        assertEquals(setOf(1L), AgendaSettings.load(app, 16).calendarIds)
     }
 }

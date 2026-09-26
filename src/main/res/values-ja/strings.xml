@@ -31,4 +31,8 @@
     <string name="preview_event_2">アンナとランチ</string>
     <string name="preview_event_3">歯医者</string>
     <string name="preview_event_4">休暇</string>
+    <string name="discard_changes">変更を破棄しますか？</string>
+    <string name="discard">破棄</string>
+    <string name="keep_editing">編集を続ける</string>
+    <string name="discard_new_widget">ウィジェットはホーム画面に追加されません。</string>
 </resources>

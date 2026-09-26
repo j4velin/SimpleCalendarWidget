@@ -33,7 +33,7 @@ internal class ConfigViewModel<S>(
     private val store: S.(SharedPreferences, Int) -> Unit,
     private val withCalendars: S.(Set<Long>) -> S,
     /** a widget which is being placed right now, i.e. has not been configured before */
-    isNewWidget: Boolean,
+    val isNewWidget: Boolean,
 ) : AndroidViewModel(application) {
 
     /** new widgets show all visible calendars by default */
@@ -43,6 +43,13 @@ internal class ConfigViewModel<S>(
 
     var settings by mutableStateOf(load(application, widgetId))
         private set
+
+    /** the settings as they are stored */
+    private var stored = settings
+
+    /** whether leaving the screen now would discard anything */
+    val hasUnsavedChanges: Boolean
+        get() = isNewWidget || settings != stored
 
     /** the calendars on this device, null while loading */
     var calendars by mutableStateOf<List<CalendarInfo>?>(null)
@@ -83,6 +90,7 @@ internal class ConfigViewModel<S>(
     fun save() {
         val app = getApplication<Application>()
         settings.store(app.widgetPrefs(), widgetId)
+        stored = settings
         log("settings saved for widget $widgetId")
         WidgetUpdates.refreshAsync(app, widgetId)
     }
@@ -98,6 +106,7 @@ internal class ConfigViewModel<S>(
         if (result == Backup.RestoreResult.RESTORED) {
             // the restored settings are stored already
             settings = load(app, widgetId)
+            stored = settings
             version++
             WidgetUpdates.refreshAsync(app, widgetId)
         }

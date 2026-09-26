@@ -37,4 +37,8 @@
     <string name="preview_event_2">غداء مع آنا</string>
     <string name="preview_event_3">طبيب الأسنان</string>
     <string name="preview_event_4">إجازة</string>
+    <string name="discard_changes">تجاهل التغييرات؟</string>
+    <string name="discard">تجاهل</string>
+    <string name="keep_editing">متابعة التعديل</string>
+    <string name="discard_new_widget">لن تتم إضافة الأداة إلى الشاشة الرئيسية.</string>
 </resources>

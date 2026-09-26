@@ -103,4 +103,8 @@
     <string name="preview_event_2">Lunch with Anna</string>
     <string name="preview_event_3">Dentist</string>
     <string name="preview_event_4">Vacation</string>
+    <string name="discard_changes">Discard changes?</string>
+    <string name="discard">Discard</string>
+    <string name="keep_editing">Keep editing</string>
+    <string name="discard_new_widget">The widget will not be added to your home screen.</string>
 </resources>

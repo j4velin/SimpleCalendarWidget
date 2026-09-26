@@ -83,4 +83,8 @@ tools:ignore="MissingTranslation">
     <string name="preview_event_2">Lunch met Anna</string>
     <string name="preview_event_3">Tandarts</string>
     <string name="preview_event_4">Vakantie</string>
+    <string name="discard_changes">Wijzigingen negeren?</string>
+    <string name="discard">Negeren</string>
+    <string name="keep_editing">Verder bewerken</string>
+    <string name="discard_new_widget">De widget wordt niet aan je startscherm toegevoegd.</string>
 </resources>

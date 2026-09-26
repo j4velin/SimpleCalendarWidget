@@ -7,6 +7,7 @@ import android.content.Intent
 import android.net.Uri
 import android.provider.Settings
 import android.widget.Toast
+import androidx.activity.compose.BackHandler
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Arrangement
@@ -145,13 +146,16 @@ internal fun ConfigScaffold(
     val context = LocalContext.current
     var menuExpanded by remember { mutableStateOf(false) }
     var showBackup by rememberSaveable { mutableStateOf(false) }
+    var confirmDiscard by rememberSaveable { mutableStateOf(false) }
+    val cancel = { if (viewModel.hasUnsavedChanges) confirmDiscard = true else onCancel() }
+    BackHandler(onBack = cancel)
 
     Scaffold(
         topBar = {
             TopAppBar(
                 title = { Text(stringResource(R.string.app_name)) },
                 navigationIcon = {
-                    IconButton(onClick = onCancel) {
+                    IconButton(onClick = cancel) {
                         Icon(
                             painterResource(R.drawable.ic_close),
                             contentDescription = stringResource(android.R.string.cancel),
@@ -205,4 +209,21 @@ internal fun ConfigScaffold(
         }
     }
     if (showBackup) BackupDialog(viewModel) { showBackup = false }
+    if (confirmDiscard) {
+        AlertDialog(
+            onDismissRequest = { confirmDiscard = false },
+            title = { Text(stringResource(R.string.discard_changes)) },
+            text = if (viewModel.isNewWidget) {
+                { Text(stringResource(R.string.discard_new_widget)) }
+            } else null,
+            confirmButton = {
+                TextButton(onClick = onCancel) { Text(stringResource(R.string.discard)) }
+            },
+            dismissButton = {
+                TextButton(onClick = { confirmDiscard = false }) {
+                    Text(stringResource(R.string.keep_editing))
+                }
+            },
+        )
+    }
 }

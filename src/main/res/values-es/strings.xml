@@ -83,4 +83,8 @@ tools:ignore="MissingTranslation">
     <string name="preview_event_2">Comida con Anna</string>
     <string name="preview_event_3">Dentista</string>
     <string name="preview_event_4">Vacaciones</string>
+    <string name="discard_changes">¿Descartar los cambios?</string>
+    <string name="discard">Descartar</string>
+    <string name="keep_editing">Seguir editando</string>
+    <string name="discard_new_widget">El widget no se añadirá a tu pantalla de inicio.</string>
 </resources>

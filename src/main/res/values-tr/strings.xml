@@ -57,4 +57,8 @@
     <string name="preview_event_2">Anna ile öğle yemeği</string>
     <string name="preview_event_3">Diş hekimi</string>
     <string name="preview_event_4">Tatil</string>
+    <string name="discard_changes">Değişiklikler silinsin mi?</string>
+    <string name="discard">Sil</string>
+    <string name="keep_editing">Düzenlemeye devam et</string>
+    <string name="discard_new_widget">Widget ana ekranınıza eklenmeyecek.</string>
 </resources>

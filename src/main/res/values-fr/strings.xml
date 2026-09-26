@@ -96,4 +96,8 @@ tools:ignore="MissingTranslation">
     <string name="preview_event_2">Déjeuner avec Anna</string>
     <string name="preview_event_3">Dentiste</string>
     <string name="preview_event_4">Vacances</string>
+    <string name="discard_changes">Abandonner les modifications ?</string>
+    <string name="discard">Abandonner</string>
+    <string name="keep_editing">Continuer</string>
+    <string name="discard_new_widget">Le widget ne sera pas ajouté à votre écran d\'accueil.</string>
 </resources>

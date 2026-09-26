@@ -96,4 +96,8 @@ tools:ignore="MissingTranslation">
     <string name="preview_event_2">Frokost med Anna</string>
     <string name="preview_event_3">Tandlæge</string>
     <string name="preview_event_4">Ferie</string>
+    <string name="discard_changes">Kassér ændringer?</string>
+    <string name="discard">Kassér</string>
+    <string name="keep_editing">Fortsæt redigering</string>
+    <string name="discard_new_widget">Widgetten bliver ikke tilføjet til din startskærm.</string>
 </resources>

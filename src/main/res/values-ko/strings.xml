@@ -31,4 +31,8 @@
     <string name="preview_event_2">안나와 점심</string>
     <string name="preview_event_3">치과</string>
     <string name="preview_event_4">휴가</string>
+    <string name="discard_changes">변경사항을 삭제할까요?</string>
+    <string name="discard">삭제</string>
+    <string name="keep_editing">계속 편집</string>
+    <string name="discard_new_widget">위젯이 홈 화면에 추가되지 않습니다.</string>
 </resources>

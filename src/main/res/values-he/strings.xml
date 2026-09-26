@@ -31,4 +31,8 @@
     <string name="preview_event_2">ארוחת צהריים עם אנה</string>
     <string name="preview_event_3">רופא שיניים</string>
     <string name="preview_event_4">חופשה</string>
+    <string name="discard_changes">לבטל את השינויים?</string>
+    <string name="discard">ביטול שינויים</string>
+    <string name="keep_editing">המשך עריכה</string>
+    <string name="discard_new_widget">הווידג\'ט לא יתווסף למסך הבית.</string>
 </resources>

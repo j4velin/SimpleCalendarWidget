@@ -30,4 +30,8 @@
     <string name="preview_event_2">Almoço com Anna</string>
     <string name="preview_event_3">Dentista</string>
     <string name="preview_event_4">Férias</string>
+    <string name="discard_changes">Descartar alterações?</string>
+    <string name="discard">Descartar</string>
+    <string name="keep_editing">Continuar editando</string>
+    <string name="discard_new_widget">O widget não será adicionado à tela inicial.</string>
 </resources>

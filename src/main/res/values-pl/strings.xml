@@ -89,4 +89,8 @@
     <string name="preview_event_2">Lunch z Anną</string>
     <string name="preview_event_3">Dentysta</string>
     <string name="preview_event_4">Urlop</string>
+    <string name="discard_changes">Odrzucić zmiany?</string>
+    <string name="discard">Odrzuć</string>
+    <string name="keep_editing">Kontynuuj edycję</string>
+    <string name="discard_new_widget">Widżet nie zostanie dodany do ekranu głównego.</string>
 </resources>

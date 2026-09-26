@@ -86,7 +86,8 @@ records the plan and what actually changed.
 
 * New widgets preselect all calendars that are visible in the calendar app.
 * The config screens have **Done** and cancel (✕) buttons. Changes are only saved with
-  Done. Cancelling or pressing Back discards them, and also cancels placing a new widget.
+  Done. Cancelling or pressing Back asks before discarding them if something changed (always,
+  for a new widget, since it also cancels placing it). Leaving via Home discards silently.
 * Adaptive launcher icon, including a monochrome layer for themed icons (Android 13+).
 * Widgets:
   * rounded corners (Android 12+)

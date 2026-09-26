@@ -83,4 +83,8 @@ tools:ignore="MissingTranslation">
     <string name="preview_event_2">Oběd s Annou</string>
     <string name="preview_event_3">Zubař</string>
     <string name="preview_event_4">Dovolená</string>
+    <string name="discard_changes">Zahodit změny?</string>
+    <string name="discard">Zahodit</string>
+    <string name="keep_editing">Pokračovat v úpravách</string>
+    <string name="discard_new_widget">Widget nebude přidán na domovskou obrazovku.</string>
 </resources>

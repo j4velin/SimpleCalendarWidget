@@ -109,4 +109,8 @@
     <string name="preview_event_2">Mittagessen mit Anna</string>
     <string name="preview_event_3">Zahnarzt</string>
     <string name="preview_event_4">Urlaub</string>
+    <string name="discard_changes">Änderungen verwerfen?</string>
+    <string name="discard">Verwerfen</string>
+    <string name="keep_editing">Weiter bearbeiten</string>
+    <string name="discard_new_widget">Das Widget wird nicht zu deinem Startbildschirm hinzugefügt.</string>
 </resources>
