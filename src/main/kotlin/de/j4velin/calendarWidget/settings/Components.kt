@@ -65,7 +65,8 @@ import java.util.Locale
 internal fun SettingsPage(content: @Composable ColumnScope.() -> Unit) {
     Column(
         modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState())
-            .padding(horizontal = 16.dp, vertical = 8.dp),
+            // the bottom padding keeps the last setting clear of the done button
+            .padding(start = 16.dp, end = 16.dp, top = 8.dp, bottom = 88.dp),
         content = content,
     )
 }

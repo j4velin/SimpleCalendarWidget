@@ -74,7 +74,7 @@ class ConfigLifecycleTest {
             WidgetConfig.editIntent(app, 14)
         )
         compose.onNodeWithText("Work (me@example.com)").assertExists()
-        compose.onNodeWithText(app.getString(R.string.done)).performClick()
+        compose.onNodeWithContentDescription(app.getString(R.string.done)).performClick()
         assertEquals(Activity.RESULT_OK, scenario.result.resultCode)
         assertEquals(setOf(2L), AgendaSettings.load(app, 14).calendarIds)
     }
@@ -87,7 +87,7 @@ class ConfigLifecycleTest {
     @Test
     fun doneSavesAndPlacesTheWidget() {
         val scenario = placeWidget(11)
-        compose.onNodeWithText(app.getString(R.string.done)).performClick()
+        compose.onNodeWithContentDescription(app.getString(R.string.done)).performClick()
         assertEquals(Activity.RESULT_OK, scenario.result.resultCode)
         assertEquals(setOf(1L, 3L), AgendaSettings.load(app, 11).calendarIds)
     }

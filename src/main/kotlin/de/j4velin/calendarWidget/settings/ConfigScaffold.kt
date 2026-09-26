@@ -21,6 +21,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -130,7 +131,7 @@ private fun BackupDialog(viewModel: ConfigViewModel<*>, onDismiss: () -> Unit) {
 }
 
 /**
- * Common frame of the configuration screens: top bar with cancel, done and menu, backup dialog
+ * Common frame of the configuration screens: top bar with cancel and menu, done button, backup dialog
  * and, if [requirePermission], a calendar permission request instead of the content.
  */
 @OptIn(ExperimentalMaterial3Api::class)
@@ -163,7 +164,6 @@ internal fun ConfigScaffold(
                     }
                 },
                 actions = {
-                    TextButton(onClick = onDone) { Text(stringResource(R.string.done)) }
                     Box {
                         IconButton(onClick = { menuExpanded = true }) {
                             Icon(
@@ -197,6 +197,14 @@ internal fun ConfigScaffold(
                     }
                 },
             )
+        },
+        floatingActionButton = {
+            FloatingActionButton(onClick = onDone) {
+                Icon(
+                    painterResource(R.drawable.ic_check),
+                    contentDescription = stringResource(R.string.done),
+                )
+            }
         },
     ) { padding ->
         if (requirePermission && !viewModel.hasPermission) {
