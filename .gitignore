@@ -38,3 +38,6 @@ build/
 # Signing
 *.keystore
 *.jks
+
+# Cygwin/MSYS crash dumps
+*.stackdump
