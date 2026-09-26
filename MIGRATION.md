@@ -94,9 +94,36 @@ records the plan and what actually changed.
   * default grid sizes and picker descriptions
   * compact icons when the widget is small
   * generated previews in the widget picker (Android 15+)
-* Everything added during the modernization is translated into all 17 existing languages,
-  including the widget names.
 * GitHub Actions workflow: build, lint and tests on every push and pull request.
+
+## Translations (done)
+
+The app is now fully translated into all 17 existing languages. Before, only German was
+complete.
+
+* **New texts:** the 35 texts added during the modernization are translated. They cover the
+  permission screen, dialogs, widget names and descriptions, and preview sample events.
+* **Older gaps filled:**
+
+  | Language | Texts added |
+  |---|---|
+  | Arabic | 63 |
+  | Hebrew, Japanese, Korean, Portuguese | 61 each |
+  | Turkish | 44 |
+  | Czech, Spanish, Dutch, Polish, Russian, Chinese (Taiwan) | 19 each |
+  | Danish, French, Italian, Swedish | 6 each |
+
+  Hebrew, Japanese, Korean and Portuguese also got the missing look-ahead unit list
+  (days/weeks/months/years).
+* **Backup folder:** the backup dialog named a folder that doesn't exist. In every language it
+  now names `/Android/data/de.j4velin.calendarWidget/files`.
+* **Lint:** the `MissingTranslation` check is no longer suppressed, so any new text without
+  translations is flagged.
+
+The added translations were machine-written and have not been reviewed by native speakers.
+Review them before release, especially Arabic, Hebrew, Japanese, Korean, Portuguese and Turkish,
+which previously had few or no strings to match the wording against. Also check the
+right-to-left layout in Arabic and Hebrew.
 
 ## Verification
 
