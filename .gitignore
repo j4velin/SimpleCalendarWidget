@@ -34,3 +34,7 @@ build/
 *.iml
 # Kotlin
 .kotlin/
+
+# Signing
+*.keystore
+*.jks
