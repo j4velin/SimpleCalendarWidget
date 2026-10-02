@@ -150,3 +150,23 @@ internal fun buildAgenda(
 
     return Agenda(days, nextChange.takeIf { it != Long.MAX_VALUE })
 }
+
+/**
+ * Limits the agenda to the given number of rows, counting one row per day title and one per
+ * event. A day is only kept if at least one of its events fits as well.
+ *
+ * @return the remaining days and the date of the first day which was not or only partly kept,
+ * or null if nothing was removed
+ */
+internal fun List<Day>.limitRows(maxRows: Int): Pair<List<Day>, Long?> {
+    val result = ArrayList<Day>()
+    var rows = 0
+    for (day in this) {
+        val fitting = minOf(day.events.size, maxRows - rows - 1)
+        if (fitting < 1) return result to day.date
+        result += if (fitting == day.events.size) day else Day(day.date, day.events.take(fitting))
+        rows += 1 + fitting
+        if (fitting < day.events.size) return result to day.date
+    }
+    return result to null
+}

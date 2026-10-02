@@ -104,4 +104,5 @@
     <string name="same_as_on_other_days">مثل الأيام الأخرى</string>
     <string name="time_location_for_todays_events">الوقت/المكان لأحداث اليوم</string>
     <string name="update_on_click">عدم فتح أي تطبيق، بل تحديث محتوى الأداة بدلًا من ذلك</string>
+    <string name="more_events">المزيد من الأحداث…</string>
 </resources>

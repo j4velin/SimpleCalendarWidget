@@ -112,4 +112,5 @@
     <string name="same_as_on_other_days">jak w inne dni</string>
     <string name="time_location_for_todays_events">Godzina/miejsce dzisiejszych wydarzeń</string>
     <string name="update_on_click">nie uruchamiaj aplikacji, tylko odśwież widżet</string>
+    <string name="more_events">Więcej wydarzeń…</string>
 </resources>

@@ -102,4 +102,5 @@
         <item>か月</item>
         <item>年</item>
     </string-array>
+    <string name="more_events">その他の予定…</string>
 </resources>

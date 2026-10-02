@@ -113,4 +113,5 @@
     <string name="discard">Verwerfen</string>
     <string name="keep_editing">Weiter bearbeiten</string>
     <string name="discard_new_widget">Das Widget wird nicht zu deinem Startbildschirm hinzugefügt.</string>
+    <string name="more_events">Weitere Termine…</string>
 </resources>

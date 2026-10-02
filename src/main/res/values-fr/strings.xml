@@ -106,4 +106,5 @@ tools:ignore="MissingTranslation">
     <string name="same_as_on_other_days">comme les autres jours</string>
     <string name="time_location_for_todays_events">Heure/lieu des événements du jour</string>
     <string name="update_on_click">ne lancer aucune application, mais actualiser le widget</string>
+    <string name="more_events">Plus d\'événements…</string>
 </resources>

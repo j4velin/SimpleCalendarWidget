@@ -102,4 +102,5 @@
         <item>חודשים</item>
         <item>שנים</item>
     </string-array>
+    <string name="more_events">אירועים נוספים…</string>
 </resources>

@@ -154,4 +154,33 @@ class AgendaTest {
             assertEquals(today.startMillis(localZone), local)
         }
     }
+
+    /** an agenda with the given number of events on each day, starting today */
+    private fun days(vararg eventsPerDay: Int): List<Day> = eventsPerDay.mapIndexed { i, count ->
+        val day = today.plusDays(i.toLong())
+        build(*Array(count) { instance(at(day, 13 + it), at(day, 14 + it), "event $i $it") })
+            .days.single()
+    }
+
+    @Test
+    fun limitRowsKeepsShortAgendas() {
+        val agenda = days(2, 1)
+        assertEquals(agenda to null, agenda.limitRows(5))
+    }
+
+    @Test
+    fun limitRowsCutsWithinDay() {
+        val agenda = days(2, 3, 1)
+        val (limited, cut) = agenda.limitRows(5)
+        assertEquals(listOf(2, 1), limited.map { it.events.size })
+        assertEquals(agenda[1].date, cut)
+    }
+
+    @Test
+    fun limitRowsDropsDayWithoutRoomForEvents() {
+        val agenda = days(2, 3)
+        val (limited, cut) = agenda.limitRows(4)
+        assertEquals(listOf(agenda[0]), limited)
+        assertEquals(agenda[1].date, cut)
+    }
 }

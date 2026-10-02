@@ -106,4 +106,5 @@ tools:ignore="MissingTranslation">
     <string name="same_as_on_other_days">samma som andra dagar</string>
     <string name="time_location_for_todays_events">Tid/plats för dagens händelser</string>
     <string name="update_on_click">starta ingen app utan uppdatera widgetens innehåll i stället</string>
+    <string name="more_events">Fler händelser…</string>
 </resources>

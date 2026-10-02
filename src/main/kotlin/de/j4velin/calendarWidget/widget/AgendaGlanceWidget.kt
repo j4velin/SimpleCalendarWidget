@@ -56,6 +56,7 @@ import de.j4velin.calendarWidget.data.ClickAction
 import de.j4velin.calendarWidget.data.DAY_MS
 import de.j4velin.calendarWidget.data.Defaults
 import de.j4velin.calendarWidget.data.buildAgenda
+import de.j4velin.calendarWidget.data.limitRows
 import de.j4velin.calendarWidget.data.startMillis
 import de.j4velin.calendarWidget.data.toLocalDate
 import de.j4velin.calendarWidget.settings.WidgetConfig
@@ -88,7 +89,15 @@ internal data class AgendaData(
     val hasPermission: Boolean,
     val header: String?,
     val days: List<AgendaDayItem>,
+    /** intent to start when the "more events" row is clicked, null if all events are shown */
+    val more: Intent? = null,
 )
+
+/**
+ * Maximum number of agenda rows: on Android 12+ all list items are sent in one widget update,
+ * which fails with "Can't show content" if it exceeds the binder transaction limit
+ */
+private const val MAX_AGENDA_ROWS = 100
 
 internal class AgendaGlanceWidget : GlanceAppWidget() {
 
@@ -163,9 +172,11 @@ internal fun loadAgenda(context: Context, widgetId: Int): AgendaData {
     )
     val todayText = context.getString(R.string.today)
     val tomorrowText = context.getString(R.string.tomorrow)
-    val days = agenda.days.map { day ->
+    val (shownDays, firstCutDay) = agenda.days.limitRows(MAX_AGENDA_ROWS)
+    val days = shownDays.mapIndexed { index, day ->
         val relativeDay = ChronoUnit.DAYS.between(today, day.date.toLocalDate(zone))
-        val single = day.events.singleOrNull()
+        // a day cut down to one event still has more, so it must not open just that one
+        val single = agenda.days[index].events.singleOrNull()
         val click = if (settings.openSingleEvent && single != null) {
             CalendarActionActivity.openEvent(
                 context, widgetId, single.id,
@@ -190,7 +201,8 @@ internal fun loadAgenda(context: Context, widgetId: Int): AgendaData {
             click = click,
         )
     }
-    return AgendaData(widgetId, settings, hasPermission = true, header, days)
+    val more = firstCutDay?.let { CalendarActionActivity.openCalendar(context, widgetId, it) }
+    return AgendaData(widgetId, settings, hasPermission = true, header, days, more)
 }
 
 private const val LIGHT_FONT = "sans-serif-light"
@@ -255,6 +267,19 @@ internal fun AgendaContent(data: AgendaData) {
                                     click.padding(bottom = if (last) 5.dp else 0.dp),
                                 )
                             }
+                        }
+                    }
+                    if (data.more != null) {
+                        item {
+                            Text(
+                                text = context.getString(R.string.more_events),
+                                style = textStyle(
+                                    settings.dateColor, settings.dateSize, settings.dateBold,
+                                    settings.dateLight
+                                ),
+                                modifier = GlanceModifier.fillMaxWidth()
+                                    .clickable(actionStartActivity(data.more)),
+                            )
                         }
                     }
                 }

@@ -101,4 +101,5 @@
         <item>meses</item>
         <item>anos</item>
     </string-array>
+    <string name="more_events">Mais eventos…</string>
 </resources>

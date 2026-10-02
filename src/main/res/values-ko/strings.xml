@@ -102,4 +102,5 @@
         <item>개월</item>
         <item>년</item>
     </string-array>
+    <string name="more_events">일정 더 보기…</string>
 </resources>

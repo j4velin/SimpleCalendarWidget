@@ -65,6 +65,7 @@ class WidgetRenderingTest {
             hasPermission = true,
             header = "Friday, 25. September",
             days = listOf(day),
+            more = Intent(),
         )
         val texts = render { AgendaContent(data) }.texts()
         assertTrue(texts.toString(), "Friday, 25. September" in texts)

@@ -111,4 +111,5 @@
     <string name="same_as_on_other_days">как в другие дни</string>
     <string name="time_location_for_todays_events">Время/место сегодняшних событий</string>
     <string name="update_on_click">не запускать приложение, а обновить виджет</string>
+    <string name="more_events">Другие события…</string>
 </resources>

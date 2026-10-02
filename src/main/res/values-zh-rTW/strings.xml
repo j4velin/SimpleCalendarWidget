@@ -106,4 +106,5 @@ tools:ignore="MissingTranslation">
     <string name="same_as_on_other_days">與其他日子相同</string>
     <string name="time_location_for_todays_events">今天活動的時間/地點</string>
     <string name="update_on_click">不啟動任何應用程式，改為更新小工具內容</string>
+    <string name="more_events">更多活動…</string>
 </resources>
